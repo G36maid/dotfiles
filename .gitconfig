@@ -1,0 +1,7 @@
+[user]
+	email = miku65434@gmail.com
+	name = G36maid
+[core]
+	editor = vim
+[init]
+	defaultBranch = main

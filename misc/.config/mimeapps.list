@@ -1,0 +1,6 @@
+[Added Associations]
+image/jpeg=firefox-3.desktop;firefox-2.desktop;
+
+[Default Applications]
+image/jpeg=firefox-3.desktop;
+x-scheme-handler/ror2mm=r2modman.desktop

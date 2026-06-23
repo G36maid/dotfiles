@@ -1,0 +1,42 @@
+# ===== Secrets (NEVER commit) =====
+# GitHub CLI token
+hosts.yml
+# Zed API credentials
+development_credentials
+# Advent of Code session
+*.session
+# SSH / GPG / Docker / K8s
+.ssh/
+.gnupg/
+.docker/
+.kube/
+.mcp-auth/
+.npmrc
+.claude.json
+.codex/
+.gemini/
+
+# ===== Cache / runtime state =====
+**/node_modules/
+**/.cache/
+**/cache/
+*.log
+error.log
+**/cached_layouts
+
+# ===== Backups =====
+*.bak
+*.backup
+*.orig
+*.swp
+*~
+
+# ===== App-specific runtime =====
+# fcitx5 regenerates this
+**/fcitx5/conf/cached_layouts
+# Zed backup
+**/zed/settings_backup.json
+# Opencode runtime artifacts
+**/opencode/package-lock.json
+**/opencode/*.backup-*
+**/opencode/skills/

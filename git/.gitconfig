@@ -1,0 +1,9 @@
+[user]
+	email = G36_maid@proton.me
+	name = G36maid
+[core]
+#	editor = zeditor --wait
+[alias]
+	graph = log --graph --oneline --all --decorate
+[init]
+	defaultBranch = main

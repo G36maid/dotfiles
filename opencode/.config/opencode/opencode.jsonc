@@ -1,0 +1,33 @@
+{
+  "plugin": ["oh-my-openagent@latest"],
+  "$schema": "https://opencode.ai/config.json",
+  // "lsp": {},
+  "mcp": {
+    "markitdown": {
+      "type": "local",
+      "command": ["uvx", "--python", "3.13", "markitdown-mcp"],
+    },
+    "deepwiki": { "type": "remote", "url": "https://mcp.deepwiki.com/mcp" },
+    // "ghidra": {
+    //   "type": "local",
+    //   "command": [
+    //     "uv",
+    //     "run",
+    //     "--script",
+    //     "/home/g36maid/.local/share/ghidra-mcp/bridge_mcp_ghidra.py"
+    //   ],
+    //   "enabled": true
+    // }
+    // "playwright": {
+    //   "type": "local",
+    //   "command": [
+    //     "npx",
+    //     "-y",
+    //     "@playwright/mcp@latest",
+    //     "--browser",
+    //     "firefox",
+    //   ],
+    //   "enabled": true,
+    // },
+  },
+}

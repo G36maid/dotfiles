@@ -2,6 +2,10 @@
 
 My Arch Linux + Hyprland dotfiles, managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
+## screenshots
+
+![Desktop screenshot](screenshot.png)
+
 ## Contents
 
 - [System](#system)

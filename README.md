@@ -41,7 +41,7 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 
 | Package | Contents |
 |---|---|
-| `zsh/` | `.zshrc` (zim + custom `oc()` fn) |
+| `zsh/` | `.zshrc` (zim + custom `oc()` fn), `.zimrc` (zimfw modules) |
 | `bash/` | `.bashrc`, `.bash_profile` |
 | `tmux/` | `.tmux.conf` (dracula theme via TPM) |
 | `vim/` | `.vimrc` |

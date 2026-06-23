@@ -44,10 +44,8 @@ sudo pacman -S --needed stow zsh tmux vim kitty hyprland waybar wofi \
 Additional binaries referenced by Hyprland keybinds and `autostart.conf`. Without these, the corresponding keys / tray icons will silently do nothing:
 
 ```bash
-sudo pacman -S --needed hypridle hyprpaper playerctl brightnessctl \
+sudo pacman -S --needed hyprshot hypridle hyprpaper playerctl brightnessctl \
   wireplumber network-manager-applet blueman
-# AUR (paru):
-paru -S hyprshot
 ```
 
 | Tool | Where it's used |

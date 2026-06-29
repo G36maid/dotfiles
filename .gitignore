@@ -40,3 +40,4 @@ error.log
 **/opencode/package-lock.json
 **/opencode/*.backup-*
 **/opencode/skills/
+.omo/

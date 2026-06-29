@@ -22,7 +22,7 @@
       "default_config_options": {
         "model": "opencode/glm-5.2",
       },
-      "type": "registry"
+      "type": "registry",
     },
     "gemini": {
       "type": "registry",
@@ -172,21 +172,8 @@
             "name": "glm-5.2",
             "display_name": "GLM-5.2",
             "max_tokens": 1000000,
-            "max_output_tokens": 131072,
-            "max_completion_tokens": 131072,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-            },
-          },
-          {
-            "name": "glm-5-turbo",
-            "display_name": "GLM-5-Turbo",
-            "max_tokens": 200000,
-            "max_output_tokens": 131072,
-            "max_completion_tokens": 131072,
+            "max_output_tokens": 128000,
+            "max_completion_tokens": 128000,
             "capabilities": {
               "tools": true,
               "images": false,
@@ -197,6 +184,19 @@
           {
             "name": "glm-5.1",
             "display_name": "GLM-5.1",
+            "max_tokens": 200000,
+            "max_output_tokens": 128000,
+            "max_completion_tokens": 128000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+            },
+          },
+          {
+            "name": "glm-5-turbo",
+            "display_name": "GLM-5-Turbo",
             "max_tokens": 200000,
             "max_output_tokens": 128000,
             "max_completion_tokens": 128000,
@@ -257,28 +257,22 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/g36maid/docker"
-          ]
-        }
-      ]
+          "paths": ["/home/g36maid/docker"],
+        },
+      ],
     },
     {
       "host": "g36archpc",
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/g36maid/.config/opencode"
-          ]
+          "paths": ["/home/g36maid/.config/opencode"],
         },
         {
-          "paths": [
-            "/home/g36maid/Code/rust/zed"
-          ]
-        }
-      ]
-    }
+          "paths": ["/home/g36maid/Code/rust/zed"],
+        },
+      ],
+    },
   ],
   "context_servers": {
     "arch-ops-server": {

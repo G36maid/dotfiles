@@ -1,3 +1,9 @@
+/* Catppuccin Mocha palette + nene_bfes_2026 wallpaper-derived border */
+@define-color crust         #11111b; /* darkest bg, also text on light pills */
+@define-color text          #cdd6f4; /* main text, also light pill bg */
+@define-color lavender      #b4befe; /* workspace / arch accent */
+@define-color module-border rgba(192, 190, 217, 0.5); /* wallpaper highlight #c0bed9 @ 50% */
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     border: none;
@@ -14,9 +20,10 @@ window#waybar {
 }
 
 #workspaces {
+    border: 1px solid @module-border;
     border-radius: 10px;
-    background-color: #11111b;
-    color: #b4befe;
+    background-color: @crust;
+    color: @lavender;
     margin-top: 5px;
     margin-right: 5px;
     margin-left: 5px;
@@ -27,9 +34,10 @@ window#waybar {
 
 #custom-arch {
     font-size: 20px;
+    border: 1px solid @module-border;
     border-radius: 10px;
-    background-color: #11111b;
-    color: #b4befe;
+    background-color: @crust;
+    color: @lavender;
     margin-top: 5px;
     margin-right: 5px;
     margin-left: 5px;
@@ -39,14 +47,15 @@ window#waybar {
 }
 
 #workspaces button {
-    background: #11111b;
-    color: #b4befe;
+    background: @crust;
+    color: @lavender;
 }
 
 #window {
+    border: 1px solid @module-border;
     border-radius: 10px;
-    background-color: #11111b;
-    color: #cdd6f4;
+    background-color: @crust;
+    color: @text;
     margin-top: 5px;
     padding-top: 2px;
     padding-left: 10px;
@@ -58,8 +67,8 @@ window#waybar {
 #cpu {
     border-radius: 3px;
 
-    color: #11111b;
-    background-color: #cdd6f4;
+    color: @crust;
+    background-color: @text;
     margin-top: 5px;
     margin-right: 5px;
     padding: 1px 3px;
@@ -68,8 +77,8 @@ window#waybar {
 #memory {
     border-radius: 3px;
 
-    color: #11111b;
-    background-color: #cdd6f4;
+    color: @crust;
+    background-color: @text;
 
     margin-top: 2px;
 
@@ -80,8 +89,8 @@ window#waybar {
 #temperature {
     border-radius: 3px;
 
-    color: #11111b;
-    background-color: #cdd6f4;
+    color: @crust;
+    background-color: @text;
 
     margin-top: 2px;
 
@@ -92,8 +101,8 @@ window#waybar {
 #battery {
     border-radius: 3px;
 
-    color: #11111b;
-    background-color: #cdd6f4;
+    color: @crust;
+    background-color: @text;
     margin-top: 5px;
 
     margin-right: 2px;
@@ -101,10 +110,11 @@ window#waybar {
 }
 
 #pulseaudio {
+    border: 1px solid @module-border;
     border-radius: 3px;
 
-    background-color: #11111b;
-    color: #cdd6f4;
+    background-color: @crust;
+    color: @text;
     margin-top: 5px;
 
     margin-right: 5px;
@@ -112,10 +122,11 @@ window#waybar {
 }
 
 #backlight {
+    border: 1px solid @module-border;
     border-radius: 3px;
 
-    background-color: #11111b;
-    color: #cdd6f4;
+    background-color: @crust;
+    color: @text;
     margin-top: 2px;
 
     margin-right: 5px;
@@ -124,9 +135,10 @@ window#waybar {
 
 #keyboard-state,
 #clock {
+    border: 1px solid @module-border;
     border-radius: 10px;
-    background-color: #11111b;
-    color: #cdd6f4;
+    background-color: @crust;
+    color: @text;
     margin-top: 5px;
     padding-top: 2px;
     padding-left: 10px;
@@ -136,9 +148,10 @@ window#waybar {
 
 #power-profiles-daemon,
 #network {
+    border: 1px solid @module-border;
     border-radius: 10px;
-    background-color: #11111b;
-    color: #cdd6f4;
+    background-color: @crust;
+    color: @text;
     margin-top: 5px;
     padding-top: 1px;
     padding-left: 10px;
@@ -148,9 +161,10 @@ window#waybar {
 
 #tray,
 #custom-power {
+    border: 1px solid @module-border;
     border-radius: 10px;
-    background-color: #11111b;
-    color: #cdd6f4;
+    background-color: @crust;
+    color: @text;
     margin-top: 5px;
     padding-top: 1px;
     padding-left: 10px;

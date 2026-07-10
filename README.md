@@ -77,14 +77,17 @@ sudo pacman -S --needed ttf-firacode-nerd
 git clone git@github.com:G36maid/dotfiles.git ~/Github/dotfiles
 cd ~/Github/dotfiles
 
-# Stow every package (symlinks into $HOME)
-stow */
+# Stow every package (symlinks into $HOME).
+# --target="$HOME" is required because the repo isn't cloned directly
+# under $HOME (it's at ~/Github/dotfiles); stow's default target is
+# the repo's parent dir (~/Github), which is wrong.
+stow --target="$HOME" */
 
 # Or pick individual packages
-stow zsh hypr kitty waybar
+stow --target="$HOME" zsh hypr kitty waybar
 ```
 
-To remove a package: `stow -D <package>`
+To remove a package: `stow --target="$HOME" -D <package>`
 
 > If `stow */` reports conflicts, real (non-symlink) files already exist at the target paths — see [Pre-install: back up existing dotfiles](#pre-install-back-up-existing-dotfiles).
 
@@ -174,10 +177,10 @@ paru --bottomup --devel --provides --pgpfetch --fm yazi --save
 mkdir -p ~/.config-backup
 mv ~/.zshrc ~/.zimrc ~/.tmux.conf ~/.vimrc ~/.gitconfig ~/.gdbinit \
    ~/.bashrc ~/.bash_profile ~/.config-backup/ 2>/dev/null
-stow */
+stow --target="$HOME" */
 ```
 
-Alternatively, `stow --adopt */` overwrites the stow package's copy with your existing files (useful if you want to capture your current setup into this repo).
+Alternatively, `stow --target="$HOME" --adopt */` overwrites the stow package's copy with your existing files (useful if you want to capture your current setup into this repo).
 
 ## Secrets policy
 

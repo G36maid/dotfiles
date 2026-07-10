@@ -115,7 +115,7 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `opencode/` | `.config/opencode/{opencode.jsonc,oh-my-openagent.json,package.json}` |
 | `misc/` | `.config/`: `QtProject.conf`, `hyfetch.json`, `dolphinrc`, `mimeapps.list`, `code-flags.conf` |
 
-> Since Hyprland 0.55 the config is **Lua**: `hyprland.lua` requires per-concern files under `.config/hypr/modules/` (`monitors`, `env`, `look`, `input`, `binds`, `rules`, `autostart` — all `.lua`). Edit one concern without touching the rest.
+> Since Hyprland 0.55 the config is **Lua**: `hyprland.lua` requires per-concern files under `.config/hypr/modules/` (`monitors`, `env`, `look`, `input`, `binds`, `rules`, `autostart` — all `.lua`). Edit one concern without touching the rest. Per-host differences (monitors, env, sensitivity, binds, …) live in `modules/machine.lua` as profiles — a `default` base plus named overrides (`archfw13`, `g36archpc`, …); set `current` there per host and the rest of the tree stays identical across machines.
 
 ## Post-install steps
 

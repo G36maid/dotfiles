@@ -1,10 +1,11 @@
 -- ============================================================================
---  Input  (archfw13; from modules/input.conf)
+--  Input  (from modules/input.conf)
 --  Wiki: https://wiki.hypr.land/Configuring/Basics/Variables/ (#input, #gestures)
 --        https://wiki.hypr.land/Configuring/Advanced-and-Cool/Gestures/
---  Differs from g36archpc: sensitivity 0, touchpad block, 3-finger gesture
---  ACTIVE, two per-device logitech mice.
+--  Per-host: sensitivity, touchpad, gestures, devices — see modules/machine.lua.
 -- ============================================================================
+
+local M = require("modules.machine")
 
 hl.config({
     input = {
@@ -14,37 +15,19 @@ hl.config({
         kb_options   = "",
         kb_rules     = "",
         follow_mouse = 1,
-        sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification (g36archpc uses -0.5)
-
-        touchpad = {
-            natural_scroll = false,
-        },
+        sensitivity  = M.sensitivity,
+        touchpad     = M.touchpad, -- nil on hosts without a touchpad
     },
 })
 
 -- Gestures. In 0.55 `workspace_swipe` / `_fingers` were removed in favor of
--- hl.gesture(). `workspace_swipe_distance` is still valid (Variables: #gestures).
--- archfw13 had the 3-finger horizontal swipe ACTIVE, so we register it here.
+-- hl.gesture(); `workspace_swipe_distance` is still valid (Variables: #gestures).
 hl.config({
     gestures = {
         workspace_swipe_distance = 500,
     },
 })
 
-hl.gesture({
-    fingers   = 3,
-    direction = "horizontal",
-    action    = "workspace",
-})
-
--- Per-device config (https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/)
--- archfw13: two external logitech mice with custom sensitivity.
-hl.device({
-    name        = "logitech-g-pro--1",
-    sensitivity = -1,
-})
-
-hl.device({
-    name        = "logitech-g502-hero",
-    sensitivity = -0.75,
-})
+-- Per-host gesture registrations + device configs (see modules/machine.lua).
+for _, g in ipairs(M.gestures) do hl.gesture(g) end
+for _, d in ipairs(M.devices)  do hl.device(d) end

@@ -1,9 +1,12 @@
 -- ============================================================================
---  Look & feel  (archfw13; from modules/general.conf)
+--  Look & feel  (from modules/general.conf)
 --  Wiki: https://wiki.hypr.land/Configuring/Basics/Variables/
 --        https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
---  Differs from g36archpc: shadow ENABLED, force_default_wallpaper = 0.
+--  Shadow + wallpaper flag are per-host — see modules/machine.lua
+--  (M.shadow, M.wallpaper).
 -- ============================================================================
+
+local M = require("modules.machine")
 
 -- ---- general (https://wiki.hypr.land/Configuring/Basics/Variables/#general) ----
 hl.config({
@@ -21,20 +24,13 @@ hl.config({
     },
 })
 
--- ---- decoration (archfw13: shadow enabled) ----
+-- ---- decoration (shadow is per-host) ----
 hl.config({
     decoration = {
         rounding         = 10,
         active_opacity   = 1.0,
         inactive_opacity = 1.0,
-        -- shadow was ENABLED on archfw13 (range 4, render_power 3, rgba(1a1a1aee)).
-        -- rgba(1a1a1aee) == legacy ARGB 0xee1a1a1a (same color).
-        shadow = {
-            enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
-        },
+        shadow = M.shadow,
         blur = {
             enabled  = true,
             size     = 3,
@@ -44,7 +40,7 @@ hl.config({
     },
 })
 
--- ---- animations ----
+-- ---- animations (new API: hl.curve / hl.animation) ----
 hl.config({ animations = { enabled = true } })
 
 -- user's custom bezier (was: `bezier = myBezier, 0.05, 0.9, 0.1, 1.05`)
@@ -71,10 +67,10 @@ hl.config({
     },
 })
 
--- ---- misc (archfw13: anime mascot wallpaper disabled = 0) ----
+-- ---- misc (wallpaper flag is per-host) ----
 hl.config({
     misc = {
-        force_default_wallpaper = 0,    -- 0 or 1 disables the anime mascot wallpaper
+        force_default_wallpaper = M.wallpaper, -- -1 keep default; 0/1 disable mascot
         disable_hyprland_logo   = false,
     },
 })

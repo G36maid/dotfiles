@@ -1,7 +1,7 @@
 -- ============================================================================
---  Window rules  (archfw13; from modules/rules.conf)
+--  Window rules  (from modules/rules.conf)
 --  Wiki: https://wiki.hypr.land/Configuring/Basics/Window-Rules/
---  Identical to g36archpc — no machine-specific rules.
+--  No machine-specific rules.
 -- ============================================================================
 
 -- Ignore window maximize requests from all apps

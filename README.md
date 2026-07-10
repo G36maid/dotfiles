@@ -48,8 +48,8 @@ sudo pacman -S --needed stow zsh tmux vim kitty hyprland waybar wofi \
 Additional binaries referenced by Hyprland keybinds and `autostart.conf`. Without these, the corresponding keys / tray icons will silently do nothing:
 
 ```bash
-sudo pacman -S --needed hyprshot hypridle hyprpaper playerctl brightnessctl \
-  wireplumber network-manager-applet blueman
+sudo pacman -S --needed hyprshot hypridle hyprlock hyprpaper playerctl \
+  brightnessctl wireplumber network-manager-applet blueman
 ```
 
 | Tool | Where it's used |
@@ -59,7 +59,7 @@ sudo pacman -S --needed hyprshot hypridle hyprpaper playerctl brightnessctl \
 | `brightnessctl` | Brightness + keyboard-backlight keys |
 | `wireplumber` (`wpctl`) | Volume up/down/mute + mic mute keys |
 | `nm-applet` / `blueman-applet` | Autostart tray icons (network / bluetooth) |
-| `hypridle` / `hyprpaper` | Autostart (idle daemon, wallpaper) |
+| `hypridle` / `hyprlock` / `hyprpaper` | Autostart (idle daemon, screen locker, wallpaper) |
 
 ### Fonts
 
@@ -101,7 +101,7 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `git/` | `.gitconfig` |
 | `gdb/` | `.gdbinit` |
 | `starship/` | `.config/starship.toml` |
-| `hypr/` | `.config/hypr/` (hyprland, hypridle, hyprpaper, modules/) |
+| `hypr/` | `.config/hypr/` (hyprland, hypridle, hyprlock, hyprpaper, modules/) |
 | `kitty/` | `.config/kitty/kitty.conf` |
 | `wofi/` | `.config/wofi/` (launcher + menus) |
 | `waybar/` | `.config/waybar/` (bar + power menu) |

@@ -27,7 +27,7 @@ My Arch Linux + Hyprland dotfiles, managed with [GNU Stow](https://www.gnu.org/s
 ## System
 
 - **OS**: Arch Linux
-- **WM**: Hyprland (Wayland)
+- **WM**: Hyprland 0.55+ (Wayland, Lua config)
 - **Shell**: zsh (zim framework)
 - **Terminal**: kitty
 - **Editor**: vim + zed
@@ -45,7 +45,7 @@ sudo pacman -S --needed stow zsh tmux vim kitty hyprland waybar wofi \
 
 ### Runtime deps
 
-Additional binaries referenced by Hyprland keybinds and `autostart.conf`. Without these, the corresponding keys / tray icons will silently do nothing:
+Additional binaries referenced by Hyprland keybinds and `modules/autostart.lua`. Without these, the corresponding keys / tray icons will silently do nothing:
 
 ```bash
 sudo pacman -S --needed hyprshot hypridle hyprlock hyprpaper playerctl \
@@ -101,7 +101,7 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `git/` | `.gitconfig` |
 | `gdb/` | `.gdbinit` |
 | `starship/` | `.config/starship.toml` |
-| `hypr/` | `.config/hypr/` (hyprland, hypridle, hyprlock, hyprpaper, modules/) |
+| `hypr/` | `.config/hypr/` (`hyprland.lua` + `modules/*.lua`, hypridle, hyprlock, hyprpaper) |
 | `kitty/` | `.config/kitty/kitty.conf` |
 | `wofi/` | `.config/wofi/` (launcher + menus) |
 | `waybar/` | `.config/waybar/` (bar + power menu) |
@@ -115,7 +115,7 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `opencode/` | `.config/opencode/{opencode.jsonc,oh-my-openagent.json,package.json}` |
 | `misc/` | `.config/`: `QtProject.conf`, `hyfetch.json`, `dolphinrc`, `mimeapps.list`, `code-flags.conf` |
 
-> The `hypr/` config is split into per-concern files under `.config/hypr/modules/` (`general`, `input`, `binds`, `env`, `monitors`, `rules`, `autostart`), all sourced by `hyprland.conf` — edit one concern without touching the rest.
+> Since Hyprland 0.55 the config is **Lua**: `hyprland.lua` requires per-concern files under `.config/hypr/modules/` (`monitors`, `env`, `look`, `input`, `binds`, `rules`, `autostart` — all `.lua`). Edit one concern without touching the rest.
 
 ## Post-install steps
 

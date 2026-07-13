@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "ghidra": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--script",
+        "/home/g36maid/.local/share/ghidra-mcp/bridge_mcp_ghidra.py"
+      ]
+    }
+  }
+}

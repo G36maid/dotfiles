@@ -39,5 +39,4 @@ error.log
 # Opencode runtime artifacts
 **/opencode/package-lock.json
 **/opencode/*.backup-*
-**/opencode/skills/
 .omo/

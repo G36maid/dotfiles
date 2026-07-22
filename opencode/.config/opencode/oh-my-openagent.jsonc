@@ -4,68 +4,73 @@
     "sisyphus": {
       "model": "zai-coding-plan/glm-5.2",
       "fallback_models": [
-        { "model": "openai/gpt-5.5", "variant": "medium" },
+        // { "model": "openai/gpt-5.5", "variant": "medium" },
         { "model": "opencode-go/glm-5.2" }
       ]
     },
-    "hephaestus": { "model": "openai/gpt-5.5", "variant": "medium" },
+    "hephaestus": {
+      // primary was openai-only; no non-openai fallback available
+      "model": "openai/gpt-5.5", "variant": "medium"
+    },
     "oracle": {
-      "model": "openai/gpt-5.5",
-      "variant": "high",
+      // "model": "openai/gpt-5.5",
+      // "variant": "high",
+      "model": "opencode-go/glm-5.2",
       "fallback_models": [
-        { "model": "opencode-go/glm-5.2" },
         { "model": "zai-coding-plan/glm-5.2" }
       ]
     },
     "librarian": {
-      "model": "openai/gpt-5.4-mini-fast",
+      // "model": "openai/gpt-5.4-mini-fast",
+      "model": "zai-coding-plan/glm-4.7",
       "fallback_models": [
-        { "model": "zai-coding-plan/glm-4.7" },
         { "model": "opencode-go/qwen3.7-plus" },
         { "model": "opencode-go/minimax-m3" },
         { "model": "opencode-go/minimax-m2.7" },
-        { "model": "openai/gpt-5.4-nano" }
+        // { "model": "openai/gpt-5.4-nano" }
       ]
     },
     "explore": {
-      "model": "openai/gpt-5.4-mini-fast",
+      // "model": "openai/gpt-5.4-mini-fast",
+      "model": "zai-coding-plan/glm-4.7",
       "fallback_models": [
-        { "model": "zai-coding-plan/glm-4.7" },
         { "model": "opencode-go/qwen3.7-plus" },
         { "model": "opencode-go/minimax-m3" },
         { "model": "opencode-go/minimax-m2.7" },
         { "model": "zai-coding-plan/glm-4.7" },
-        { "model": "openai/gpt-5.4-nano" }
+        // { "model": "openai/gpt-5.4-nano" }
       ]
     },
     "multimodal-looker": {
       "model": "google/gemini-3-flash-preview",
       "variant": "high",
       "fallback_models": [
-        { "model": "openai/gpt-5.5", "variant": "medium" },
+        // { "model": "openai/gpt-5.5", "variant": "medium" },
         { "model": "opencode-go/kimi-k2.6" },
         { "model": "zai-coding-plan/glm-4.6v" },
-        { "model": "openai/gpt-5-nano" }
+        // { "model": "openai/gpt-5-nano" }
       ]
     },
     "prometheus": {
       "model": "zai-coding-plan/glm-5.2",
       "fallback_models": [
-        { "model": "openai/gpt-5.5", "variant": "high" },
+        // { "model": "openai/gpt-5.5", "variant": "high" },
         { "model": "opencode-go/glm-5.2" },
         { "model": "google/gemini-3.1-pro-preview" }
       ]
     },
     "metis": {
-      "model": "openai/gpt-5.5",
-      "variant": "high",
-      "fallback_models": [{ "model": "opencode-go/glm-5.2" }]
+      // "model": "openai/gpt-5.5",
+      // "variant": "high",
+      "model": "opencode-go/glm-5.2",
+      "fallback_models": []
     },
     "momus": {
-      "model": "openai/gpt-5.5",
-      "variant": "xhigh",
+      // "model": "openai/gpt-5.5",
+      // "variant": "xhigh",
+      "model": "google/gemini-3.1-pro-preview",
+      "variant": "high",
       "fallback_models": [
-        { "model": "google/gemini-3.1-pro-preview", "variant": "high" },
         { "model": "opencode-go/glm-5.2" }
       ]
     },
@@ -73,7 +78,7 @@
       "model": "zai-coding-plan/glm-5.2",
       "fallback_models": [
         { "model": "opencode-go/kimi-k2.6" },
-        { "model": "openai/gpt-5.5", "variant": "medium" },
+        // { "model": "openai/gpt-5.5", "variant": "medium" },
         { "model": "opencode-go/minimax-m3" },
         { "model": "opencode-go/minimax-m2.7" }
       ]
@@ -82,7 +87,7 @@
       "model": "zai-coding-plan/glm-5.2",
       "fallback_models": [
         { "model": "opencode-go/kimi-k2.6" },
-        { "model": "openai/gpt-5.5", "variant": "medium" },
+        // { "model": "openai/gpt-5.5", "variant": "medium" },
         { "model": "opencode-go/minimax-m3" },
         { "model": "opencode-go/minimax-m2.7" }
       ]
@@ -98,19 +103,20 @@
       ]
     },
     "ultrabrain": {
-      "model": "openai/gpt-5.5",
-      "variant": "xhigh",
+      // "model": "openai/gpt-5.5",
+      // "variant": "xhigh",
+      "model": "google/gemini-3.1-pro-preview",
+      "variant": "high",
       "fallback_models": [
-        { "model": "google/gemini-3.1-pro-preview", "variant": "high" },
         { "model": "opencode-go/glm-5.2" },
         { "model": "zai-coding-plan/glm-5.2" }
       ]
     },
     "deep": {
-      "model": "openai/gpt-5.5",
-      "variant": "medium",
+      // "model": "openai/gpt-5.5",
+      // "variant": "medium",
+      "model": "zai-coding-plan/glm-5.2",
       "fallback_models": [
-        { "model": "zai-coding-plan/glm-5.2" },
         { "model": "opencode-go/glm-5.2" },
         { "model": "opencode-go/kimi-k2.6" }
       ]
@@ -119,32 +125,32 @@
       "model": "google/gemini-3.1-pro-preview",
       "variant": "high",
       "fallback_models": [
-        { "model": "openai/gpt-5.5" },
+        // { "model": "openai/gpt-5.5" },
         { "model": "opencode-go/kimi-k2.6" },
         { "model": "opencode-go/glm-5.2" }
       ]
     },
     "quick": {
-      "model": "openai/gpt-5.4-mini",
+      // "model": "openai/gpt-5.4-mini",
+      "model": "opencode-go/minimax-m3",
       "fallback_models": [
-        { "model": "opencode-go/minimax-m3" },
         { "model": "opencode-go/minimax-m2.7" }
       ]
     },
     "unspecified-low": {
-      "model": "openai/gpt-5.5",
-      "variant": "medium",
+      // "model": "openai/gpt-5.5",
+      // "variant": "medium",
+      "model": "opencode-go/kimi-k2.6",
       "fallback_models": [
-        { "model": "opencode-go/kimi-k2.6" },
         { "model": "opencode-go/minimax-m3" },
         { "model": "opencode-go/minimax-m2.7" }
       ]
     },
     "unspecified-high": {
-      "model": "openai/gpt-5.5",
-      "variant": "medium",
+      // "model": "openai/gpt-5.5",
+      // "variant": "medium",
+      "model": "opencode-go/kimi-k2.6",
       "fallback_models": [
-        { "model": "opencode-go/kimi-k2.6" },
         { "model": "google/gemini-3-flash-preview" },
         { "model": "opencode-go/minimax-m3" },
         { "model": "opencode-go/minimax-m2.7" }

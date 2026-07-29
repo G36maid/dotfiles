@@ -64,49 +64,29 @@ window#waybar {
 }
 
 #mpd,
-#cpu {
-    border-radius: 3px;
-
-    color: @crust;
-    background-color: @text;
-    margin-top: 5px;
-    margin-right: 5px;
-    padding: 1px 3px;
-}
-
-#memory {
-    border-radius: 3px;
-
-    color: @crust;
-    background-color: @text;
-
-    margin-top: 2px;
-
-    margin-right: 5px;
-    padding: 1px 3px;
-}
-
-#temperature {
-    border-radius: 3px;
-
-    color: @crust;
-    background-color: @text;
-
-    margin-top: 2px;
-
-    margin-right: 2px;
-    padding: 1px 3px;
-}
-
+#cpu,
+#memory,
+#temperature,
 #battery {
+    /* transparent border matches #pulseaudio/#backlight box model so
+       all vertical groups have identical heights and align cleanly */
+    border: 1px solid transparent;
     border-radius: 3px;
-
     color: @crust;
     background-color: @text;
-    margin-top: 5px;
-
-    margin-right: 2px;
+    margin-right: 5px;
     padding: 1px 3px;
+}
+
+#mpd,
+#cpu,
+#battery {
+    margin-top: 5px;
+}
+
+#memory,
+#temperature {
+    margin-top: 2px;
 }
 
 #pulseaudio {

@@ -61,8 +61,9 @@ local profiles = {
             { fingers = 3, direction = "horizontal", action = "workspace" },
         },
         devices = {
-            { name = "logitech-g-pro--1",  sensitivity = -1    },
-            { name = "logitech-g502-hero", sensitivity = -0.75 },
+            { name = "logitech-g-pro--1",       sensitivity = -1    },
+            { name = "logitech-g502-hero",      sensitivity = -0.75 },
+            { name = "asustek-rog-gladius-iii", sensitivity = -1    },
         },
         shadow = {
             enabled      = true,

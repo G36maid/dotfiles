@@ -1,5 +1,7 @@
 {
-  "plugin": ["oh-my-openagent@latest"],
+  "plugin": ["oh-my-openagent@latest",
+    //"@rahadiana/opencode-multi-account"
+    ],
   "$schema": "https://opencode.ai/config.json",
   // "lsp": {},
   "mcp": {

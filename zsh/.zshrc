@@ -63,3 +63,7 @@ source ${ZIM_HOME}/init.zsh
 
 #starship
 #eval "$(starship init zsh)"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/g36maid/.local/bin:$PATH"

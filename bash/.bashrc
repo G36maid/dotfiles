@@ -32,3 +32,7 @@ for p in "$HOME/.deno/bin" "$HOME/.local/bin"; do
     *) export PATH="$p:$PATH" ;;
   esac
 done
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/g36maid/.local/bin:$PATH"

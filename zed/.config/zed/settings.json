@@ -93,9 +93,8 @@
       },
     },
     "default_model": {
-      "effort": "high",
-      "provider": "google",
-      "model": "gemini-3.1-pro-preview",
+      "provider": "Z.ai",
+      "model": "glm-5.2",
       "enable_thinking": false,
     },
     "favorite_models": [
@@ -257,22 +256,33 @@
       "args": [],
       "projects": [
         {
-          "paths": ["/home/g36maid/docker"],
-        },
-      ],
+          "paths": [
+            "/home/g36maid/docker"
+          ]
+        }
+      ]
     },
     {
       "host": "g36archpc",
       "args": [],
       "projects": [
         {
-          "paths": ["/home/g36maid/.config/opencode"],
+          "paths": [
+            "/home/g36maid/.config/opencode"
+          ]
         },
         {
-          "paths": ["/home/g36maid/Code/rust/zed"],
+          "paths": [
+            "/home/g36maid/Code/AI/gemini-to-obsidian"
+          ]
         },
-      ],
-    },
+        {
+          "paths": [
+            "/home/g36maid/Code/rust/zed"
+          ]
+        }
+      ]
+    }
   ],
   "context_servers": {
     "arch-ops-server": {

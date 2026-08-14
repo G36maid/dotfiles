@@ -307,6 +307,10 @@
       "command": "uvx",
       "args": ["--python", "3.13", "markitdown-mcp"],
     },
+    "deepwiki": {
+      "enabled": true,
+      "url": "https://mcp.deepwiki.com/mcp",
+    },
   },
   "icon_theme": "Catppuccin Macchiato",
   "base_keymap": "VSCode",

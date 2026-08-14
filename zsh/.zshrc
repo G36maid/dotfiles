@@ -21,7 +21,6 @@ export PATH="$HOME/.deno/bin:$HOME/.local/bin:$PATH"
 
 ### editor setup ###
 export EDITOR="vim"
-export VISUAL="zeditor --wait"
 
 # opencode with tmux
 oc() {
@@ -56,7 +55,13 @@ oc() {
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
-  source /usr/share/zimfw/zimfw.zsh init
+  # Portable bootstrap: pacman installs zimfw to /usr/share/zimfw, the official
+  # installer puts it at ${ZIM_HOME}/zimfw.zsh.
+  if [[ -e /usr/share/zimfw/zimfw.zsh ]]; then
+    source /usr/share/zimfw/zimfw.zsh init
+  else
+    source ${ZIM_HOME}/zimfw.zsh init
+  fi
 fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh

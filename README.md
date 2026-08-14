@@ -136,7 +136,7 @@ tmux source ~/.tmux.conf
 
 ### Zim (zsh framework)
 
-`.zshrc` bootstraps zim automatically on first login via `/usr/share/zimfw/zimfw.zsh`. Just make sure the `zimfw` package (listed in [Requirements](#requirements)) is installed — zim will self-initialize on first shell launch.
+`.zshrc` bootstraps zim automatically on first login. The bootstrap prefers the pacman-installed `/usr/share/zimfw/zimfw.zsh` and falls back to the official installer's `${ZIM_HOME}/zimfw.zsh` (user-installed), so it works on both Arch and distros where zim is installed via the official installer. Just make sure the `zimfw` package (listed in [Requirements](#requirements)) is installed — zim will self-initialize on first shell launch. On Debian/Ubuntu, also set `skip_global_compinit=1` in `~/.zshenv` to avoid double `compinit` with the distro's `/etc/zsh/zshrc`.
 
 ### `oc()` — opencode + tmux wrapper
 

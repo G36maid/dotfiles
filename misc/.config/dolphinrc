@@ -17,3 +17,6 @@ Places Icons Static Size=22
 
 [MainWindow]
 MenuBar=Disabled
+
+[UiSettings]
+ColorScheme=BreezeLight

@@ -2,6 +2,7 @@
 @define-color crust         #11111b; /* darkest bg, also text on light pills */
 @define-color text          #cdd6f4; /* main text, also light pill bg */
 @define-color lavender      #b4befe; /* workspace / arch accent */
+@define-color pink          #f5c2e7; /* workspace on the other monitor */
 @define-color module-border rgba(192, 190, 217, 0.5); /* wallpaper highlight #c0bed9 @ 50% */
 
 * {
@@ -46,7 +47,15 @@ window#waybar {
     padding-right: 5px;
 }
 
+/* workspace buttons default to pink (= workspace lives on the other
+   monitor); the more-specific .hosting-monitor rule restores the original
+   lavender for workspaces on this bar's own screen */
 #workspaces button {
+    background: @crust;
+    color: @pink;
+}
+
+#workspaces button.hosting-monitor {
     background: @crust;
     color: @lavender;
 }

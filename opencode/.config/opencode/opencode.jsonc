@@ -2,6 +2,18 @@
   "plugin": ["oh-my-openagent@latest", "opencode-mermaid-renderer@latest"],
   "$schema": "https://opencode.ai/config.json",
   "provider": {
+    "local-dgx-spark-tp2": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "DGX Spark DeepSeek-V4-Flash-0731 (TP2, 1M ctx)",
+      "options": {
+        "baseURL": "http://100.102.84.36:8888/v1"
+      },
+      "models": {
+        "deepseek-v4-flash-0731": {
+          "name": "DeepSeek V4 Flash 0731 (2x DGX Spark)"
+        }
+      }
+    },
     "local-dgx-spark": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "DGX Spark DeepSeek-V4-Flash-0731 (UD-Q2_K_XL)",

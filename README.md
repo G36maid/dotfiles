@@ -117,7 +117,9 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `lazytuis/` | `.config/{lazygit,lazydocker}/` |
 | `opencode/` | `.config/opencode/{opencode.jsonc,oh-my-openagent.json,package.json}`, `.config/opencode/skills/{ghidra,playwright}/` (user-installed MCP skills) |
 | `omo/` | `.omo/omo.jsonc` (unified oh-my-openagent config; `~/.omo` path is hardcoded by omo-config-core, so the stow package adopts it) |
-| `misc/` | `.config/`: `QtProject.conf`, `hyfetch.json`, `dolphinrc`, `mimeapps.list`, `code-flags.conf` |
+| `misc/` | `.config/`: `hyfetch.json`, `dolphinrc`, `mimeapps.list`, `code-flags.conf` |
+
+> Two user-level configs are deliberately **not** stowed or tracked: `~/.config/btop/btop.conf` and `~/.config/QtProject.conf`. Both are rewritten by their own applications at runtime (btop persists its full state whenever you change theme/settings in the TUI; Qt apps continuously update window geometry and dialog state), so a symlink into this repo would produce endless noise diffs. They live as real files in `$HOME` (gitignored here); on a fresh machine just launch each app once and it regenerates sensible defaults.
 
 > Since Hyprland 0.55 the config is **Lua**: `hyprland.lua` requires per-concern files under `.config/hypr/modules/` (`monitors`, `env`, `look`, `input`, `binds`, `rules`, `autostart` — all `.lua`). Edit one concern without touching the rest. Per-host differences (monitors, env, sensitivity, binds, …) live in `modules/machine.lua` as profiles — a `default` base plus named overrides (`archfw13`, `g36archpc`, …); set `current` there per host and the rest of the tree stays identical across machines.
 

@@ -34,6 +34,10 @@ error.log
 # ===== App-specific runtime =====
 # fcitx5 regenerates this
 **/fcitx5/conf/cached_layouts
+# btop rewrites its full state on theme/settings change (unstowed, real file in $HOME)
+**/.config/btop/
+# Qt apps persist geometry/state into QtProject.conf (unstowed, real file in $HOME)
+**/QtProject.conf
 # Zed backup
 **/zed/settings_backup.json
 # Opencode runtime artifacts

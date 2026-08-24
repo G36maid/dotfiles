@@ -37,26 +37,28 @@ My Arch Linux + Hyprland dotfiles, managed with [GNU Stow](https://www.gnu.org/s
 ## Headless machines (headless branch)
 
 The `headless` branch carries the dotfiles for my **headless** Arch machines (no
-display / no Wayland session). It diverges from `main` only where a headless box
-actually differs — there's no Hyprland/waybar/wofi/kitty/fcitx5 here, so those
-GUI packages are **not** stowed or installed. The TUI/CLI portion (zsh, tmux,
-vim, git, starship, fastfetch, zellij, yazi, monitors, lazytuis, opencode, …)
-is identical to `main`. Per-host differences on headless boxes still go in
-`modules/machine.lua` via the same profile mechanism (`arch-agent`, …),
-matching how `main` handles the desktop hosts.
+display / no Wayland session) and is also what gets dropped into a docker
+container for a quick dev-environment install. It is the **TUI-only** subset of
+`main`: the GUI packages (`hypr`, `waybar`, `wofi`, `kitty`, `fcitx5`, `zed`, and
+the GUI bits of `misc` — `dolphinrc`, `mimeapps.list`, `code-flags.conf`) are
+removed entirely on this branch, so nothing GUI-related is tracked or stowed.
+The TUI/CLI portion (zsh, bash, tmux, vim, git, gdb, starship, fastfetch,
+zellij, yazi, monitors, lazytuis, opencode, omo, misc/hyfetch.json) is kept.
 
-Notable headless specifics (see commit history on this branch):
+GUI packages are not merged back automatically — when syncing from `main`,
+cherry-pick only commits that touch the retained TUI paths and skip anything
+touching the pruned GUI dirs (`hypr/`, `waybar/`, `wofi/`, `kitty/`, `fcitx5/`,
+`zed/`, and the GUI files in `misc/`). To restore the desktop stack on a
+non-headless box, use `main` instead.
 
-- `arch-agent` machine profile added; `current = "arch-agent"` set in
-  `modules/machine.lua`.
-- Suggested install set (headless, via paru):
+Suggested install set (headless / docker, via paru):
 
   ```bash
   paru -S --needed stow zsh tmux vim git gdb starship fastfetch zellij yazi \
     btop htop bottom bashtop lazygit lazydocker zimfw opencode
   ```
 
-To use this branch on a fresh headless box:
+To use this branch on a fresh headless box / in a container:
 
 ```bash
 git clone git@github.com:G36maid/dotfiles.git ~/Github/dotfiles

@@ -23,7 +23,7 @@
 -- ============================================================================
 
 -- >>> EDIT THIS LINE PER HOST <<<
-local current = "archfw13" -- "archfw13" | "g36archpc" | <new profile key>
+local current = "arch-agent" -- headless branch: set per headless host; "archfw13" | "g36archpc" | <new profile key>
 
 local profiles = {
     -- Base profile (desktop-oriented). Also the fallback for any field a
@@ -88,6 +88,11 @@ local profiles = {
     -- Desktop. Currently identical to `default`; override fields here as it
     -- diverges.
     g36archpc = {},
+
+    -- Headless headless-branch hosts (no display). Hyprland doesn't run here,
+    -- but keeping a profile keeps machine.lua valid/mergeable and gives a place
+    -- for headless-only overrides if any are ever needed.
+    ["arch-agent"] = {},
 }
 
 assert(profiles[current],

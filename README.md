@@ -9,6 +9,7 @@ My Arch Linux + Hyprland dotfiles, managed with [GNU Stow](https://www.gnu.org/s
 ## Contents
 
 - [System](#system)
+- [Headless machines (headless branch)](#headless-machines-headless-branch)
 - [Requirements](#requirements)
   - [Core (pacman)](#core-pacman)
   - [Runtime deps](#runtime-deps)
@@ -32,6 +33,40 @@ My Arch Linux + Hyprland dotfiles, managed with [GNU Stow](https://www.gnu.org/s
 - **Terminal**: kitty
 - **Editor**: vim + zed
 - **Input method**: fcitx5 (mcbopomofo)
+
+## Headless machines (headless branch)
+
+The `headless` branch carries the dotfiles for my **headless** Arch machines (no
+display / no Wayland session). It diverges from `main` only where a headless box
+actually differs — there's no Hyprland/waybar/wofi/kitty/fcitx5 here, so those
+GUI packages are **not** stowed or installed. The TUI/CLI portion (zsh, tmux,
+vim, git, starship, fastfetch, zellij, yazi, monitors, lazytuis, opencode, …)
+is identical to `main`. Per-host differences on headless boxes still go in
+`modules/machine.lua` via the same profile mechanism (`arch-agent`, …),
+matching how `main` handles the desktop hosts.
+
+Notable headless specifics (see commit history on this branch):
+
+- `arch-agent` machine profile added; `current = "arch-agent"` set in
+  `modules/machine.lua`.
+- Suggested install set (headless, via paru):
+
+  ```bash
+  paru -S --needed stow zsh tmux vim git gdb starship fastfetch zellij yazi \
+    btop htop bottom bashtop lazygit lazydocker zimfw opencode
+  ```
+
+To use this branch on a fresh headless box:
+
+```bash
+git clone git@github.com:G36maid/dotfiles.git ~/Github/dotfiles
+cd ~/Github/dotfiles
+git checkout headless
+stow --target="$HOME" */          # or your chosen packages
+```
+
+(Remember: `bottom`'s binary is `btm`, and `zimfw` installs to
+`/usr/share/zimfw/zimfw.zsh` rather than providing a `bin`.)
 
 ## Requirements
 

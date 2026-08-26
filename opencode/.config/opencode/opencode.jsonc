@@ -9,9 +9,34 @@
         "baseURL": "http://100.102.84.36:8888/v1"
       },
       "models": {
-        "deepseek-v4-flash": {
+        "deepseek-v4-flash-0731": {
           "name": "DeepSeek V4 Flash"
         }
+      }
+    },
+    "zai-coding-plan": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Z.AI Coding Plan",
+      "options": {
+        "baseURL": "https://api.z.ai/api/coding/paas/v4",
+        "apiKey": "{env:ZHIPU_CODING_API_KEY}"
+      },
+      "models": {
+        "glm-5.3-flash": { "name": "GLM-5.3-Flash" },
+        "glm-5.3": { "name": "GLM-5.3" }
+      }
+    },
+    "opencode": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OpenCode Go",
+      "options": {
+        "baseURL": "https://opencode.ai/zen/go/v1",
+        "apiKey": "{env:OPENCODE_GO_API_KEY}"
+      },
+      "models": {
+        "glm-5.3-flash": { "name": "GLM-5.3-Flash (Go)" },
+        "glm-5.3": { "name": "GLM-5.3 (Go)" },
+        "deepseek-v4-flash": { "name": "DeepSeek V4 Flash (Go)" }
       }
     }
   },

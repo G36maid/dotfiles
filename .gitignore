@@ -43,6 +43,8 @@ error.log
 # Opencode runtime artifacts
 **/opencode/package-lock.json
 **/opencode/*.backup-*
+# Opencode credential store — stowed under opencode/.local/share but NEVER committed (public repo)
+**/.local/share/opencode/auth.json
 # OMO runtime artifacts at repo root (.omo/run-continuation etc.);
 # anchored so omo/.omo/ (the tracked stow package) is NOT excluded.
 /.omo/

@@ -18,8 +18,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "Z.AI Coding Plan",
       "options": {
-        "baseURL": "https://api.z.ai/api/coding/paas/v4",
-        "apiKey": "{env:ZHIPU_CODING_API_KEY}"
+        "baseURL": "https://api.z.ai/api/coding/paas/v4"
       },
       "models": {
         "glm-5.3-flash": { "name": "GLM-5.3-Flash" },
@@ -30,13 +29,12 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "OpenCode Go",
       "options": {
-        "baseURL": "https://opencode.ai/zen/go/v1",
-        "apiKey": "{env:OPENCODE_GO_API_KEY}"
+        "baseURL": "https://opencode.ai/zen/go/v1"
       },
       "models": {
         "glm-5.3-flash": { "name": "GLM-5.3-Flash (Go)" },
         "glm-5.3": { "name": "GLM-5.3 (Go)" },
-        "deepseek-v4-flash": { "name": "DeepSeek V4 Flash (Go)" }
+        "deepseek-v4-flash-0731": { "name": "DeepSeek V4 Flash (Go)" }
       }
     }
   },

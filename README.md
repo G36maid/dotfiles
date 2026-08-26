@@ -189,6 +189,28 @@ oc --resume   # any args pass through to opencode
 - If a session named `<dir>-<hash>` already exists for this path, it re-attaches instead of spawning a duplicate.
 - Already inside tmux? It opens a new window in the current session rather than nesting.
 
+### opencode provider keys (`auth.json`, stowed + gitignored)
+
+Provider API keys are kept in the **stowed**, **gitignored** file
+`opencode/.local/share/opencode/auth.json`, which is symlinked to
+`~/.local/share/opencode/auth.json`. This repo is public, so the secret
+content is never committed (`.gitignore` rule:
+`**/.local/share/opencode/auth.json`); the file's *location* is maintained
+through stow so the structure transfers, but each machine must supply its own
+keys. Format (as written by `opencode auth login` / `/connect`):
+
+```json
+{
+  "zai-coding-plan": { "type": "api", "key": "..." },
+  "opencode":        { "type": "api", "key": "..." }
+}
+```
+
+`opencode.jsonc` references keys only via the auth store — no `{env:...}` and
+no inline `apiKey`, so nothing secret lives in a tracked file. To use on a
+fresh machine, place your own `auth.json` at that path (or run
+`opencode auth login`), then `stow opencode`.
+
 ### System-level configs (not stowed)
 
 `pacman.conf` and `paru.conf` live under `/etc/` and are not tracked here — they're upstream-managed (pacman ships `.pacnew` updates) and not worth fighting stow's `$HOME` model for. Reproduce the customizations manually:

@@ -9,3 +9,9 @@
 	defaultBranch = main
 [pull]
 	rebase = true
+
+# Host-specific settings (credential helpers, work-only identity, ...).
+# The file is machine-local and NOT tracked or stowed — see
+# .gitconfig.local.example in this repo. A missing file is silently ignored.
+[include]
+	path = ~/.gitconfig.local

@@ -102,7 +102,7 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `bash/` | `.bashrc`, `.bash_profile` |
 | `tmux/` | `.tmux.conf` (dracula theme via TPM) |
 | `vim/` | `.vimrc` |
-| `git/` | `.gitconfig` |
+| `git/` | `.gitconfig` (+ `.gitconfig.local.example` → copy to untracked `~/.gitconfig.local` for host-specific settings such as credential helpers) |
 | `gdb/` | `.gdbinit` |
 | `starship/` | `.config/starship.toml` |
 | `hypr/` | `.config/hypr/` (`hyprland.lua` + `modules/*.lua`, hypridle, hyprlock, hyprpaper) |

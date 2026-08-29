@@ -57,9 +57,12 @@ jobs:
           # Rebuild the tree from main, exactly
           git read-tree -u --reset origin/main^{tree}
 
-          # ... then prune the GUI paths
-          git rm -rq --ignore-unmatch hypr waybar wofi kitty fcitx5 zed
-          git rm -q --ignore-unmatch --cached \
+          # ... then prune the GUI paths.
+          # -f is required and safe: after read-tree these paths are staged
+          # (in index via main) but absent from HEAD (old headless), which
+          # git rm otherwise refuses as "changes staged in the index".
+          git rm -rqf --ignore-unmatch hypr waybar wofi kitty fcitx5 zed
+          git rm -qf --ignore-unmatch \
             misc/.config/code-flags.conf misc/.config/dolphinrc misc/.config/mimeapps.list
           rm -rf -- hypr waybar wofi kitty fcitx5 zed
 

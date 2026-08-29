@@ -1,7 +1,15 @@
 {
   "theme": "dark",
-  "defaultProvider": "dgx-spark-x2",
-  "defaultModel": "GLM-5.3-Flash-EXL3",
+  "defaultProvider": "zai",
+  "defaultModel": "glm-5.3-flash",
+  "defaultTools": [
+    "read",
+    "bash",
+    "edit",
+    "write",
+    "grep",
+    "find"
+  ],
   "skills": [
     "~/.config/opencode/skills"
   ],
@@ -9,7 +17,8 @@
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
     "npm:pi-tool-display",
-    "npm:@juicesharp/rpiv-ask-user-question"
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:pi-tps-meter"
   ],
-  "lastChangelogVersion": "0.83.0"
+  "lastChangelogVersion": "0.84.3"
 }

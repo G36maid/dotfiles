@@ -18,7 +18,8 @@ My Arch Linux + Hyprland dotfiles, managed with [GNU Stow](https://www.gnu.org/s
 - [Post-install steps](#post-install-steps)
   - [TPM (tmux plugin manager)](#tpm-tmux-plugin-manager)
   - [Zim (zsh framework)](#zim-zsh-framework)
-  - [`oc()` — opencode + tmux wrapper](#oc--opencode--tmux-wrapper)
+  - [AI agents (opencode + pi)](#ai-agents-opencode--pi)
+  - [opencode provider keys](#opencode-provider-keys)
   - [System-level configs (not stowed)](#system-level-configs-not-stowed)
 - [Pre-install: back up existing dotfiles](#pre-install-back-up-existing-dotfiles)
 - [Secrets policy](#secrets-policy)
@@ -97,7 +98,7 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 
 | Package | Contents |
 |---|---|
-| `zsh/` | `.zshrc` (zim + custom `oc()` fn), `.zimrc` (zimfw modules) |
+| `zsh/` | `.zshrc` (zim), `.zimrc` (zimfw modules) |
 | `bash/` | `.bashrc`, `.bash_profile` |
 | `tmux/` | `.tmux.conf` (dracula theme via TPM) |
 | `vim/` | `.vimrc` |
@@ -140,27 +141,55 @@ tmux source ~/.tmux.conf
 
 `.zshrc` bootstraps zim automatically on first login. The bootstrap prefers the pacman-installed `/usr/share/zimfw/zimfw.zsh` and falls back to the official installer's `${ZIM_HOME}/zimfw.zsh` (user-installed), so it works on both Arch and distros where zim is installed via the official installer. Just make sure the `zimfw` package (listed in [Requirements](#requirements)) is installed — zim will self-initialize on first shell launch. On Debian/Ubuntu, also set `skip_global_compinit=1` in `~/.zshenv` to avoid double `compinit` with the distro's `/etc/zsh/zshrc`.
 
-### `oc()` — opencode + tmux wrapper
+### AI agents (opencode + pi)
 
-`.zshrc` defines an `oc()` function that launches [opencode](https://opencode.ai/) inside a dedicated tmux session, named after the current directory, and auto-selects a free port in `4096–5096` (exported as `$OPENCODE_PORT`):
+Both agents are configured through stowed files; the heavy lifting happens on first launch.
+
+Prerequisites:
 
 ```bash
-oc            # fresh named session for $PWD, attaches if it already exists
-oc --resume   # any args pass through to opencode
+paru -S --needed uv github-cli   # uvx (markitdown MCP) + gh (reviewer subagent)
 ```
 
-- If a session named `<dir>-<hash>` already exists for this path, it re-attaches instead of spawning a duplicate.
-- Already inside tmux? It opens a new window in the current session rather than nesting.
+**opencode** — plugins (`opencode-mermaid-renderer`, rate-limit fallback, todo-enforcer) auto-install from `opencode.jsonc` on first launch (needs network). Provider auth: run `opencode auth login` once — keys land in the native store at `~/.local/share/opencode/auth.json` (untracked).
 
-### opencode provider keys (`auth.json`, stowed + gitignored)
+**pi** — after stowing, `~/.pi/agent/auth.json` is a **dangling symlink** until you create the gitignored repo file with your own keys:
 
-Provider API keys are kept in the **stowed**, **gitignored** file
-`opencode/.local/share/opencode/auth.json`, which is symlinked to
-`~/.local/share/opencode/auth.json`. This repo is public, so the secret
-content is never committed (`.gitignore` rule:
-`**/.local/share/opencode/auth.json`); the file's *location* is maintained
-through stow so the structure transfers, but each machine must supply its own
-keys. Format (as written by `opencode auth login` / `/connect`):
+```bash
+cat > ~/Code/github/dotfiles/pi/.pi/agent/auth.json <<'EOF'
+{
+  "zai": { "type": "api_key", "key": "..." }
+}
+EOF
+chmod 600 ~/Code/github/dotfiles/pi/.pi/agent/auth.json
+```
+
+Then install the four packages listed in `settings.json`:
+
+```bash
+pi install npm:pi-mcp-adapter npm:pi-web-access npm:pi-tool-display npm:@juicesharp/rpiv-ask-user-question
+```
+
+**playwright-cli** (shared browser skill for both agents):
+
+```bash
+npm install -g --prefix ~/.local @playwright/cli
+playwright-cli install --skills agents --global   # → ~/.agents/skills, scanned by both agents
+```
+
+Firefox-only setup: always `playwright-cli open --browser=firefox <url>` (also noted inside the installed skill).
+
+### opencode provider keys
+
+Two per-host patterns exist — either way, no secret is ever committed:
+
+1. **Native (default)**: run `opencode auth login` — keys land in the untracked store at `~/.local/share/opencode/auth.json`.
+2. **Stowed copy** (used on some hosts): keys live in the **stowed**, **gitignored** file
+   `opencode/.local/share/opencode/auth.json`, symlinked to
+   `~/.local/share/opencode/auth.json`. The repo is public, so secret content is never committed
+   (`.gitignore` rule: `**/.local/share/opencode/auth.json`); stow only maintains the file's
+   *location*, and each machine must supply its own keys. Format (as written by
+   `opencode auth login` / `/connect`):
 
 ```json
 {

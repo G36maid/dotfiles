@@ -66,6 +66,21 @@
       "hibernate": "systemctl hibernate",
     },
   },
+  ```lua
+    hl.env("AQ_DRM_DEVICES", "/dev/dri/card0")
+    hl.env("GBM_BACKEND", "nvidia-drm")
+    hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+    hl.env("LIBVA_DRIVER_NAME", "nvidia")
+
+    hl.env("XCURSOR_SIZE", "24")
+    hl.env("HYPRCURSOR_SIZE", "24")
+
+    hl.config({
+        cursor = {
+            no_hardware_cursors = 1,  -- 0=關, 1=開, 2=auto
+        },
+    })
+  ```
   //Death Stranding collor code
   // blood red: #eb264d
   // UI light blue:#0182c5

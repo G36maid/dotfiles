@@ -9,7 +9,6 @@ My Arch Linux + Hyprland dotfiles, managed with [GNU Stow](https://www.gnu.org/s
 ## Contents
 
 - [System](#system)
-- [Headless machines (headless branch)](#headless-machines-headless-branch)
 - [Requirements](#requirements)
   - [Core (pacman)](#core-pacman)
   - [Runtime deps](#runtime-deps)
@@ -19,7 +18,8 @@ My Arch Linux + Hyprland dotfiles, managed with [GNU Stow](https://www.gnu.org/s
 - [Post-install steps](#post-install-steps)
   - [TPM (tmux plugin manager)](#tpm-tmux-plugin-manager)
   - [Zim (zsh framework)](#zim-zsh-framework)
-  - [`oc()` — opencode + tmux wrapper](#oc--opencode--tmux-wrapper)
+  - [AI agents (opencode + pi)](#ai-agents-opencode--pi)
+  - [opencode provider keys](#opencode-provider-keys)
   - [System-level configs (not stowed)](#system-level-configs-not-stowed)
 - [Pre-install: back up existing dotfiles](#pre-install-back-up-existing-dotfiles)
 - [Secrets policy](#secrets-policy)
@@ -34,42 +34,6 @@ My Arch Linux + Hyprland dotfiles, managed with [GNU Stow](https://www.gnu.org/s
 - **Editor**: vim + zed
 - **Input method**: fcitx5 (mcbopomofo)
 
-## Headless machines (headless branch)
-
-The `headless` branch carries the dotfiles for my **headless** Arch machines (no
-display / no Wayland session) and is also what gets dropped into a docker
-container for a quick dev-environment install. It is the **TUI-only** subset of
-`main`: the GUI packages (`hypr`, `waybar`, `wofi`, `kitty`, `fcitx5`, `zed`, and
-the GUI bits of `misc` — `dolphinrc`, `mimeapps.list`, `code-flags.conf`) are
-removed entirely on this branch, so nothing GUI-related is tracked or stowed.
-The TUI/CLI portion (zsh, bash, tmux, vim, git, gdb, starship, fastfetch,
-zellij, yazi, monitors, lazytuis, opencode, omo, misc/hyfetch.json) is kept.
-
-GUI packages are not merged back automatically — when syncing from `main`,
-cherry-pick only commits that touch the retained TUI paths and skip anything
-touching the pruned GUI dirs (`hypr/`, `waybar/`, `wofi/`, `kitty/`, `fcitx5/`,
-`zed/`, and the GUI files in `misc/`). To restore the desktop stack on a
-non-headless box, use `main` instead.
-
-Suggested install set (headless / docker, via paru):
-
-  ```bash
-  paru -S --needed stow zsh tmux vim git gdb starship fastfetch zellij yazi \
-    btop htop bottom bashtop lazygit lazydocker zimfw opencode
-  ```
-
-To use this branch on a fresh headless box / in a container:
-
-```bash
-git clone git@github.com:G36maid/dotfiles.git ~/Github/dotfiles
-cd ~/Github/dotfiles
-git checkout headless
-stow --target="$HOME" */          # or your chosen packages
-```
-
-(Remember: `bottom`'s binary is `btm`, and `zimfw` installs to
-`/usr/share/zimfw/zimfw.zsh` rather than providing a `bin`.)
-
 ## Requirements
 
 ### Core (pacman)
@@ -77,7 +41,7 @@ stow --target="$HOME" */          # or your chosen packages
 ```bash
 sudo pacman -S --needed stow zsh tmux vim kitty hyprland waybar wofi \
   fastfetch fcitx5 zellij yazi btop htop bottom bashtop lazygit lazydocker \
-  starship gdb zimfw
+  starship gdb zimfw zoxide
 ```
 
 ### Runtime deps
@@ -111,13 +75,13 @@ sudo pacman -S --needed ttf-firacode-nerd
 ## Install
 
 ```bash
-git clone git@github.com:G36maid/dotfiles.git ~/Github/dotfiles
-cd ~/Github/dotfiles
+git clone git@github.com:G36maid/dotfiles.git ~/Code/github/dotfiles
+cd ~/Code/github/dotfiles
 
 # Stow every package (symlinks into $HOME).
 # --target="$HOME" is required because the repo isn't cloned directly
-# under $HOME (it's at ~/Github/dotfiles); stow's default target is
-# the repo's parent dir (~/Github), which is wrong.
+# under $HOME (it's at ~/Code/github/dotfiles); stow's default target is
+# the repo's parent dir (~/Code/github), which is wrong.
 stow --target="$HOME" */
 
 # Or pick individual packages
@@ -134,11 +98,11 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 
 | Package | Contents |
 |---|---|
-| `zsh/` | `.zshrc` (zim + custom `oc()` fn), `.zimrc` (zimfw modules) |
+| `zsh/` | `.zshrc` (zim), `.zimrc` (zimfw modules) |
 | `bash/` | `.bashrc`, `.bash_profile` |
 | `tmux/` | `.tmux.conf` (dracula theme via TPM) |
 | `vim/` | `.vimrc` |
-| `git/` | `.gitconfig` |
+| `git/` | `.gitconfig` (+ `.gitconfig.local.example` → copy to untracked `~/.gitconfig.local` for host-specific settings such as credential helpers) |
 | `gdb/` | `.gdbinit` |
 | `starship/` | `.config/starship.toml` |
 | `hypr/` | `.config/hypr/` (`hyprland.lua` + `modules/*.lua`, hypridle, hyprlock, hyprpaper) |
@@ -152,8 +116,8 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `zed/` | `.config/zed/` (settings, keymap, tasks) |
 | `monitors/` | `.config/{btop,htop,bottom,bashtop}/` |
 | `lazytuis/` | `.config/{lazygit,lazydocker}/` |
-| `opencode/` | `.config/opencode/{opencode.jsonc,oh-my-openagent.json,package.json}`, `.config/opencode/skills/{ghidra,playwright}/` (user-installed MCP skills) |
-| `omo/` | `.omo/omo.jsonc` (unified oh-my-openagent config; `~/.omo` path is hardcoded by omo-config-core, so the stow package adopts it) |
+| `opencode/` | `.config/opencode/{opencode.jsonc,package.json,rate-limit-fallback.json}`, `.config/opencode/{agents,commands}/` (custom subagents + slash commands), `.config/opencode/skills/{ghidra,git-master}/` (Agent Skills) |
+| `pi/` | `.pi/agent/{settings.json,models.json,mcp.json}` (pi coding agent config; `~/.pi` path is hardcoded by pi, so the stow package adopts it. Shares skills with opencode via the `skills` setting. `auth.json` (API keys), `sessions/`, and `bin/` are runtime data, gitignored) |
 | `misc/` | `.config/`: `hyfetch.json`, `dolphinrc`, `mimeapps.list`, `code-flags.conf` |
 
 > Two user-level configs are deliberately **not** stowed or tracked: `~/.config/btop/btop.conf` and `~/.config/QtProject.conf`. Both are rewritten by their own applications at runtime (btop persists its full state whenever you change theme/settings in the TUI; Qt apps continuously update window geometry and dialog state), so a symlink into this repo would produce endless noise diffs. They live as real files in `$HOME` (gitignored here); on a fresh machine just launch each app once and it regenerates sensible defaults.
@@ -177,27 +141,55 @@ tmux source ~/.tmux.conf
 
 `.zshrc` bootstraps zim automatically on first login. The bootstrap prefers the pacman-installed `/usr/share/zimfw/zimfw.zsh` and falls back to the official installer's `${ZIM_HOME}/zimfw.zsh` (user-installed), so it works on both Arch and distros where zim is installed via the official installer. Just make sure the `zimfw` package (listed in [Requirements](#requirements)) is installed — zim will self-initialize on first shell launch. On Debian/Ubuntu, also set `skip_global_compinit=1` in `~/.zshenv` to avoid double `compinit` with the distro's `/etc/zsh/zshrc`.
 
-### `oc()` — opencode + tmux wrapper
+### AI agents (opencode + pi)
 
-`.zshrc` defines an `oc()` function that launches [opencode](https://opencode.ai/) inside a dedicated tmux session, named after the current directory, and auto-selects a free port in `4096–5096` (exported as `$OPENCODE_PORT`):
+Both agents are configured through stowed files; the heavy lifting happens on first launch.
+
+Prerequisites:
 
 ```bash
-oc            # fresh named session for $PWD, attaches if it already exists
-oc --resume   # any args pass through to opencode
+paru -S --needed uv github-cli   # uvx (markitdown MCP) + gh (reviewer subagent)
 ```
 
-- If a session named `<dir>-<hash>` already exists for this path, it re-attaches instead of spawning a duplicate.
-- Already inside tmux? It opens a new window in the current session rather than nesting.
+**opencode** — plugins (`opencode-mermaid-renderer`, rate-limit fallback, todo-enforcer) auto-install from `opencode.jsonc` on first launch (needs network). Provider auth: run `opencode auth login` once — keys land in the native store at `~/.local/share/opencode/auth.json` (untracked).
 
-### opencode provider keys (`auth.json`, stowed + gitignored)
+**pi** — after stowing, `~/.pi/agent/auth.json` is a **dangling symlink** until you create the gitignored repo file with your own keys:
 
-Provider API keys are kept in the **stowed**, **gitignored** file
-`opencode/.local/share/opencode/auth.json`, which is symlinked to
-`~/.local/share/opencode/auth.json`. This repo is public, so the secret
-content is never committed (`.gitignore` rule:
-`**/.local/share/opencode/auth.json`); the file's *location* is maintained
-through stow so the structure transfers, but each machine must supply its own
-keys. Format (as written by `opencode auth login` / `/connect`):
+```bash
+cat > ~/Code/github/dotfiles/pi/.pi/agent/auth.json <<'EOF'
+{
+  "zai": { "type": "api_key", "key": "..." }
+}
+EOF
+chmod 600 ~/Code/github/dotfiles/pi/.pi/agent/auth.json
+```
+
+Then install the four packages listed in `settings.json`:
+
+```bash
+pi install npm:pi-mcp-adapter npm:pi-web-access npm:pi-tool-display npm:@juicesharp/rpiv-ask-user-question
+```
+
+**playwright-cli** (shared browser skill for both agents):
+
+```bash
+npm install -g --prefix ~/.local @playwright/cli
+playwright-cli install --skills agents --global   # → ~/.agents/skills, scanned by both agents
+```
+
+Firefox-only setup: always `playwright-cli open --browser=firefox <url>` (also noted inside the installed skill).
+
+### opencode provider keys
+
+Two per-host patterns exist — either way, no secret is ever committed:
+
+1. **Native (default)**: run `opencode auth login` — keys land in the untracked store at `~/.local/share/opencode/auth.json`.
+2. **Stowed copy** (used on some hosts): keys live in the **stowed**, **gitignored** file
+   `opencode/.local/share/opencode/auth.json`, symlinked to
+   `~/.local/share/opencode/auth.json`. The repo is public, so secret content is never committed
+   (`.gitignore` rule: `**/.local/share/opencode/auth.json`); stow only maintains the file's
+   *location*, and each machine must supply its own keys. Format (as written by
+   `opencode auth login` / `/connect`):
 
 ```json
 {

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/azumag/opencode-rate-limit-fallback/main/.schema/config.schema.json",
+  "enabled": true,
+  "cooldownMs": 60000,
+  "fallbackMode": "cycle",
+  "fallbackModels": [
+    { "providerID": "zai-coding-plan", "modelID": "glm-5.3-flash" },
+    { "providerID": "opencode-go", "modelID": "glm-5.3-flash" },
+    { "providerID": "local-dgx-spark-x2", "modelID": "GLM-5.3-Flash-EXL3" },
+    { "providerID": "zai-coding-plan", "modelID": "glm-5.3" },
+    { "providerID": "opencode-go", "modelID": "glm-5.3" }
+  ]
+}

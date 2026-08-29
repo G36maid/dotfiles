@@ -1,0 +1,13 @@
+# Host-specific git settings — copy to ~/.gitconfig.local and edit per machine.
+#
+# ~/.gitconfig includes this path via [include], but ~/.gitconfig.local itself
+# is deliberately NOT tracked or stowed: host-only settings (credential
+# helpers, work identity, ...) would otherwise live only on one branch and
+# diverge, which the generated `headless` branch overwrites by design.
+
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential

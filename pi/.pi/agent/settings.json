@@ -1,0 +1,24 @@
+{
+  "theme": "dark",
+  "defaultProvider": "zai",
+  "defaultModel": "glm-5.3-flash",
+  "defaultTools": [
+    "read",
+    "bash",
+    "edit",
+    "write",
+    "grep",
+    "find"
+  ],
+  "skills": [
+    "~/.config/opencode/skills"
+  ],
+  "packages": [
+    "npm:pi-mcp-adapter",
+    "npm:pi-web-access",
+    "npm:pi-tool-display",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:pi-tps-meter"
+  ],
+  "lastChangelogVersion": "0.84.3"
+}

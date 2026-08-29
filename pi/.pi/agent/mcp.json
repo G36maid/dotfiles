@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "deepwiki": { "url": "https://mcp.deepwiki.com/mcp" },
+    "context7": { "url": "https://mcp.context7.com/mcp" },
+    "grep-app": { "url": "https://mcp.grep.app" },
+    "exa-websearch": { "url": "https://mcp.exa.ai/mcp?tools=web_search_exa" },
+    "markitdown": {
+      "command": "uvx",
+      "args": ["--python", "3.13", "markitdown-mcp"]
+    },
+    "ghidra": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--script",
+        "/home/g36maid/Code/AI/ghidra-mcp/bridge_mcp_ghidra.py"
+      ]
+    }
+  }
+}

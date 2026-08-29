@@ -7,9 +7,11 @@
 	graph = log --graph --oneline --all --decorate
 [init]
 	defaultBranch = main
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+[pull]
+	rebase = true
+
+# Host-specific settings (credential helpers, work-only identity, ...).
+# The file is machine-local and NOT tracked or stowed — see
+# .gitconfig.local.example in this repo. A missing file is silently ignored.
+[include]
+	path = ~/.gitconfig.local

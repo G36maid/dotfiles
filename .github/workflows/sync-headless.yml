@@ -1,16 +1,24 @@
 name: sync headless branch
 
-# Keeps the `headless` branch in sync with `main`, applying the documented
-# headless-pruning policy: `headless` is the TUI-only subset of `main`.
-#   - bring every main change in via merge
-#   - resolve conflicts on pruned GUI paths by keeping them deleted
-#   - drop any GUI files main added
-#   - fail loudly (never guess) if a retained TUI path conflicts
+# `headless` is GENERATED from `main` on every push — never merged.
+#
+# Policy: main always has top priority. headless is a pure derived artifact:
+#
+#     headless tree == main tree - GUI paths
+#
+# The tree is rebuilt from main's tip and committed on top of the previous
+# headless tip, so:
+#   - no merges -> merge conflicts are impossible (the old merge-based flow
+#     failed hard on retained-path conflicts, e.g. git/.gitconfig)
+#   - pushes are always fast-forward (remote history is never rewritten)
+#   - anything that existed only on headless is overwritten by design
 # Fires whenever `main` is pushed; pushes only `headless` (no recursion).
+# `workflow_dispatch` allows manual regeneration after editing this file.
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -20,70 +28,70 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  sync:
+  generate:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout main tip
+        uses: actions/checkout@v5
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
-      - name: Sync + prune main -> headless
+      - name: Generate headless = main - GUI
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          git config user.name "github-actions[bot]"
+          git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Full mirror refs so origin/headless exists locally
-          git fetch origin '+refs/heads/*:refs/remotes/origin/*'
+          # Parent for the generated commit (keeps the push fast-forward)
+          git fetch --no-tags origin headless
 
-          # Rebase local headless onto the remote headless (never rewrite remote history)
-          git checkout -q -B headless origin/headless
-          BEFORE="$(git rev-parse headless)"
-
-          # Paths pruned on headless (kept only on main)
+          # Paths pruned on headless (GUI, kept only on main)
           GUI_RE='^(hypr/|waybar/|wofi/|kitty/|fcitx5/|zed/|misc/.config/(code-flags\.conf|dolphinrc|mimeapps\.list))'
 
-          # Bring in main; modify/delete conflicts on GUI paths are expected
-          git merge --no-edit origin/main || true
+          git checkout -q -B headless origin/headless
+          BEFORE="$(git rev-parse HEAD)"
 
-          # Fail hard if a retained (non-GUI) path conflicts -- never auto-resolve those
-          non_gui="$(git diff --name-only --diff-filter=U | grep -vE "$GUI_RE" || true)"
-          if [ -n "$non_gui" ]; then
-            echo "::error::Retained-path merge conflicts need manual attention:"
-            echo "$non_gui"
-            exit 1
-          fi
+          # Rebuild the tree from main, exactly
+          git read-tree -u --reset origin/main^{tree}
 
-          # Resolve GUI conflicts by keeping them deleted, and remove any GUI main added
-          git rm -r -q --ignore-unmatch hypr waybar wofi kitty fcitx5 zed 2>/dev/null || true
-          git rm -q --ignore-unmatch --cached \
-            misc/.config/code-flags.conf misc/.config/dolphinrc misc/.config/mimeapps.list 2>/dev/null || true
-          rm -rf -- hypr waybar wofi kitty fcitx5 zed 2>/dev/null || true
-          git add -A
-
-          # Finalize the merge if one is in progress
-          if git rev-parse -q --verify MERGE_HEAD >/dev/null; then
-            git commit --no-edit -q
-          fi
+          # ... then prune the GUI paths.
+          # -f is required and safe: after read-tree these paths are staged
+          # (in index via main) but absent from HEAD (old headless), which
+          # git rm otherwise refuses as "changes staged in the index".
+          git rm -rqf --ignore-unmatch hypr waybar wofi kitty fcitx5 zed
+          git rm -qf --ignore-unmatch \
+            misc/.config/code-flags.conf misc/.config/dolphinrc misc/.config/mimeapps.list
+          rm -rf -- hypr waybar wofi kitty fcitx5 zed
 
           # Guard: nothing GUI may remain tracked after pruning
-          left="$(git ls-files | grep -E "$GUI_RE" || true)"
-          if [ -n "$left" ]; then
+          if left="$(git ls-files | grep -E "$GUI_RE")"; then
             echo "::error::GUI files still tracked after prune:"
             echo "$left"
             exit 1
           fi
 
-          # No net change (e.g. a GUI-only push) -> nothing to publish
-          if git diff --quiet "$BEFORE" HEAD; then
-            echo "No net change to headless (GUI-only or redundant push); skipping."
+          # No net change (GUI-only push or already synced) -> nothing to publish
+          if git diff --cached --quiet "$BEFORE"; then
+            echo "No net change to headless; skipping."
             exit 0
           fi
 
-          # Authenticate + push (fast-forward from origin/headless)
-          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git commit -q -m \
+            "Generate headless from main ${GITHUB_SHA::7}: $(git log -1 --format=%s origin/main)"
+
+          git remote set-url origin \
+            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push origin headless
-          echo "Updated headless (main $GITHUB_SHA synced + GUI pruned)."
+
+          {
+            echo "### headless regenerated"
+            echo "| | |"
+            echo "|---|---|"
+            echo "| main | \`${GITHUB_SHA::7}\` |"
+            echo "| headless | \`$(git rev-parse --short HEAD)\` |"
+            echo "| paths changed | $(git diff --name-only "$BEFORE" HEAD | wc -l) |"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "Updated headless (generated from main $GITHUB_SHA, GUI pruned)."

@@ -115,8 +115,8 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `zed/` | `.config/zed/` (settings, keymap, tasks) |
 | `monitors/` | `.config/{btop,htop,bottom,bashtop}/` |
 | `lazytuis/` | `.config/{lazygit,lazydocker}/` |
-| `opencode/` | `.config/opencode/{opencode.jsonc,oh-my-openagent.json,package.json}`, `.config/opencode/skills/{ghidra,playwright}/` (user-installed MCP skills) |
-| `omo/` | `.omo/omo.jsonc` (unified oh-my-openagent config; `~/.omo` path is hardcoded by omo-config-core, so the stow package adopts it) |
+| `opencode/` | `.config/opencode/{opencode.jsonc,package.json,rate-limit-fallback.json}`, `.config/opencode/{agents,commands}/` (custom subagents + slash commands), `.config/opencode/skills/{ghidra,git-master}/` (Agent Skills) |
+| `pi/` | `.pi/agent/{settings.json,models.json,mcp.json}` (pi coding agent config; `~/.pi` path is hardcoded by pi, so the stow package adopts it. Shares skills with opencode via the `skills` setting. `auth.json` (API keys), `sessions/`, and `bin/` are runtime data, gitignored) |
 | `misc/` | `.config/`: `hyfetch.json`, `dolphinrc`, `mimeapps.list`, `code-flags.conf` |
 
 > Two user-level configs are deliberately **not** stowed or tracked: `~/.config/btop/btop.conf` and `~/.config/QtProject.conf`. Both are rewritten by their own applications at runtime (btop persists its full state whenever you change theme/settings in the TUI; Qt apps continuously update window geometry and dialog state), so a symlink into this repo would produce endless noise diffs. They live as real files in `$HOME` (gitignored here); on a fresh machine just launch each app once and it regenerates sensible defaults.

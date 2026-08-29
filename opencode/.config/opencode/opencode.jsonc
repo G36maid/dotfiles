@@ -1,40 +1,50 @@
 {
-  "plugin": ["oh-my-openagent@latest", "opencode-mermaid-renderer@latest"],
+  "plugin": [
+    "opencode-mermaid-renderer@latest",
+    "@azumag/opencode-rate-limit-fallback",
+    "opencode-todo-enforcer",
+  ],
   "$schema": "https://opencode.ai/config.json",
+  "model": "zai-coding-plan/glm-5.3-flash",
+  "permission": {
+    "read": "allow",
+    "write": "allow",
+    "edit": "allow",
+    "bash": "allow",
+  },
+  "agent": {
+    "explore": { "model": "zai-coding-plan/glm-5.3-flash" },
+    "scout": { "model": "zai-coding-plan/glm-5.3-flash" },
+  },
   "provider": {
-    "local-dgx-spark": {
+    "dgx-spark": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "DeepSeek-V4-Flash",
+      "name": "DeepSeek-V4-Flash-0731",
+      "options": {
+        "baseURL": "http://192.168.101.70:8888/v1"
+      },
+      "models": {
+        "deepseek-v4-flash-0731": {
+          "name": "DeepSeek V4 Flash 0731 (1x DGX)",
+          "limit": { "context": 384000, "output": 16384 },
+          "reasoning": true
+        }
+      }
+    },
+    "local-dgx-spark-x2": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "GLM-5.3-Flash-EXL3",
       "options": {
         "baseURL": "http://100.102.84.36:8888/v1"
       },
       "models": {
-        "deepseek-v4-flash-0731": {
-          "name": "DeepSeek V4 Flash"
+        "GLM-5.3-Flash-EXL3": {
+          "name": "GLM 5.3 Flash EXL3 (2x DGX, 1M ctx)",
+          "limit": { "context": 1000000, "output": 16384 },
+          "reasoning": true,
+          "attachment": true,
+          "modalities": { "input": ["text", "image"], "output": ["text"] }
         }
-      }
-    },
-    "zai-coding-plan": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Z.AI Coding Plan",
-      "options": {
-        "baseURL": "https://api.z.ai/api/coding/paas/v4"
-      },
-      "models": {
-        "glm-5.3-flash": { "name": "GLM-5.3-Flash" },
-        "glm-5.3": { "name": "GLM-5.3" }
-      }
-    },
-    "opencode": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "OpenCode Go",
-      "options": {
-        "baseURL": "https://opencode.ai/zen/go/v1"
-      },
-      "models": {
-        "glm-5.3-flash": { "name": "GLM-5.3-Flash (Go)" },
-        "glm-5.3": { "name": "GLM-5.3 (Go)" },
-        "deepseek-v4-flash-0731": { "name": "DeepSeek V4 Flash (Go)" }
       }
     }
   },
@@ -45,26 +55,18 @@
       "command": ["uvx", "--python", "3.13", "markitdown-mcp"],
     },
     "deepwiki": { "type": "remote", "url": "https://mcp.deepwiki.com/mcp" },
-    // "ghidra": {
-    //   "type": "local",
-    //   "command": [
-    //     "uv",
-    //     "run",
-    //     "--script",
-    //     "/home/g36maid/.local/share/ghidra-mcp/bridge_mcp_ghidra.py"
-    //   ],
-    //   "enabled": true
-    // }
-    // "playwright": {
-    //   "type": "local",
-    //   "command": [
-    //     "npx",
-    //     "-y",
-    //     "@playwright/mcp@latest",
-    //     "--browser",
-    //     "firefox",
-    //   ],
-    //   "enabled": true,
-    // },
+    "context7": { "type": "remote", "url": "https://mcp.context7.com/mcp" },
+    "grep-app": { "type": "remote", "url": "https://mcp.grep.app" },
+    "websearch": { "type": "remote", "url": "https://mcp.exa.ai/mcp?tools=web_search_exa" },
+    "ghidra": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "uv",
+        "run",
+        "--script",
+        "/home/g36maid/Code/AI/ghidra-mcp/bridge_mcp_ghidra.py",
+      ],
+    },
   },
 }

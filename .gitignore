@@ -43,8 +43,14 @@ error.log
 # Opencode runtime artifacts
 **/opencode/package-lock.json
 **/opencode/*.backup-*
+**/opencode/rate-limit-fallback.json.bak-*
 # Opencode credential store — stowed under opencode/.local/share but NEVER committed (public repo)
 **/.local/share/opencode/auth.json
-# OMO runtime artifacts at repo root (.omo/run-continuation etc.);
-# anchored so omo/.omo/ (the tracked stow package) is NOT excluded.
+/.playwright-cli/
+# OMO harness runtime artifacts (until OMO is fully retired)
 /.omo/
+# pi agent: auth holds API keys; sessions are chat logs; bin holds downloaded helper binaries.
+# Only .pi/agent/{settings,models}.json are tracked.
+**/.pi/agent/auth.json
+**/.pi/agent/sessions/
+**/.pi/agent/bin/

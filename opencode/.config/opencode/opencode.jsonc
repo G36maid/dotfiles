@@ -3,6 +3,7 @@
     "opencode-mermaid-renderer@latest",
     "@azumag/opencode-rate-limit-fallback",
     "opencode-todo-enforcer",
+    "opencode-tps-meter",
   ],
   "$schema": "https://opencode.ai/config.json",
   "model": "zai-coding-plan/glm-5.3-flash",
@@ -11,10 +12,6 @@
     "write": "allow",
     "edit": "allow",
     "bash": "allow",
-  },
-  "agent": {
-    "explore": { "model": "zai-coding-plan/glm-5.3-flash" },
-    "scout": { "model": "zai-coding-plan/glm-5.3-flash" },
   },
   "provider": {
     "dgx-spark": {

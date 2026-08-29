@@ -24,6 +24,12 @@
       },
       "type": "registry",
     },
+    "pi-acp": {
+      "type": "custom",
+      "command": "/home/g36maid/.local/bin/pi-acp",
+      "args": [],
+      "env": {},
+    },
     "gemini": {
       "type": "registry",
     },

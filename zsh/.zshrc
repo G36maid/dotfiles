@@ -66,6 +66,13 @@ fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
 
+### zoxide (smarter cd) ###
+# `--cmd cd` replaces `cd` with a frecency-ranked jumper; `cdi` opens an
+# fzf-powered interactive picker. Change to no flag for classic `z`/`zi`.
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
+
 #starship
 #eval "$(starship init zsh)"
 

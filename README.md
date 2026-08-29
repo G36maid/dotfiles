@@ -40,7 +40,7 @@ My Arch Linux + Hyprland dotfiles, managed with [GNU Stow](https://www.gnu.org/s
 ```bash
 sudo pacman -S --needed stow zsh tmux vim kitty hyprland waybar wofi \
   fastfetch fcitx5 zellij yazi btop htop bottom bashtop lazygit lazydocker \
-  starship gdb zimfw
+  starship gdb zimfw zoxide
 ```
 
 ### Runtime deps

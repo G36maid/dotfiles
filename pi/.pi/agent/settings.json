@@ -1,0 +1,15 @@
+{
+  "theme": "dark",
+  "defaultProvider": "dgx-spark-x2",
+  "defaultModel": "GLM-5.3-Flash-EXL3",
+  "skills": [
+    "~/.config/opencode/skills"
+  ],
+  "packages": [
+    "npm:pi-mcp-adapter",
+    "npm:pi-web-access",
+    "npm:pi-tool-display",
+    "npm:@juicesharp/rpiv-ask-user-question"
+  ],
+  "lastChangelogVersion": "0.83.0"
+}

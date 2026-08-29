@@ -74,13 +74,13 @@ sudo pacman -S --needed ttf-firacode-nerd
 ## Install
 
 ```bash
-git clone git@github.com:G36maid/dotfiles.git ~/Github/dotfiles
-cd ~/Github/dotfiles
+git clone git@github.com:G36maid/dotfiles.git ~/Code/github/dotfiles
+cd ~/Code/github/dotfiles
 
 # Stow every package (symlinks into $HOME).
 # --target="$HOME" is required because the repo isn't cloned directly
-# under $HOME (it's at ~/Github/dotfiles); stow's default target is
-# the repo's parent dir (~/Github), which is wrong.
+# under $HOME (it's at ~/Code/github/dotfiles); stow's default target is
+# the repo's parent dir (~/Code/github), which is wrong.
 stow --target="$HOME" */
 
 # Or pick individual packages

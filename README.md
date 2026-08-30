@@ -116,8 +116,9 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `zed/` | `.config/zed/` (settings, keymap, tasks) |
 | `monitors/` | `.config/{btop,htop,bottom,bashtop}/` |
 | `lazytuis/` | `.config/{lazygit,lazydocker}/` |
-| `opencode/` | `.config/opencode/{opencode.jsonc,package.json,rate-limit-fallback.json}`, `.config/opencode/{agents,commands}/` (custom subagents + slash commands), `.config/opencode/skills/{ghidra,git-master}/` (Agent Skills) |
-| `pi/` | `.pi/agent/{settings.json,models.json,mcp.json}` (pi coding agent config; `~/.pi` path is hardcoded by pi, so the stow package adopts it. Shares skills with opencode via the `skills` setting. `auth.json` and `web-search.json` (both can hold API keys), `sessions/`, and `bin/` are stowed but gitignored) |
+| `opencode/` | `.config/opencode/{opencode.jsonc,package.json,rate-limit-fallback.json}`, `.config/opencode/{agents,commands}/` (custom subagents + slash commands) |
+| `pi/` | `.pi/agent/{settings.json,models.json,mcp.json}` (pi coding agent config; `~/.pi` path is hardcoded by pi, so the stow package adopts it. `auth.json` and `web-search.json` (both can hold API keys), `sessions/`, and `bin/` are stowed but gitignored) |
+| `agents/` | `.agents/skills/{convert-documents-to-markdown,ghidra,git-master,playwright-cli}/` (Agent Skills in the cross-agent standard location — read natively by both pi and opencode ≥ 1.18, no per-agent symlinks needed) |
 | `misc/` | `.config/`: `hyfetch.json`, `dolphinrc`, `mimeapps.list`, `code-flags.conf` |
 
 > Two user-level configs are deliberately **not** stowed or tracked: `~/.config/btop/btop.conf` and `~/.config/QtProject.conf`. Both are rewritten by their own applications at runtime (btop persists its full state whenever you change theme/settings in the TUI; Qt apps continuously update window geometry and dialog state), so a symlink into this repo would produce endless noise diffs. They live as real files in `$HOME` (gitignored here); on a fresh machine just launch each app once and it regenerates sensible defaults.
@@ -148,7 +149,7 @@ Both agents are configured through stowed files; the heavy lifting happens on fi
 Prerequisites:
 
 ```bash
-paru -S --needed uv github-cli   # uvx (markitdown MCP) + gh (reviewer subagent)
+paru -S --needed uv github-cli   # uv (ghidra MCP) + gh (reviewer subagent)
 ```
 
 **opencode** — plugins (`opencode-mermaid-renderer`, rate-limit fallback, todo-enforcer) auto-install from `opencode.jsonc` on first launch (needs network). Provider auth: run `opencode auth login` once — keys land in the native store at `~/.local/share/opencode/auth.json` (untracked).

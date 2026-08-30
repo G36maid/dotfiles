@@ -10,9 +10,6 @@
     "grep",
     "find"
   ],
-  "skills": [
-    "~/.config/opencode/skills"
-  ],
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",

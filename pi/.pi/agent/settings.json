@@ -18,7 +18,8 @@
     "npm:pi-web-access",
     "npm:pi-tool-display",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:pi-tps-meter"
+    "npm:pi-tps-meter",
+    "npm:pi-subdir-context"
   ],
   "lastChangelogVersion": "0.84.3"
 }

@@ -79,9 +79,6 @@
         "move_path": {
           "default": "allow",
         },
-        "mcp:markitdown:convert_to_markdown": {
-          "default": "allow",
-        },
         "terminal": {
           "default": "allow",
           "always_allow": [
@@ -291,11 +288,6 @@
     }
   ],
   "context_servers": {
-    "arch-ops-server": {
-      "enabled": false,
-      "remote": false,
-      "settings": {},
-    },
     "mcp-server-exa-search": {
       "enabled": true,
       "remote": false,
@@ -308,10 +300,6 @@
       "settings": {
         "context7_api_key": "",
       },
-    },
-    "markitdown": {
-      "command": "uvx",
-      "args": ["--python", "3.13", "markitdown-mcp"],
     },
     "deepwiki": {
       "enabled": true,

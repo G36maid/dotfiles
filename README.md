@@ -149,7 +149,7 @@ Both agents are configured through stowed files; the heavy lifting happens on fi
 Prerequisites:
 
 ```bash
-paru -S --needed uv github-cli   # uvx (markitdown MCP) + gh (reviewer subagent)
+paru -S --needed uv github-cli   # uv (ghidra MCP) + gh (reviewer subagent)
 ```
 
 **opencode** — plugins (`opencode-mermaid-renderer`, rate-limit fallback, todo-enforcer) auto-install from `opencode.jsonc` on first launch (needs network). Provider auth: run `opencode auth login` once — keys land in the native store at `~/.local/share/opencode/auth.json` (untracked).

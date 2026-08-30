@@ -54,3 +54,6 @@ error.log
 **/.pi/agent/auth.json
 **/.pi/agent/sessions/
 **/.pi/agent/bin/
+# pi-web-access config — its schema takes provider API keys (jinaApiKey, openaiApiKey, …),
+# so it's stowed but untracked, same policy as auth.json.
+**/.pi/web-search.json

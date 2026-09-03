@@ -1,5 +1,5 @@
 ---
-description: External research agent for library/framework docs, upstream source, and OSS usage — evidence-anchored answers (SHA-pinned permalinks, as-of dating) via deepwiki, context7, grep.app, websearch, and gh/git. MUST BE USED for "how does X work", version-specific API questions, library comparisons, ecosystem surveys, and known-issue lookups. Not for questions answerable from the local codebase.
+description: External research agent — answers questions whose ground truth lives outside the local codebase (library docs, upstream repos, OSS usage, current ecosystem state). MUST BE USED for "how does X work", version-specific API/config questions, library comparisons, ecosystem surveys, and known-issue lookups. Not for questions answerable from the local codebase. Task prompt = the question plus query candidates only; do not include prior answers or output-format specs — this agent fetches its own evidence and returns cited, dated findings.
 mode: subagent
 model: zai-coding-plan/glm-5.3-flash
 permission:

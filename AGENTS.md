@@ -3,7 +3,7 @@
 Dotfiles repo managed with **GNU Stow**. Each top-level dir is a stow package mirroring its path under `$HOME` (e.g. `zsh/.zshrc` → `~/.zshrc`). Repo lives at `~/Code/github/dotfiles`, so the target flag is mandatory:
 
 ```bash
-stow --target="$HOME" */   # default target (parent dir) is wrong here
+stow --no-folding --target="$HOME" */   # default target (parent dir) is wrong here
 ```
 
 ## Hard rules
@@ -22,6 +22,7 @@ All per-host differences (monitors, sensitivity, touchpad, env vars, screenshot 
 
 ## Gotchas
 
+- **Never stow without `--no-folding`.** Without it, if a target dir (e.g. `~/.pi`) doesn't exist yet, stow tree-folds it into one symlink into the repo — the app then writes its whole runtime state (pi: `npm/`, `sessions/`, `bin/`, caches; opencode: `opencode.db`, `storage/`) into the repo working tree. `--no-folding` keeps only file-level links; runtime state stays in real dirs under `$HOME`. (Flag still works on stow 2.4.1 although dropped from `--help`.)
 - Keybinds reference runtime binaries (`hyprshot`, `playerctl`, `wpctl`, `brightnessctl`, …); missing binaries fail **silently** — key does nothing.
 - `hypr/modules/binds.lua` binds `SUPER+N` twice; the center-window bind wins (later binding takes precedence).
 - Screenshot key is profile-dependent (`F11` desktop, `PRINT` laptop) — read it from `machine.lua`, don't hardcode.

@@ -82,13 +82,17 @@ cd ~/Code/github/dotfiles
 # --target="$HOME" is required because the repo isn't cloned directly
 # under $HOME (it's at ~/Code/github/dotfiles); stow's default target is
 # the repo's parent dir (~/Code/github), which is wrong.
-stow --target="$HOME" */
+# --no-folding forces file-level symlinks (real dirs at ~/.pi, ~/.local/share/opencode,
+# ...) so apps can't write runtime state through a folded dir symlink into the repo.
+stow --no-folding --target="$HOME" */
 
 # Or pick individual packages
-stow --target="$HOME" zsh hypr kitty waybar
+stow --no-folding --target="$HOME" zsh hypr kitty waybar
 ```
 
-To remove a package: `stow --target="$HOME" -D <package>`
+To remove a package: `stow --no-folding --target="$HOME" -D <package>`
+
+> **Never stow without `--no-folding`.** Without it, when a target dir like `~/.pi` doesn't exist yet, stow "tree-folds": it creates a single symlink `~/.pi → dotfiles/pi/.pi`. The app then writes ALL of its runtime state (pi: `npm/` packages, `sessions/`, `bin/`, caches; opencode: `opencode.db`, `storage/`, logs) through that symlink straight into the repo working tree. With `--no-folding` only the config files are symlinked; runtime state lands in real dirs under `$HOME`.
 
 > If `stow */` reports conflicts, real (non-symlink) files already exist at the target paths — see [Pre-install: back up existing dotfiles](#pre-install-back-up-existing-dotfiles).
 
@@ -117,7 +121,7 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `monitors/` | `.config/{btop,htop,bottom,bashtop}/` |
 | `lazytuis/` | `.config/{lazygit,lazydocker}/` |
 | `opencode/` | `.config/opencode/{opencode.jsonc,package.json,rate-limit-fallback.json}`, `.config/opencode/{agents,commands}/` (custom subagents + slash commands) |
-| `pi/` | `.pi/agent/{settings.json,models.json,mcp.json}` + `.pi/agent/prompts/{init,review}.md` (pi coding agent config; `~/.pi` path is hardcoded by pi, so the stow package adopts it. `auth.json` and `web-search.json` (both can hold API keys), `sessions/`, and `bin/` are stowed but gitignored) |
+| `pi/` | `.pi/agent/{settings.json,models.json,mcp.json}` + `.pi/agent/prompts/{init,review}.md` (pi coding agent config; `~/.pi` path is hardcoded by pi, so the stow package adopts it. `auth.json` and `web-search.json` (both can hold API keys) are stowed but gitignored — dangling symlinks until recreated per host. pi's runtime state (`npm/`, `sessions/`, `bin/`, caches) is written to the real `~/.pi` at run time and never lives in the repo) |
 | `agents/` | `.agents/skills/{convert-documents-to-markdown,ghidra,git-master,playwright-cli}/` (Agent Skills in the cross-agent standard location — read natively by both pi and opencode ≥ 1.18, no per-agent symlinks needed) |
 | `misc/` | `.config/`: `hyfetch.json`, `dolphinrc`, `mimeapps.list`, `code-flags.conf` |
 

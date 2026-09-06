@@ -50,10 +50,19 @@ error.log
 # OMO harness runtime artifacts (until OMO is fully retired)
 /.omo/
 # pi agent: auth holds API keys; sessions are chat logs; bin holds downloaded helper binaries.
-# Only .pi/agent/{settings,models}.json are tracked.
+# Only .pi/agent/{settings,models,mcp}.json + prompts/ are tracked.
 **/.pi/agent/auth.json
 **/.pi/agent/sessions/
 **/.pi/agent/bin/
+# pi runtime state (package store, model/mcp caches, trust db, ACP dir) — safety net:
+# these belong in the real ~/.pi, but if ~/.pi ever gets tree-folded into the repo
+# (stow without --no-folding) this keeps them out of git.
+**/.pi/agent/npm/
+**/.pi/agent/models-store.json
+**/.pi/agent/mcp-cache.json
+**/.pi/agent/mcp-npx-cache.json
+**/.pi/agent/trust.json
+**/.pi/pi-acp/
 # pi-web-access config — its schema takes provider API keys (jinaApiKey, openaiApiKey, …),
 # so it's stowed but untracked, same policy as auth.json.
 **/.pi/web-search.json

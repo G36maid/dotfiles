@@ -3,7 +3,6 @@
     "deepwiki": { "url": "https://mcp.deepwiki.com/mcp" },
     "context7": { "url": "https://mcp.context7.com/mcp" },
     "grep-app": { "url": "https://mcp.grep.app" },
-    "exa-websearch": { "url": "https://mcp.exa.ai/mcp?tools=web_search_exa" },
     "ghidra": {
       "command": "uv",
       "args": [

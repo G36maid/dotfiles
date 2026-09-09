@@ -285,6 +285,23 @@
           ]
         }
       ]
+    },
+    {
+      "host": "spark-037c",
+      "username": "g36maid",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/g36maid/Code/GLM-5.3-Flash-EXL3-2x-DGX-Sparks"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "spark-3343.local",
+      "args": [],
+      "projects": []
     }
   ],
   "context_servers": {

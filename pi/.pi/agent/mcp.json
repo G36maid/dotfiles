@@ -6,7 +6,6 @@
       "directTools": false
     },
     "grep-app": { "url": "https://mcp.grep.app" },
-    "exa-websearch": { "url": "https://mcp.exa.ai/mcp?tools=web_search_exa" },
     "ghidra": {
       "command": "uv",
       "args": [

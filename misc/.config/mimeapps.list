@@ -1,6 +1,3 @@
-[Added Associations]
-image/jpeg=firefox-3.desktop;firefox-2.desktop;
 
 [Default Applications]
-image/jpeg=firefox-3.desktop;
-x-scheme-handler/ror2mm=r2modman.desktop
+x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop

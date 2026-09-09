@@ -23,7 +23,7 @@
 -- ============================================================================
 
 -- >>> EDIT THIS LINE PER HOST <<<
-local current = "archfw13" -- "archfw13" | "g36archpc" | <new profile key>
+local current = "g36archpc" -- "archfw13" | "g36archpc" | <new profile key>
 
 local profiles = {
     -- Base profile (desktop-oriented). Also the fallback for any field a
@@ -61,9 +61,8 @@ local profiles = {
             { fingers = 3, direction = "horizontal", action = "workspace" },
         },
         devices = {
-            { name = "logitech-g-pro--1",       sensitivity = -1    },
-            { name = "logitech-g502-hero",      sensitivity = -0.75 },
-            { name = "asustek-rog-gladius-iii", sensitivity = -1    },
+            { name = "logitech-g-pro--1",  sensitivity = -1    },
+            { name = "logitech-g502-hero", sensitivity = -0.75 },
         },
         shadow = {
             enabled      = true,

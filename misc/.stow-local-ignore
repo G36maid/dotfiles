@@ -1,0 +1,3 @@
+# Machine-local runtime state — Qt rewrites QtProject.conf (dialog history).
+# Kept as real files in $HOME, never stowed.
+/\.config/QtProject\.conf$

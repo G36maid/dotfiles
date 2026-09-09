@@ -19,20 +19,11 @@ export GLFW_IM_MODULE=ibus
 ### Firefox Wayland support ###
 export MOZ_ENABLE_WAYLAND=1
 
-### Deno environment ###
-if [ -f "$HOME/.deno/env" ]; then
-  . "$HOME/.deno/env"
-fi
-
 ### PATH setup ###
 # Add custom paths only if not already in PATH
-for p in "$HOME/.deno/bin" "$HOME/.local/bin"; do
+for p in "$HOME/.local/bin"; do
   case ":$PATH:" in
     *":$p:"*) ;; # already in PATH
     *) export PATH="$p:$PATH" ;;
   esac
 done
-
-
-# Added by Antigravity CLI installer
-export PATH="/home/g36maid/.local/bin:$PATH"

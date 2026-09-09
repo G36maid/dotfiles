@@ -76,7 +76,8 @@ window#waybar {
 #cpu,
 #memory,
 #temperature,
-#battery {
+#battery,
+#custom-gpu-nvidia {
     /* transparent border matches #pulseaudio/#backlight box model so
        all vertical groups have identical heights and align cleanly */
     border: 1px solid transparent;
@@ -89,12 +90,15 @@ window#waybar {
 
 #mpd,
 #cpu,
-#battery {
+#battery,
+/* top members of vertical groups need the same 5px offset as single
+   modules (#window/#clock) or their group renders flush to the screen edge */
+#temperature {
     margin-top: 5px;
 }
 
 #memory,
-#temperature {
+#custom-gpu-nvidia {
     margin-top: 2px;
 }
 
@@ -102,12 +106,25 @@ window#waybar {
     border: 1px solid @module-border;
     border-radius: 3px;
 
+    color: @crust;
+    background-color: @text;
+
+    margin-top: 2px;
+    margin-right: 2px;
+
+    padding: 1px 3px;
+}
+
+#pulseaudio {
+    border: 1px solid @module-border;
+    border-radius: 10px;
     background-color: @crust;
     color: @text;
     margin-top: 5px;
-
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-right: 5px;
-    padding: 1px 3px;
 }
 
 #backlight {

@@ -33,6 +33,7 @@ function bridge(): void {
 		fetch_content: webAccess,
 		get_search_content: webAccess,
 		source_check: webAccess,
+		mcp: join(nm, "pi-mcp-adapter", "index.ts"),
 		mcp__deepwiki: join(nm, "pi-mcp-adapter", "index.ts"),
 		mcp__context7: join(nm, "pi-mcp-adapter", "index.ts"),
 		mcp__grep_app: join(nm, "pi-mcp-adapter", "index.ts"),

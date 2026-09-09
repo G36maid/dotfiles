@@ -22,6 +22,23 @@ export PATH="$HOME/.deno/bin:$HOME/.local/bin:$PATH"
 ### editor setup ###
 export EDITOR="vim"
 
+# tpi: launch pi in a per-project tmux session (pi-interactive-subagents
+# spawns its subagent panes off the parent pane, so pi must run inside tmux).
+tpi() {
+  if [ -n "$TMUX" ]; then
+    command pi "$@"
+    return
+  fi
+  local session="pi-$(basename "$PWD")-$(printf %s "$PWD" | md5sum | cut -c1-4)"
+  local cmd="pi${*:+ $*}"
+  if tmux has-session -t "$session" 2>/dev/null; then
+    tmux new-window -t "$session" -c "$PWD" "$cmd"
+    tmux attach-session -t "$session"
+  else
+    tmux new-session -s "$session" -c "$PWD" "$cmd"
+  fi
+}
+
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then

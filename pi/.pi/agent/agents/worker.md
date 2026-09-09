@@ -1,7 +1,7 @@
 ---
 name: worker
 description: General-purpose worker — reads, writes, and edits code
-tools: read, write, edit, bash, web_search, fetch_content, mcp__deepwiki, mcp__context7
+tools: read, write, edit, safe_bash, web_search, fetch_content, mcp
 subagent_agents: explore, librarian
 model: zai/glm-5.3
 thinking: high

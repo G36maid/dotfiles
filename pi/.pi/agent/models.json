@@ -36,7 +36,7 @@
           "name": "GLM 5.3 Flash EXL3 (2x DGX Spark, 1M ctx)",
           "reasoning": true,
           "input": ["text", "image"],
-          "contextWindow": 1000000,
+          "contextWindow": 850000,
           "maxTokens": 16384,
           "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
         }

@@ -37,7 +37,7 @@
       "models": {
         "GLM-5.3-Flash-EXL3": {
           "name": "GLM 5.3 Flash EXL3 (2x DGX, 1M ctx)",
-          "limit": { "context": 1000000, "output": 16384 },
+          "limit": { "context": 850000, "output": 16384 },
           "reasoning": true,
           "attachment": true,
           "modalities": { "input": ["text", "image"], "output": ["text"] }

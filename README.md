@@ -121,7 +121,7 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `monitors/` | `.config/{btop,htop,bottom,bashtop}/` |
 | `lazytuis/` | `.config/{lazygit,lazydocker}/` |
 | `opencode/` | `.config/opencode/{opencode.jsonc,package.json,rate-limit-fallback.json}`, `.config/opencode/{agents,commands}/` (custom subagents + slash commands) |
-| `pi/` | `.pi/agent/{settings.json,models.json,mcp.json}` + `.pi/agent/prompts/{init,review}.md` (pi coding agent config; `~/.pi` path is hardcoded by pi, so the stow package adopts it. `auth.json` and `web-search.json` (both can hold API keys) are stowed but gitignored — dangling symlinks until recreated per host. pi's runtime state (`npm/`, `sessions/`, `bin/`, caches) is written to the real `~/.pi` at run time and never lives in the repo) |
+| `pi/` | `.pi/agent/{settings.json,models.json,mcp.json}` + `.pi/agent/prompts/{init,review}.md` + `.pi/agent/agents/*.md` (subagent definitions) + `.pi/agent/extensions/{subagent-tool-bridges.ts,subagents.json}` (pi-subagents extension + its config; layout/status prefs, safe to commit) (pi coding agent config; `~/.pi` path is hardcoded by pi, so the stow package adopts it. `auth.json` and `web-search.json` (both can hold API keys) are stowed but gitignored — dangling symlinks until recreated per host. pi's runtime state (`npm/`, `sessions/`, `bin/`, caches) is written to the real `~/.pi` at run time and never lives in the repo) |
 | `agents/` | `.agents/skills/{convert-documents-to-markdown,ghidra,git-master,playwright-cli}/` (Agent Skills in the cross-agent standard location — read natively by both pi and opencode ≥ 1.18, no per-agent symlinks needed) |
 | `misc/` | `.config/`: `hyfetch.json`, `dolphinrc`, `mimeapps.list`, `code-flags.conf` |
 

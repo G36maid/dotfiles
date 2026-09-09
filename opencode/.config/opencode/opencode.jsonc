@@ -7,6 +7,23 @@
   ],
   "$schema": "https://opencode.ai/config.json",
   "model": "zai-coding-plan/glm-5.3-flash",
+  // No-op overrides of built-in agents: fields mirror native values, so behavior
+  // is unchanged — edit here to experiment. NOTE: adding "prompt" REPLACES the
+  // default system prompt for that agent entirely (no append mode).
+  "agent": {
+    "build": {
+      "description": "The default agent. Executes tools based on configured permissions.",
+      "mode": "primary",
+    },
+    "plan": {
+      "description": "Plan mode. Disallows all edit tools.",
+      "mode": "primary",
+    },
+    "general": {
+      "description": "General-purpose agent for researching complex questions and executing multi-step tasks. Use this agent to execute multiple units of work in parallel.",
+      "mode": "subagent",
+    },
+  },
   "permission": {
     "read": "allow",
     "write": "allow",

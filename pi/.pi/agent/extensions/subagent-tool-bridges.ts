@@ -1,25 +1,19 @@
 /**
- * Tool-provider bridges for the interactive-subagents fork.
+ * Tool bridges for github.com/G36maid/pi-interactive-subagents: that fork
+ * spawns sandboxed subagents with `--no-extensions -e <ext>` and resolves
+ * whitelisted tool names through its runtime registry
+ * (globalThis.__pi_interactive_subagents.registerToolExtension, see its
+ * pi-extension/subagents/index.ts), but its built-in path table only knows
+ * legacy ~/.pi/agent/extensions/ paths. This shim registers the npm-package
+ * tools (pi-web-access, pi-mcp-adapter) onto that hook instead; safe_bash is
+ * fork-provided and needs no entry here.
  *
- * The fork launches subagent children with `--no-extensions` plus `-e <path>`
- * for each extension that backs a tool in the agent's `tools:` allowlist. Its
- * built-in path table only knows the legacy `~/.pi/agent/extensions/` layout,
- * so tools provided by npm-installed packages must be registered here.
- *
- * MCP is handled universally: every enabled server in mcp.json gets its
- * namespace-proxy name (`mcp__<server>`, sanitized exactly like the adapter's
- * namespaceServerPart) plus the `mcp` gateway, all mapped to the adapter
- * entry file. Adding a server to mcp.json requires no edit here — restart pi
- * and whitelist the new name in whichever agent needs it. Caveat: servers
- * configured with `directTools: true` register their own server-side tool
- * names instead of a namespace proxy; whitelist those names explicitly
- * (same adapter path) or go through the `mcp` gateway.
- *
- * Limitation: the fork's registration map is per-process. This file loads in
- * top-level sessions (global extension discovery), so top-level spawns resolve
- * these tools. A subagent that itself spawns children (worker → librarian)
- * resolves against its own map, which nothing populates — those grandchildren
- * silently fall back to their remaining tools.
+ * MCP is universal: every enabled server in mcp.json becomes `mcp__<server>`
+ * (sanitized like the adapter's namespaceServerPart) plus the `mcp` gateway,
+ * so adding a server needs no edit here. directTools:true servers register
+ * native tool names instead — whitelist those explicitly. The registry is
+ * per-process, so grandchild spawns (worker → librarian) get an empty map
+ * and silently drop bridged tools.
  *
  * Idempotent: safe to register on module load and again on session_start.
  */

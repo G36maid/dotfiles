@@ -3,7 +3,7 @@ name: worker
 description: General-purpose worker — reads, writes, and edits code
 tools: read, write, edit, bash, web_search, fetch_content, mcp
 subagent_agents: explore, librarian
-model: zai/glm-5.3
+model: zai/glm-5.3-flash
 thinking: high
 system-prompt: append
 auto-exit: true

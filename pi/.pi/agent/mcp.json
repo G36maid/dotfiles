@@ -1,4 +1,7 @@
 {
+  "settings": {
+    "scriptMode": false
+  },
   "mcpServers": {
     "deepwiki": { "url": "https://mcp.deepwiki.com/mcp" },
     "context7": {

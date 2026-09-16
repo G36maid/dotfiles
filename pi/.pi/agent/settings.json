@@ -2,16 +2,9 @@
   "theme": "dark",
   "defaultProvider": "zai",
   "defaultModel": "glm-5.3-flash",
-  "defaultTools": [
-    "read",
-    "bash",
-    "edit",
-    "write",
-    "grep",
-    "find"
-  ],
+  "defaultTools": ["read", "bash", "edit", "write", "grep", "find"],
   "packages": [
-    "npm:pi-mcp-adapter",
+    { "source": "npm:pi-mcp-adapter", "skills": [] },
     "npm:pi-web-access",
     "npm:pi-tool-display",
     "npm:@juicesharp/rpiv-ask-user-question",
@@ -19,5 +12,6 @@
     "npm:pi-subdir-context",
     "git:github.com/G36maid/pi-interactive-subagents"
   ],
-  "lastChangelogVersion": "0.85.1"
+  "lastChangelogVersion": "0.85.1",
+  "hideThinkingBlock": false
 }

@@ -45,9 +45,7 @@
     {
       "type": "packages",
       "keyIcon": "󰏖",
-      "disabled": [
-        "apk"
-      ],
+      "disabled": ["apk"],
       "combined": false
     },
     {
@@ -199,10 +197,7 @@
       "paddingLeft": 0,
       "block": {
         "width": 3,
-        "range": [
-          0,
-          15
-        ]
+        "range": [0, 15]
       },
       "brightness": "default"
     }

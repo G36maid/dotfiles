@@ -8,32 +8,40 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "tab_size": 4,
+  "languages": {
+    "JSON": {
+      "formatter": "prettier"
+    },
+    "JSONC": {
+      "formatter": "prettier"
+    }
+  },
   "cli_default_open_behavior": "new_window",
   "minimap": {
-    "show": "auto",
+    "show": "auto"
   },
   "project_panel": {
-    "dock": "left",
+    "dock": "left"
   },
   "outline_panel": {
-    "dock": "left",
+    "dock": "left"
   },
   "collaboration_panel": {
-    "dock": "left",
+    "dock": "left"
   },
   "agent_servers": {
     "opencode": {
       "default_config_options": {
-        "model": "opencode/glm-5.2",
+        "model": "opencode/glm-5.2"
       },
-      "type": "registry",
+      "type": "registry"
     },
     "gemini": {
-      "type": "registry",
+      "type": "registry"
     },
     "codex-acp": {
-      "type": "registry",
-    },
+      "type": "registry"
+    }
   },
   "diff_view_style": "unified",
   "agent": {
@@ -42,123 +50,123 @@
     "inline_assistant_model": {
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "enable_thinking": false,
+      "enable_thinking": false
     },
     "default_profile": "write",
     "tool_permissions": {
       "tools": {
         "fetch": {
-          "default": "allow",
+          "default": "allow"
         },
         "mcp:mcp-server-exa-search:web_search_exa": {
-          "default": "allow",
+          "default": "allow"
         },
         "mcp:mcp-server-exa-search:web_fetch_exa": {
-          "default": "allow",
+          "default": "allow"
         },
         "create_directory": {
           "always_allow": [
             {
-              "pattern": "^/home/g36maid/School/ntu/ai\\-distributed\\-ml/hw1/",
-            },
-          ],
+              "pattern": "^/home/g36maid/School/ntu/ai\\-distributed\\-ml/hw1/"
+            }
+          ]
         },
         "delete_path": {
           "always_allow": [
             {
-              "pattern": "^lab02/",
-            },
-          ],
+              "pattern": "^lab02/"
+            }
+          ]
         },
         "move_path": {
-          "default": "allow",
+          "default": "allow"
         },
         "mcp:markitdown:convert_to_markdown": {
-          "default": "allow",
+          "default": "allow"
         },
         "terminal": {
           "default": "allow",
           "always_allow": [
             {
-              "pattern": "^git\\b",
+              "pattern": "^git\\b"
             },
             {
-              "pattern": "^git\\s+diff(\\s|$)",
+              "pattern": "^git\\s+diff(\\s|$)"
             },
             {
-              "pattern": "^cd\\b",
-            },
-          ],
-        },
-      },
+              "pattern": "^cd\\b"
+            }
+          ]
+        }
+      }
     },
     "default_model": {
       "provider": "Z.ai",
       "model": "glm-5.2",
-      "enable_thinking": false,
+      "enable_thinking": false
     },
     "favorite_models": [
       {
         "provider": "Z.ai",
         "model": "glm-5",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "copilot_chat",
         "model": "claude-opus-4.6",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "copilot_chat",
         "model": "claude-sonnet-4.6",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "copilot_chat",
         "model": "gpt-5-mini",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "copilot_chat",
         "model": "claude-haiku-4.5",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "copilot_chat",
         "model": "gpt-5.3-codex",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "copilot_chat",
         "model": "grok-code-fast-1",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "copilot_chat",
         "model": "gemini-3.1-pro-preview",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "Z.ai",
         "model": "glm-4.7",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "google",
         "model": "gemini-3.1-pro-preview",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "Z.ai",
         "model": "glm-5.2",
-        "enable_thinking": false,
-      },
+        "enable_thinking": false
+      }
     ],
-    "model_parameters": [],
+    "model_parameters": []
   },
   "git_panel": {
     "dock": "left",
-    "tree_view": true,
+    "tree_view": true
   },
   "buffer_font_family": "FiraCode Nerd Font Mono",
   "vim_mode": false,
@@ -177,8 +185,8 @@
               "tools": true,
               "images": false,
               "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-            },
+              "prompt_cache_key": true
+            }
           },
           {
             "name": "glm-5.1",
@@ -190,8 +198,8 @@
               "tools": true,
               "images": false,
               "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-            },
+              "prompt_cache_key": true
+            }
           },
           {
             "name": "glm-5-turbo",
@@ -203,8 +211,8 @@
               "tools": true,
               "images": false,
               "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-            },
+              "prompt_cache_key": true
+            }
           },
           {
             "name": "glm-5",
@@ -216,8 +224,8 @@
               "tools": true,
               "images": false,
               "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-            },
+              "prompt_cache_key": true
+            }
           },
           {
             "name": "glm-4.7",
@@ -229,12 +237,12 @@
               "tools": true,
               "images": false,
               "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-            },
-          },
-        ],
-      },
-    },
+              "prompt_cache_key": true
+            }
+          }
+        ]
+      }
+    }
   },
   "ssh_connections": [
     {
@@ -243,9 +251,7 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/g36maid/docker"
-          ]
+          "paths": ["/home/g36maid/docker"]
         }
       ]
     },
@@ -256,9 +262,7 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/g36maid/zed"
-          ]
+          "paths": ["/home/g36maid/zed"]
         }
       ]
     },
@@ -267,19 +271,13 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/g36maid/.config/opencode"
-          ]
+          "paths": ["/home/g36maid/.config/opencode"]
         },
         {
-          "paths": [
-            "/home/g36maid/Code/AI/gemini-to-obsidian"
-          ]
+          "paths": ["/home/g36maid/Code/AI/gemini-to-obsidian"]
         },
         {
-          "paths": [
-            "/home/g36maid/Code/rust/zed"
-          ]
+          "paths": ["/home/g36maid/Code/rust/zed"]
         }
       ]
     },
@@ -288,9 +286,10 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/g36maid/Code/AI/gemini-takeout/./"
-          ]
+          "paths": ["/home/g36maid/.hermes"]
+        },
+        {
+          "paths": ["/home/g36maid/Code/AI/gemini-takeout/./"]
         }
       ]
     },
@@ -300,9 +299,7 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/g36maid/Code/GLM-5.3-Flash-EXL3-2x-DGX-Sparks"
-          ]
+          "paths": ["/home/g36maid/Code/GLM-5.3-Flash-EXL3-2x-DGX-Sparks"]
         }
       ]
     },
@@ -315,6 +312,11 @@
       "host": "spark-3343.local",
       "args": [],
       "projects": []
+    },
+    {
+      "host": "10.10.101.40",
+      "args": [],
+      "projects": []
     }
   ],
   "context_servers": {
@@ -322,28 +324,28 @@
       "enabled": true,
       "remote": false,
       "settings": {
-        "exa_api_key": null,
-      },
+        "exa_api_key": null
+      }
     },
     "mcp-server-context7": {
       "enabled": true,
       "settings": {
-        "context7_api_key": "",
-      },
+        "context7_api_key": ""
+      }
     },
     "markitdown": {
       "command": "uvx",
-      "args": ["--python", "3.13", "markitdown-mcp"],
+      "args": ["--python", "3.13", "markitdown-mcp"]
     },
     "deepwiki": {
       "enabled": true,
-      "url": "https://mcp.deepwiki.com/mcp",
-    },
+      "url": "https://mcp.deepwiki.com/mcp"
+    }
   },
   "icon_theme": {
     "mode": "light",
     "light": "Catppuccin Mocha",
-    "dark": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
   },
   "base_keymap": "VSCode",
   "ui_font_size": 18,
@@ -351,6 +353,6 @@
   "theme": {
     "mode": "light",
     "light": "Tokyo Night Storm",
-    "dark": "Catppuccin Macchiato",
-  },
+    "dark": "Catppuccin Macchiato"
+  }
 }

@@ -1,21 +1,26 @@
 {
-  "settings": {
-    "scriptMode": false
-  },
-  "mcpServers": {
-    "deepwiki": { "url": "https://mcp.deepwiki.com/mcp" },
-    "context7": {
-      "url": "https://mcp.context7.com/mcp",
-      "directTools": false
-    },
-    "grep-app": { "url": "https://mcp.grep.app" },
-    "ghidra": {
-      "command": "uv",
-      "args": [
-        "run",
-        "--script",
-        "/home/g36maid/Code/AI/ghidra-mcp/bridge_mcp_ghidra.py"
-      ]
-    }
-  }
+	"mcpServers": {
+		"deepwiki": {
+			"url": "https://mcp.deepwiki.com/mcp",
+			"description": "DeepWiki — AI-generated wiki docs and Q&A for GitHub repositories"
+		},
+		"context7": {
+			"url": "https://mcp.context7.com/mcp",
+			"description": "Context7 — up-to-date official library/framework documentation lookup"
+		},
+		"grep-app": {
+			"url": "https://mcp.grep.app",
+			"description": "grep.app — code search across public GitHub repositories"
+		},
+		"ghidra": {
+			"command": "uv",
+			"args": [
+				"run",
+				"--directory",
+				"/home/g36maid/Code/AI/ghidra-mcp",
+				"bridge-mcp-ghidra"
+			],
+			"description": "Ghidra — reverse engineering bridge into a running Ghidra instance (decompile, function/symbol/memory analysis)"
+		}
+	}
 }

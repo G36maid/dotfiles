@@ -183,7 +183,7 @@ EOF
 Then install the packages listed in `settings.json`:
 
 ```bash
-pi install npm:pi-mcp-adapter npm:pi-web-access npm:pi-tool-display npm:@juicesharp/rpiv-ask-user-question npm:pi-tps-meter npm:pi-subdir-context git:github.com/G36maid/pi-interactive-subagents
+pi install npm:pi-web-access npm:pi-tool-display npm:@juicesharp/rpiv-ask-user-question npm:pi-tps-meter git:github.com/G36maid/pi-interactive-subagents
 ```
 
 `/init` is a global prompt template (stowed at `~/.pi/agent/prompts/init.md`) ported from opencode's native init: it analyzes the repo and creates or improves `AGENTS.md` in place. Run `/init` inside pi, optionally with a focus (e.g. `/init testing setup`).

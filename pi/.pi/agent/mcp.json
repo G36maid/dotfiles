@@ -1,13 +1,7 @@
 {
-  "settings": {
-    "scriptMode": false
-  },
   "mcpServers": {
     "deepwiki": { "url": "https://mcp.deepwiki.com/mcp" },
-    "context7": {
-      "url": "https://mcp.context7.com/mcp",
-      "directTools": false
-    },
+    "context7": { "url": "https://mcp.context7.com/mcp" },
     "grep-app": { "url": "https://mcp.grep.app" },
     "ghidra": {
       "command": "uv",

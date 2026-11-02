@@ -63,6 +63,7 @@ fi
 #starship
 #eval "$(starship init zsh)"
 
+export PATH="/home/g36maid/.bun/bin:$PATH"
 
 # Added by Antigravity CLI installer
 export PATH="/home/g36maid/.local/bin:$PATH"

@@ -16,13 +16,13 @@
           "reasoning": true,
           "input": ["text"],
           "contextWindow": 384000,
-          "maxTokens": 16384,
+          "maxTokens": 65536,
           "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
         }
       ]
     },
     "dgx-spark-x2": {
-      "baseUrl": "http://100.102.84.36:8888/v1",
+      "baseUrl": "http://spark-037c:8888/v1",
       "api": "openai-completions",
       "apiKey": "none",
       "compat": {
@@ -36,8 +36,8 @@
           "name": "GLM 5.3 Flash EXL3 (2x DGX Spark, 1M ctx)",
           "reasoning": true,
           "input": ["text", "image"],
-          "contextWindow": 850000,
-          "maxTokens": 16384,
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
           "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
         }
       ]

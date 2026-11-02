@@ -27,3 +27,5 @@ for p in "$HOME/.local/bin"; do
     *) export PATH="$p:$PATH" ;;
   esac
 done
+
+#eval "$(/home/g36maid/.local/bin/mise activate bash)" # added by https://mise.run/bash

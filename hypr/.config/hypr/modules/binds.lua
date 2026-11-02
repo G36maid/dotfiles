@@ -37,9 +37,19 @@ hl.bind(mainMod .. " + B",         hl.dsp.exec_cmd("killall -SIGUSR2 waybar"))  
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("hyprctl reload"))                          -- reload hyprland config
 hl.bind(mainMod .. " + CTRL + B",  hl.dsp.exec_cmd("killall hyprpaper && hyprpaper &disown"))  -- restart hyprpaper
 
--- ---- gaming / float+center on Super+N (two binds on the same key) ----
-hl.bind(mainMod .. " + N", hl.dsp.window.float({ action = "toggle" }))
+-- ---- gaming: independent window-state keys ----
+-- N = center, G = reliable float-toggle sandwich (F on → float toggle → F off;
+-- works around Unity's FIXED_SIZE hint re-floating on plain toggle), F = fullscreen
 hl.bind(mainMod .. " + N", hl.dsp.window.center())
+hl.bind(mainMod .. " + G", function()
+    hl.dispatch(hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
+    hl.timer(function()
+        hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+        hl.timer(function()
+            hl.dispatch(hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
+        end, { timeout = 50, type = "oneshot" })
+    end, { timeout = 50, type = "oneshot" })
+end)
 
 -- ---- workspace cycle + Tab ----
 hl.config({ binds = { allow_workspace_cycles = true } })

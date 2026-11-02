@@ -15,9 +15,8 @@
     "npm:pi-tool-display",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-tps-meter",
-    "npm:pi-subdir-context",
     "git:github.com/G36maid/pi-interactive-subagents"
   ],
-  "lastChangelogVersion": "0.99.2",
-  "hideThinkingBlock": false
+  "lastChangelogVersion": "1.4.0",
+  "hideThinkingBlock": true
 }

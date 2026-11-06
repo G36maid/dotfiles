@@ -6,17 +6,18 @@
       "apiKey": "none",
       "compat": {
         "supportsDeveloperRole": false,
-        "supportsReasoningEffort": false,
+        "supportsReasoningEffort": true,
+        "thinkingFormat": "openai",
         "maxTokensField": "max_tokens"
       },
       "models": [
         {
-          "id": "GLM-5.3-Flash-EXL3",
-          "name": "GLM 5.3 Flash EXL3",
+          "id": "GLM-5.3-Flash",
+          "name": "GLM-5.3-Flash-EXL3",
           "reasoning": true,
           "input": ["text", "image"],
-          "contextWindow": 1000000,
-          "maxTokens": 65536,
+          "contextWindow": 1048576,
+          "maxTokens": 32768,
           "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
         }
       ]

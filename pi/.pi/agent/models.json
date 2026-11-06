@@ -1,26 +1,5 @@
 {
   "providers": {
-    "dgx-spark": {
-      "baseUrl": "http://192.168.101.70:8888/v1",
-      "api": "openai-completions",
-      "apiKey": "none",
-      "compat": {
-        "supportsDeveloperRole": false,
-        "supportsReasoningEffort": false,
-        "maxTokensField": "max_tokens"
-      },
-      "models": [
-        {
-          "id": "deepseek-v4-flash-0731",
-          "name": "DeepSeek V4 Flash 0731 (1x DGX Spark, 384k ctx)",
-          "reasoning": true,
-          "input": ["text"],
-          "contextWindow": 384000,
-          "maxTokens": 65536,
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
-        }
-      ]
-    },
     "dgx-spark-x2": {
       "baseUrl": "http://spark-037c:8888/v1",
       "api": "openai-completions",
@@ -33,7 +12,7 @@
       "models": [
         {
           "id": "GLM-5.3-Flash-EXL3",
-          "name": "GLM 5.3 Flash EXL3 (2x DGX Spark, 1M ctx)",
+          "name": "GLM 5.3 Flash EXL3",
           "reasoning": true,
           "input": ["text", "image"],
           "contextWindow": 1000000,

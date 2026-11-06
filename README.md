@@ -121,7 +121,7 @@ Each top-level directory is a Stow package that mirrors its target path under `$
 | `monitors/` | `.config/{btop,htop,bottom,bashtop}/` |
 | `lazytuis/` | `.config/{lazygit,lazydocker}/` |
 | `opencode/` | `.config/opencode/{opencode.jsonc,package.json,rate-limit-fallback.json}`, `.config/opencode/{agents,commands}/` (custom subagents + slash commands) |
-| `pi/` | `.pi/agent/{settings.json,models.json,mcp.json}` (native MCP servers, pi ≥ 0.99) + `.pi/agent/prompts/{init,review}.md` + `.pi/agent/agents/*.md` (subagent definitions) + `.pi/agent/extensions/{subagent-tool-bridges.ts,subagents.json}` (pi-subagents extension + its config; layout/status prefs, safe to commit) (pi coding agent config; `~/.pi` path is hardcoded by pi, so the stow package adopts it. `auth.json` and `web-search.json` (both can hold API keys) are stowed but gitignored — dangling symlinks until recreated per host. `mcp-auth.json` (MCP OAuth tokens) is runtime-only in the real `~/.pi/agent/` and gitignored. pi's runtime state (`npm/`, `sessions/`, `bin/`, caches) is written to the real `~/.pi` at run time and never lives in the repo) |
+| `pi/` | `.pi/agent/{settings.json,models.json,mcp.json}` + `.pi/agent/prompts/{init,init-deep,review}.md` + `.pi/agent/agents/*.md` (subagent definitions) + `.pi/agent/extensions/{subagent-tool-bridges.ts,subagents.json}` (pi-subagents extension + its config; layout/status prefs, safe to commit) (pi coding agent config; `~/.pi` path is hardcoded by pi, so the stow package adopts it. `auth.json` and `web-search.json` (both can hold API keys) are stowed but gitignored — dangling symlinks until recreated per host. pi's runtime state (`npm/`, `sessions/`, `bin/`, caches) is written to the real `~/.pi` at run time and never lives in the repo) |
 | `agents/` | `.agents/skills/{convert-documents-to-markdown,ghidra,git-master,playwright-cli}/` (Agent Skills in the cross-agent standard location — read natively by both pi and opencode ≥ 1.18, no per-agent symlinks needed) |
 | `misc/` | `.config/`: `hyfetch.json`, `dolphinrc`, `mimeapps.list`, `code-flags.conf` |
 
@@ -183,10 +183,12 @@ EOF
 Then install the packages listed in `settings.json`:
 
 ```bash
-pi install npm:pi-web-access npm:pi-tool-display npm:@juicesharp/rpiv-ask-user-question npm:pi-tps-meter npm:pi-subdir-context git:github.com/G36maid/pi-interactive-subagents
+pi install npm:pi-web-access npm:pi-tool-display npm:@juicesharp/rpiv-ask-user-question npm:pi-tps-meter git:github.com/G36maid/pi-interactive-subagents
 ```
 
 `/init` is a global prompt template (stowed at `~/.pi/agent/prompts/init.md`) ported from opencode's native init: it analyzes the repo and creates or improves `AGENTS.md` in place. Run `/init` inside pi, optionally with a focus (e.g. `/init testing setup`).
+
+`/init-deep` is a global prompt template (stowed at `~/.pi/agent/prompts/init-deep.md`) ported from opencode's `/init-deep` command: the deep variant of `/init` that delegates discovery to 4 parallel `explore` subagents (structure/stack, commands/toolchain, conventions/quirks, anti-patterns/gotchas — auto-scaled to repo size) and synthesizes their reports into `AGENTS.md`, keeping the main session's context lean. Same usage: `/init-deep [focus]`.
 
 `/review` is a global prompt template (stowed at `~/.pi/agent/prompts/review.md`) integrating opencode's `reviewer` subagent and `/review` command into one: a read-only deep review (goal/constraint verification, 10 quality dimensions, 10 security checks, git/gh context mining) with a PASS/FAIL verdict, saved to `review-output.md` for pasting back into the original session. Run it in a dedicated session, optionally with a focus (e.g. `/review error handling`).
 

@@ -304,6 +304,9 @@
         },
         {
           "paths": ["/home/g36maid/Code/rust/zed"]
+        },
+        {
+          "paths": ["/home/g36maid/Documents/2026_master"]
         }
       ]
     },

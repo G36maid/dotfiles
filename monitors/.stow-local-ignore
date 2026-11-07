@@ -1,0 +1,3 @@
+# Machine-local runtime state — btop rewrites btop.conf on exit.
+# Kept as real files in $HOME, never stowed.
+/\.config/btop(/|$)

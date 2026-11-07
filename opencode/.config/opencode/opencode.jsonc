@@ -3,7 +3,7 @@
     "opencode-mermaid-renderer@latest",
     "@azumag/opencode-rate-limit-fallback",
     "opencode-todo-enforcer",
-    "opencode-tps-meter",
+    "opencode-tps-meter"
   ],
   "$schema": "https://opencode.ai/config.json",
   "model": "zai-coding-plan/glm-5.3-flash",
@@ -11,36 +11,30 @@
     "read": "allow",
     "write": "allow",
     "edit": "allow",
-    "bash": "allow",
+    "bash": "allow"
   },
-  "provider": {
-    "dgx-spark": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "DeepSeek-V4-Flash-0731",
-      "options": {
-        "baseURL": "http://192.168.101.70:8888/v1"
+  "providers": {
+    "dgx-spark-x2": {
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "name": "GLM-5.3-Flash",
+      "settings": {
+        "baseURL": "http://spark-037c:8888/v1"
       },
       "models": {
-        "deepseek-v4-flash-0731": {
-          "name": "DeepSeek V4 Flash 0731 (1x DGX)",
-          "limit": { "context": 384000, "output": 16384 },
-          "reasoning": true
-        }
-      }
-    },
-    "local-dgx-spark-x2": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "GLM-5.3-Flash-EXL3",
-      "options": {
-        "baseURL": "http://100.102.84.36:8888/v1"
-      },
-      "models": {
-        "GLM-5.3-Flash-EXL3": {
-          "name": "GLM 5.3 Flash EXL3 (2x DGX, 1M ctx)",
-          "limit": { "context": 850000, "output": 16384 },
-          "reasoning": true,
-          "attachment": true,
-          "modalities": { "input": ["text", "image"], "output": ["text"] }
+        "GLM-5.3-Flash": {
+          "name": "GLM-5.3-Flash-EXL3",
+          // context/output: recipe README — CONTEXT_MAX 1048576, MAX_TOKENS 32768
+          "limit": { "context": 1048576, "output": 32768 },
+          "capabilities": {
+            "reasoning": true,
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "variants": [
+            { "id": "low", "body": { "reasoning_effort": "low" } },
+            { "id": "high", "body": { "reasoning_effort": "high" } },
+            { "id": "max", "body": { "reasoning_effort": "xhigh" } }
+          ]
         }
       }
     }
@@ -50,7 +44,10 @@
     "deepwiki": { "type": "remote", "url": "https://mcp.deepwiki.com/mcp" },
     "context7": { "type": "remote", "url": "https://mcp.context7.com/mcp" },
     "grep-app": { "type": "remote", "url": "https://mcp.grep.app" },
-    "websearch": { "type": "remote", "url": "https://mcp.exa.ai/mcp?tools=web_search_exa" },
+    "websearch": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa"
+    },
     "ghidra": {
       "type": "local",
       "enabled": false,
@@ -58,8 +55,8 @@
         "uv",
         "run",
         "--script",
-        "/home/g36maid/Code/AI/ghidra-mcp/bridge_mcp_ghidra.py",
-      ],
-    },
-  },
+        "/home/g36maid/Code/AI/ghidra-mcp/bridge_mcp_ghidra.py"
+      ]
+    }
+  }
 }

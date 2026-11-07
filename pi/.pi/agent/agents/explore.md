@@ -1,7 +1,7 @@
 ---
 name: explore
 description: Fast codebase recon — explores files, finds patterns, maps architecture
-tools: read, grep, find, ls
+tools: read, grep, find, ls, safe_bash
 model: zai/glm-5.3-flash
 thinking: low
 system-prompt: append

@@ -3,7 +3,7 @@ name: librarian
 description: External research agent — answers questions whose ground truth lives outside the local codebase (library docs, upstream repos, OSS usage, ecosystem state). Evidence-based, source-pinned findings.
 model: zai/glm-5.3-flash
 thinking: low
-tools: read, grep, find, safe_bash, web_search, fetch_content, get_search_content, mcp
+tools: read, grep, find, safe_bash, web_search, fetch_content, get_search_content, codemode, tool_search
 system-prompt: append
 auto-exit: true
 ---

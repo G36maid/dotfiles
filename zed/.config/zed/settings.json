@@ -376,11 +376,12 @@
     "light": "Catppuccin Mocha",
     "dark": "Catppuccin Mocha"
   },
+  "icon_theme": "Catppuccin Macchiato",
   "base_keymap": "VSCode",
-  "ui_font_size": 18,
-  "buffer_font_size": 18.0,
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Tokyo Night Storm",
     "dark": "Catppuccin Macchiato"
   }

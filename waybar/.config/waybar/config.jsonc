@@ -13,28 +13,29 @@
     "hyprland/workspaces", //workspaces
     "group/hardware1",
     "group/hardware2",
-    "pulseaudio"
+    "group/control",
   ],
   "modules-center": ["hyprland/window"],
   "modules-right": [
-    //"power-profiles-daemon",
+    // "custom/codexbar",
+    "power-profiles-daemon",
     "network",
     "tray",
     "clock",
-    "custom/power"
+    "custom/power",
   ],
   // ---- Groups configuration ----
-  // "group/control": {
-  //   "orientation": "vertical",
-  //   "modules": ["pulseaudio"],
-  // },
+  "group/control": {
+    "orientation": "vertical",
+    "modules": ["pulseaudio", "backlight"],
+  },
   "group/hardware1": {
     "orientation": "vertical",
-    "modules": ["temperature", "custom/gpu-nvidia"]
+    "modules": ["battery", "temperature"],
   },
   "group/hardware2": {
     "orientation": "vertical",
-    "modules": ["cpu", "memory"]
+    "modules": ["cpu", "memory"],
   },
   // ---- Modules configuration ----
   "hyprland/workspaces": {
@@ -45,12 +46,12 @@
     "format-icons": {
       "urgent": "",
       "active": "",
-      "default": ""
-    }
+      "default": "",
+    },
   },
   "hyprland/window": {
     "format": "{}",
-    "separate-outputs": true
+    "separate-outputs": true,
   },
   "custom/arch": {
     "format": "  ",
@@ -62,8 +63,8 @@
       "shutdown": "shutdown now",
       "reboot": "reboot",
       "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate"
-    }
+      "hibernate": "systemctl hibernate",
+    },
   },
   //Death Stranding collor code
   // blood red: #eb264d
@@ -75,7 +76,7 @@
     "states": {
       // "good": 95,
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "󱊢 {icon} {capacity:03d}%",
     "format-full": "󱊣 {icon} {capacity:03d}%",
@@ -100,12 +101,12 @@
       "<span foreground='#FF0000'>███████</span><span foreground='#024c75'>███</span>",
       "<span foreground='#FF0000'>████████</span><span foreground='#024c75'>██</span>",
       "<span foreground='#FF0000'>█████████</span><span foreground='#024c75'>█</span>",
-      "<span foreground='#FF0000'>██████████</span><span foreground='#024c75'></span>"
-    ]
+      "<span foreground='#FF0000'>██████████</span><span foreground='#024c75'></span>",
+    ],
   },
   "temperature": {
     // "thermal-zone": 2,
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C {icon}",
     "format": " {icon} {temperatureC:03d}°",
@@ -115,18 +116,18 @@
     //     ""
     // ]
     "format-icons": [
-      "<span foreground='#FF0000'></span><span foreground='#024c75'>██████████</span>",
-      "<span foreground='#FF0000'>█</span><span foreground='#024c75'>█████████</span>",
-      "<span foreground='#FF0000'>██</span><span foreground='#024c75'>████████</span>",
-      "<span foreground='#FF0000'>███</span><span foreground='#024c75'>███████</span>",
-      "<span foreground='#FF0000'>████</span><span foreground='#024c75'>██████</span>",
-      "<span foreground='#FF0000'>█████</span><span foreground='#024c75'>█████</span>",
-      "<span foreground='#FF0000'>██████</span><span foreground='#024c75'>████</span>",
-      "<span foreground='#FF0000'>███████</span><span foreground='#024c75'>███</span>",
-      "<span foreground='#FF0000'>████████</span><span foreground='#024c75'>██</span>",
-      "<span foreground='#FF0000'>█████████</span><span foreground='#024c75'>█</span>",
-      "<span foreground='#FF0000'>██████████</span><span foreground='#024c75'></span>"
-    ]
+      "<span foreground='#0182c5'></span><span foreground='#024c75'>██████████</span>",
+      "<span foreground='#0182c5'>█</span><span foreground='#024c75'>█████████</span>",
+      "<span foreground='#0182c5'>██</span><span foreground='#024c75'>████████</span>",
+      "<span foreground='#0182c5'>███</span><span foreground='#024c75'>███████</span>",
+      "<span foreground='#0182c5'>████</span><span foreground='#024c75'>██████</span>",
+      "<span foreground='#0182c5'>█████</span><span foreground='#024c75'>█████</span>",
+      "<span foreground='#0182c5'>██████</span><span foreground='#024c75'>████</span>",
+      "<span foreground='#0182c5'>███████</span><span foreground='#024c75'>███</span>",
+      "<span foreground='#0182c5'>████████</span><span foreground='#024c75'>██</span>",
+      "<span foreground='#0182c5'>█████████</span><span foreground='#024c75'>█</span>",
+      "<span foreground='#0182c5'>██████████</span><span foreground='#024c75'></span>",
+    ],
   },
   "cpu": {
     "interval": 1,
@@ -142,8 +143,8 @@
       "<span foreground='#e0a33e'>███</span><span foreground='#024c75'>███████</span>",
       "<span foreground='#e0a33e'>██</span><span foreground='#024c75'>████████</span>",
       "<span foreground='#e0a33e'>█</span><span foreground='#024c75'>█████████</span>",
-      "<span foreground='#e0a33e'></span><span foreground='#024c75'>██████████</span>"
-    ]
+      "<span foreground='#e0a33e'></span><span foreground='#024c75'>██████████</span>",
+    ],
   },
   "memory": {
     "interval": 1,
@@ -159,12 +160,12 @@
       "<span foreground='#00b3c5'>███</span><span foreground='#024c75'>███████</span>",
       "<span foreground='#00b3c5'>██</span><span foreground='#024c75'>████████</span>",
       "<span foreground='#00b3c5'>█</span><span foreground='#024c75'>█████████</span>",
-      "<span foreground='#00b3c5'></span><span foreground='#024c75'>██████████</span>"
-    ]
+      "<span foreground='#00b3c5'></span><span foreground='#024c75'>██████████</span>",
+    ],
   },
   "tray": {
     //"icon-size": 10,
-    "spacing": 10
+    "spacing": 10,
   },
   "clock": {
     // "timezone": "America/New_York",
@@ -181,14 +182,14 @@
         "days": "<span color='#ecc6d9'><b>{}</b></span>",
         "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
-    }
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
+    },
   },
   "backlight": {
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
   "power-profiles-daemon": {
     "format": "{icon} ",
@@ -198,8 +199,8 @@
       "default": "",
       "performance": "",
       "balanced": "",
-      "power-saver": ""
-    }
+      "power-saver": "",
+    },
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -208,7 +209,7 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -225,9 +226,9 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": ["", "", ""],
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
   "custom/power": {
     "format": "⏻ ",
@@ -239,26 +240,15 @@
       "shutdown": "shutdown now",
       "reboot": "reboot",
       "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate"
-    }
+      "hibernate": "systemctl hibernate",
+    },
   },
-  "custom/gpu-nvidia": {
-    "exec": "$HOME/.config/waybar/scripts/gpu-nvidia.sh",
-    "interval": 5,
-    "return-type": "json",
-    "format": "󰾲 {icon} {percentage:03d}°",
-    "format-icons": [
-      "<span foreground='#0182c5'></span><span foreground='#024c75'>██████████</span>",
-      "<span foreground='#0182c5'>█</span><span foreground='#024c75'>█████████</span>",
-      "<span foreground='#0182c5'>██</span><span foreground='#024c75'>████████</span>",
-      "<span foreground='#0182c5'>███</span><span foreground='#024c75'>███████</span>",
-      "<span foreground='#0182c5'>████</span><span foreground='#024c75'>██████</span>",
-      "<span foreground='#0182c5'>█████</span><span foreground='#024c75'>█████</span>",
-      "<span foreground='#0182c5'>██████</span><span foreground='#024c75'>████</span>",
-      "<span foreground='#0182c5'>███████</span><span foreground='#024c75'>███</span>",
-      "<span foreground='#0182c5'>████████</span><span foreground='#024c75'>██</span>",
-      "<span foreground='#0182c5'>█████████</span><span foreground='#024c75'>█</span>",
-      "<span foreground='#0182c5'>██████████</span><span foreground='#024c75'></span>"
-    ]
-  }
+  // "custom/codexbar": {
+  //     "exec": "codexbar --icon '🤖'",
+  //     // => 🤖 42% · 1h 30m
+  //     "return-type": "json",
+  //     "interval": 60,
+  //     "tooltip": true,
+  //     "on-click": "xdg-open https://chatgpt.com/codex/settings/usage",
+  // },
 }

@@ -13,7 +13,7 @@
       "models": [
         {
           "id": "GLM-5.3-Flash",
-          "name": "GLM-5.3-Flash-EXL3",
+          "name": "GLM-5.3-Flash",
           "reasoning": true,
           "input": ["text", "image"],
           "contextWindow": 1048576,

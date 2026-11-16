@@ -15,7 +15,8 @@
     "npm:pi-tool-display",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-tps-meter",
-    "git:github.com/G36maid/pi-interactive-subagents"
+    "git:github.com/G36maid/pi-interactive-subagents",
+    "git:github.com/G36maid/pi-nested-agents-md"
   ],
   "lastChangelogVersion": "1.5.0",
   "hideThinkingBlock": false,

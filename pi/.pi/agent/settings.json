@@ -16,7 +16,8 @@
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-tps-meter",
     "git:github.com/G36maid/pi-interactive-subagents",
-    "git:github.com/G36maid/pi-nested-agents-md"
+    "git:github.com/G36maid/pi-nested-agents-md",
+    "git:github.com/G36maid/pi-unhappy-index"
   ],
   "lastChangelogVersion": "1.5.2",
   "hideThinkingBlock": false,

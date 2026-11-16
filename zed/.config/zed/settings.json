@@ -45,7 +45,9 @@
   },
   "diff_view_style": "unified",
   "agent": {
-    "sidebar_side": "right",
+    "threads_sidebar": {
+      "position": "right"
+    },
     "dock": "right",
     "inline_assistant_model": {
       "provider": "Z.ai",

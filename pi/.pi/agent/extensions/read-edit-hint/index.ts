@@ -12,7 +12,8 @@
  * What it does. When a bash command involves `cat` or `python`, prepend one
  * fixed line to the tool result so the model sees it:
  *
- *   hint: If you are reading, must use the `read` tool. If you are editing, must use the `edit` tool.
+ *   read-edit-hint: Do not read or edit files with `cat` or `python`.
+ *   Use the `read` tool to read and the `edit` tool to edit.
  *
  * Design decisions (deliberate, not lazy):
  *
@@ -24,9 +25,11 @@
  *     piped reads (`cat f | wc -l`), remote ssh, and /tmp scratch writes are
  *     also nudged here — the message is conditional, so a nudge on a
  *     non-violation is one wasted line, not wrong guidance.
- *   - Conditional message. The model knows its own intent, so the line routes
- *     itself ("if you are reading … if you are editing …") instead of the
- *     extension guessing. Wording is the owner's, kept verbatim.
+ *   - Direct rule, self-routed tools. The line states the rule outright
+ *     ("do not read or edit files with `cat` or `python`") instead of a
+ *     conditional, but routing is still the model's: it knows whether it is
+ *     reading or editing and picks `read` or `edit` accordingly. Wording
+ *     chosen with the owner.
  *   - Warn-only. The command always runs and its output is preserved after
  *     the reminder; the extension never blocks or rewrites.
  *
@@ -41,9 +44,9 @@ import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 /** Bash commands mentioning either word get the reminder. `python3?` covers `python`, `python3`, `python3.x`; `\b` keeps `concat`/`category` out. */
 const TRIGGER = /\bcat\b|\bpython3?\b/;
 
-/** The reminder. Wording is the owner's; conditional so the model self-routes. */
+/** The reminder. States the rule directly; the model still picks read vs edit by intent. */
 const MESSAGE =
-	"hint: If you are reading, must use the `read` tool. If you are editing, must use the `edit` tool.";
+	"read-edit-hint: Do not read or edit files with `cat` or `python`. Use the `read` tool to read and the `edit` tool to edit.";
 
 /** Exported for tests: does this tool input deserve the reminder? */
 export function shouldHint(command: unknown): boolean {

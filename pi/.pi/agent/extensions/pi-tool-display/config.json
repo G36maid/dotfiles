@@ -1,0 +1,5 @@
+{
+  "registerToolOverrides": {
+    "ls": false
+  }
+}

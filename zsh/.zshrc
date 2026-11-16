@@ -68,3 +68,6 @@ export PATH="/home/g36maid/.bun/bin:$PATH"
 
 # Added by Antigravity CLI installer
 export PATH="/home/g36maid/.local/bin:$PATH"
+
+# fnm: activate + auto-switch on cd (reads devEngines/.node-version via resolve-engines)
+eval "$(fnm env --use-on-cd --shell zsh)"

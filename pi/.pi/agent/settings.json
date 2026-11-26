@@ -1,7 +1,7 @@
 {
   "theme": "dark",
-  "defaultProvider": "zai",
-  "defaultModel": "glm-5.3-flash",
+  "defaultProvider": "magpie",
+  "defaultModel": "group/glm-5.3-flash-fast",
   "defaultTools": [
     "read",
     "bash",
@@ -19,11 +19,15 @@
     "git:github.com/G36maid/pi-nested-agents-md",
     "git:github.com/G36maid/pi-unhappy-index"
   ],
-  "lastChangelogVersion": "1.5.0",
-  "hideThinkingBlock": false,
+  "lastChangelogVersion": "1.5.2",
+  "hideThinkingBlock": true,
   "extensionChangelogVersions": {
-    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.46.0",
-    "{\"source\":\"npm:pi-tool-display\",\"scope\":\"user\"}": "0.5.0"
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.48.0",
+    "{\"source\":\"npm:pi-tool-display\",\"scope\":\"user\"}": "0.5.0",
+    "{\"source\":\"git:github.com/G36maid/pi-unhappy-index\",\"scope\":\"user\"}": "0.3.0"
   },
-  "deviceId": "417c3fb5-0b6f-4e36-add0-d41dc768f50d"
+  "deviceId": "417c3fb5-0b6f-4e36-add0-d41dc768f50d",
+  "markdown": {
+    "mermaid": "streaming"
+  }
 }

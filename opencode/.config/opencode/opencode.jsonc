@@ -1,19 +1,26 @@
 {
-  "plugin": [
+  "plugins": [
     "opencode-mermaid-renderer@latest",
-    "@azumag/opencode-rate-limit-fallback",
     "opencode-todo-enforcer",
     "opencode-tps-meter"
   ],
   "$schema": "https://opencode.ai/config.json",
-  "model": "zai-coding-plan/glm-5.3-flash",
-  "permission": {
-    "read": "allow",
-    "write": "allow",
-    "edit": "allow",
-    "bash": "allow"
-  },
+  "model": "magpie/group/glm-5.3-flash-fast",
+  "permissions": [
+    { "action": "*", "resource": "*", "effect": "allow" }
+  ],
   "providers": {
+    "magpie": {
+      "compatibility": {
+        "supportsPromptCacheKey": true
+      },
+      "name": "magpie",
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
+        "apiKey": "magpie",
+        "baseURL": "http://127.0.0.1:3425/v1"
+      }
+    },
     "dgx-spark-x2": {
       "package": "aisdk:@ai-sdk/openai-compatible",
       "name": "GLM-5.3-Flash",
@@ -41,22 +48,24 @@
   },
   // "lsp": {},
   "mcp": {
-    "deepwiki": { "type": "remote", "url": "https://mcp.deepwiki.com/mcp" },
-    "context7": { "type": "remote", "url": "https://mcp.context7.com/mcp" },
-    "grep-app": { "type": "remote", "url": "https://mcp.grep.app" },
-    "websearch": {
-      "type": "remote",
-      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa"
-    },
-    "ghidra": {
-      "type": "local",
-      "enabled": false,
-      "command": [
-        "uv",
-        "run",
-        "--script",
-        "/home/g36maid/Code/AI/ghidra-mcp/bridge_mcp_ghidra.py"
-      ]
+    "servers": {
+      "deepwiki": { "type": "remote", "url": "https://mcp.deepwiki.com/mcp" },
+      "context7": { "type": "remote", "url": "https://mcp.context7.com/mcp" },
+      "grep-app": { "type": "remote", "url": "https://mcp.grep.app" },
+      "websearch": {
+        "type": "remote",
+        "url": "https://mcp.exa.ai/mcp?tools=web_search_exa"
+      },
+      "ghidra": {
+        "type": "local",
+        "disabled": true,
+        "command": [
+          "uv",
+          "run",
+          "--script",
+          "/home/g36maid/Code/AI/ghidra-mcp/bridge_mcp_ghidra.py"
+        ]
+      }
     }
   }
 }

@@ -63,9 +63,8 @@
     },
     "dock": "right",
     "inline_assistant_model": {
-      "provider": "Z.ai",
-      "model": "glm-5.3-flash",
-      "enable_thinking": false
+      "provider": "magpie",
+      "model": "group/glm"
     },
     "default_profile": "write",
     "tool_permissions": {

@@ -2,7 +2,7 @@
 name: explore
 description: Fast codebase recon — explores files, finds patterns, maps architecture
 tools: read, grep, find, ls, safe_bash
-model: magpie/auto/glm-5.3-flash
+model: magpie/group/cheap
 thinking: low
 system-prompt: append
 auto-exit: true

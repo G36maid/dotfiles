@@ -9,84 +9,6 @@
       },
       "models": [
         {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.03436,
-            "cacheWrite": 0,
-            "input": 0.11952,
-            "output": 0.41831
-          },
-          "id": "group/glm",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 131072,
-          "name": "glm · routing group",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 200000,
-          "id": "auto/glm-5-turbo",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 131072,
-          "name": "GLM-5-Turbo · routing group",
-          "promptCache": {
-            "short": 300
-          },
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": null,
-            "max": null,
-            "medium": null,
-            "minimal": null,
-            "off": "none",
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1000000,
-          "cost": {
-            "cacheRead": 0.29879,
-            "cacheWrite": 0,
-            "input": 1.19516,
-            "output": 4.18306
-          },
-          "id": "auto/glm-5.2",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 131072,
-          "name": "GLM-5.2 · routing group",
-          "promptCache": {
-            "short": 300
-          },
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": null,
-            "max": "max",
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
           "contextWindow": 1000000,
           "cost": {
             "cacheRead": 0.29879,
@@ -160,6 +82,58 @@
           "thinkingLevelMap": {
             "high": "high",
             "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 200000,
+          "id": "auto/glm-5-turbo",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5-Turbo · routing group",
+          "promptCache": {
+            "short": 300
+          },
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": "none",
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1000000,
+          "cost": {
+            "cacheRead": 0.29879,
+            "cacheWrite": 0,
+            "input": 1.19516,
+            "output": 4.18306
+          },
+          "id": "auto/glm-5.2",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.2 · routing group",
+          "promptCache": {
+            "short": 300
+          },
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
             "max": "max",
             "medium": null,
             "minimal": null,

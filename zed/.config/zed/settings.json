@@ -33,7 +33,8 @@
   "agent_servers": {
     "antigravity-acp": {
       "default_config_options": {
-        "model": "gemini-4-neon"
+        "model": "gemini-4-neon",
+        "mode": "yolo"
       },
       "type": "registry"
     },
@@ -50,17 +51,21 @@
       "type": "registry"
     },
     "codex-acp": {
+      "default_config_options": {
+        "model": "gpt-6.2-sol"
+      },
       "type": "registry"
     }
   },
   "diff_view_style": "unified",
   "agent": {
-    "sidebar_side": "right",
+    "threads_sidebar": {
+      "position": "right"
+    },
     "dock": "right",
     "inline_assistant_model": {
-      "provider": "Z.ai",
-      "model": "glm-5.3-flash",
-      "enable_thinking": false
+      "provider": "magpie",
+      "model": "group/glm-5.3-flash-fast"
     },
     "default_profile": "write",
     "tool_permissions": {

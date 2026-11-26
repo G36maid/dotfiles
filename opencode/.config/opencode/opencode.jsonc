@@ -6,7 +6,7 @@
     "opencode-tps-meter"
   ],
   "$schema": "https://opencode.ai/config.json",
-  "model": "zai-coding-plan/glm-5.3-flash",
+  "model": "magpie/group/glm",
   "permission": {
     "read": "allow",
     "write": "allow",
@@ -14,6 +14,17 @@
     "bash": "allow"
   },
   "providers": {
+    "magpie": {
+      "compatibility": {
+        "supportsPromptCacheKey": true
+      },
+      "name": "magpie",
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
+        "apiKey": "magpie",
+        "baseURL": "http://127.0.0.1:3425/v1"
+      }
+    },
     "dgx-spark-x2": {
       "package": "aisdk:@ai-sdk/openai-compatible",
       "name": "GLM-5.3-Flash",

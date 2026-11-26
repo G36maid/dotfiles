@@ -116,9 +116,8 @@
       }
     },
     "default_model": {
-      "provider": "Z.ai",
-      "model": "glm-5.3-flash",
-      "enable_thinking": false
+      "model": "group/glm",
+      "provider": "magpie"
     },
     "favorite_models": [
       {
@@ -187,6 +186,1422 @@
   "vim_mode": false,
   "language_models": {
     "openai_compatible": {
+      "magpie": {
+        "api_url": "http://127.0.0.1:3425/v1",
+        "available_models": [
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "glm · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "group/glm",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5-Turbo · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 331072,
+            "name": "auto/glm-5-turbo",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.2 · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "auto/glm-5.2",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3 · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "auto/glm-5.3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-Flash · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "auto/glm-5.3-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.4 · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "auto/glm-5.4",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-5.6 Luna · routing group",
+            "max_output_tokens": 128000,
+            "max_tokens": 1050000,
+            "name": "auto/gpt-5.6-luna",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6 Luna · routing group",
+            "max_output_tokens": 128000,
+            "max_tokens": 1050000,
+            "name": "auto/gpt-6-luna",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Haiku 5.5 · routing group",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "auto/claude-haiku-5-5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Kimi K3 · routing group",
+            "max_output_tokens": 1048576,
+            "max_tokens": 2097152,
+            "name": "auto/kimi-k3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6.1 Sol · routing group",
+            "max_output_tokens": 128000,
+            "max_tokens": 628000,
+            "name": "auto/gpt-6.1-sol",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6 Astra · routing group",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "auto/gpt-6-astra",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6 Sol · routing group",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "auto/gpt-6-sol",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-5.6 Sol · routing group",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "auto/gpt-5.6-sol",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 3.8 Flash · routing group",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "auto/gemini-3.8-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-4.5 · Z.ai",
+            "max_output_tokens": 98304,
+            "max_tokens": 229376,
+            "name": "zai/glm-4.5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-4.5-Air · Z.ai",
+            "max_output_tokens": 98304,
+            "max_tokens": 229376,
+            "name": "zai/glm-4.5-air",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-4.6 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 335872,
+            "name": "zai/glm-4.6",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-4.7 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 335872,
+            "name": "zai/glm-4.7",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 335872,
+            "name": "zai/glm-5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5-Turbo · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 331072,
+            "name": "zai/glm-5-turbo",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.1 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 331072,
+            "name": "zai/glm-5.1",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.2 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.2",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-Flash · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.3-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-FlashX · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.3-flashx",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-FlashX-Legal · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.3-flashx-legal",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.4 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.4",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "DeepSeek V4.1 Flash 1017 · OpenCode Go",
+            "max_output_tokens": 384000,
+            "max_tokens": 1384000,
+            "name": "opencode-go/deepseek-v4.1-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "DeepSeek V4 Pro · OpenCode Go",
+            "max_output_tokens": 384000,
+            "max_tokens": 1384000,
+            "name": "opencode-go/deepseek-v4-pro",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3 · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "opencode-go/glm-5.3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Grok 4.7 · OpenCode Go",
+            "max_output_tokens": 500000,
+            "max_tokens": 1000000,
+            "name": "opencode-go/grok-4.7",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Muse Spark 1.2 Contributor · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "opencode-go/muse-spark-1.2-contributor",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Muse Spark 1.3 Contributor · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "opencode-go/muse-spark-1.3-contributor",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-Flash · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "opencode-go/glm-5.3-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-5.6 Luna · OpenCode Go",
+            "max_output_tokens": 128000,
+            "max_tokens": 1050000,
+            "name": "opencode-go/gpt-5.6-luna",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6 Luna · OpenCode Go",
+            "max_output_tokens": 128000,
+            "max_tokens": 1050000,
+            "name": "opencode-go/gpt-6-luna",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Haiku 5.5 · OpenCode Go",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "opencode-go/claude-haiku-5-5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Hy3 · OpenCode Go",
+            "max_output_tokens": 128000,
+            "max_tokens": 320000,
+            "name": "opencode-go/hy3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Hy4 preview · OpenCode Go",
+            "max_output_tokens": 65536,
+            "max_tokens": 1048576,
+            "name": "opencode-go/hy4-preview",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Kimi K2.7 Code · OpenCode Go",
+            "max_output_tokens": 262144,
+            "max_tokens": 524288,
+            "name": "opencode-go/kimi-k2.7-code",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Kimi K3 · OpenCode Go",
+            "max_output_tokens": 1048576,
+            "max_tokens": 2097152,
+            "name": "opencode-go/kimi-k3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "MiMo-V2.6-Flash · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "opencode-go/mimo-v2.6-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "MiMo-V2.6-Pro · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "opencode-go/mimo-v2.6-pro",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "MiniMax-M3 · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "opencode-go/minimax-m3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "MiniMax M3.1 Flash · OpenCode Go",
+            "max_output_tokens": 512000,
+            "max_tokens": 1512000,
+            "name": "opencode-go/minimax-m3.1-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Step 5 Preview · OpenCode Go",
+            "max_output_tokens": 65536,
+            "max_tokens": 1065536,
+            "name": "opencode-go/step-5-preview",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Beam Free · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "opencode-go/beam-free",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Qwen3.8 Max · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "opencode-go/qwen3.8-max",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Qwen3.8 Flash · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "opencode-go/qwen3.8-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Qwen3.7 Plus · OpenCode Go",
+            "max_output_tokens": 65536,
+            "max_tokens": 1065536,
+            "name": "opencode-go/qwen3.7-plus",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Kimi K3.1 Pro · OpenCode Go",
+            "max_output_tokens": 1048576,
+            "max_tokens": 2097152,
+            "name": "opencode-go/kimi-k3.1-pro",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-Flash · spark-x2",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "spark-x2/GLM-5.3-Flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6.2-Sol · Codex",
+            "max_output_tokens": 128000,
+            "max_tokens": 628000,
+            "name": "codex/gpt-6.2-sol",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6.2-Astra · Codex",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "codex/gpt-6.2-astra",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6.1-Sol · Codex",
+            "max_output_tokens": 128000,
+            "max_tokens": 628000,
+            "name": "codex/gpt-6.1-sol",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6.1 Terra · Codex",
+            "max_output_tokens": 128000,
+            "max_tokens": 628000,
+            "name": "codex/gpt-6.1-terra",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6-Astra · Codex",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "codex/gpt-6-astra",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6-Sol · Codex",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "codex/gpt-6-sol",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6-Luna · Codex",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "codex/gpt-6-luna",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-5.6-Sol · Codex",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "codex/gpt-5.6-sol",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-5.6-Terra · Codex",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "codex/gpt-5.6-terra",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-5.6-Luna · Codex",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "codex/gpt-5.6-luna",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Fable 5.1 · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 1064000,
+            "name": "copilot/claude-fable-5.1",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Fable 5.2 · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "copilot/claude-fable-5.2",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Fable 5 · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 1064000,
+            "name": "copilot/claude-fable-5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Haiku 5.5 · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 228000,
+            "name": "copilot/claude-haiku-5.5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Opus 4.8 (fast mode) · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 1064000,
+            "name": "copilot/claude-opus-4.8-fast",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Opus 5.5 · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "copilot/claude-opus-5.5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Opus 5 · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 1064000,
+            "name": "copilot/claude-opus-5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Sonnet 5.5 · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 1064000,
+            "name": "copilot/claude-sonnet-5.5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Sonnet 5 · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 1064000,
+            "name": "copilot/claude-sonnet-5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 3.8 Flash · Copilot",
+            "max_output_tokens": 65536,
+            "max_tokens": 1048576,
+            "name": "copilot/gemini-3.8-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 4 Argon · Copilot",
+            "max_output_tokens": 65536,
+            "max_tokens": 1048576,
+            "name": "copilot/gemini-4-argon",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-5.6 Luna · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 328000,
+            "name": "copilot/gpt-5.6-luna",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-5.6 Sol · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "copilot/gpt-5.6-sol",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6.1 Sol · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "copilot/gpt-6.1-sol",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6 Astra · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "copilot/gpt-6-astra",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6 Luna · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "copilot/gpt-6-luna",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6 Sol · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 400000,
+            "name": "copilot/gpt-6-sol",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Kimi K3 · Copilot",
+            "max_output_tokens": 1048576,
+            "max_tokens": 1966080,
+            "name": "copilot/kimi-k3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "MAI-Code-1.1-Flash · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 256000,
+            "name": "copilot/mai-code-1.1-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "MAI Code 2 Flash · Copilot",
+            "max_output_tokens": 128000,
+            "max_tokens": 1050000,
+            "name": "copilot/mai-code-2-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Haiku 4.5 · Copilot",
+            "max_output_tokens": 64000,
+            "max_tokens": 192000,
+            "name": "copilot/claude-haiku-4.5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-4.1 · Copilot",
+            "max_output_tokens": 32768,
+            "max_tokens": 160768,
+            "name": "copilot/gpt-4.1"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Auto · Copilot",
+            "max_tokens": 128000,
+            "name": "copilot/auto"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.4 · ZCode",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "zcode/GLM-5.4",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3 · ZCode",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "zcode/GLM-5.3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-Flash · ZCode",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "zcode/GLM-5.3-Flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.2 · ZCode",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "zcode/GLM-5.2",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5-Turbo · ZCode",
+            "max_output_tokens": 64000,
+            "max_tokens": 264000,
+            "name": "zcode/GLM-5-Turbo",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 3.1 Pro Preview · Gemini CLI",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "gemini/gemini-3.1-pro-preview",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 3 Pro Preview · Gemini CLI",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "gemini/gemini-3-pro-preview",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 3 Flash Preview · Gemini CLI",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "gemini/gemini-3-flash-preview",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 3.8 Flash · Gemini CLI",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "gemini/gemini-3.8-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 3.5 Flash · Gemini CLI",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "gemini/gemini-3.5-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 3.5 Flash Lite · Gemini CLI",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "gemini/gemini-3.5-flash-lite",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 3.1 Flash Lite · Gemini CLI",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "gemini/gemini-3.1-flash-lite",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 2.5 Pro · Gemini CLI",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "gemini/gemini-2.5-pro",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 2.5 Flash · Gemini CLI",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "gemini/gemini-2.5-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Gemini 2.5 Flash Lite · Gemini CLI",
+            "max_output_tokens": 65536,
+            "max_tokens": 1114112,
+            "name": "gemini/gemini-2.5-flash-lite",
+            "reasoning_effort": "high"
+          }
+        ]
+      },
       "Z.ai": {
         "api_url": "https://api.z.ai/api/coding/paas/v4",
         "available_models": [

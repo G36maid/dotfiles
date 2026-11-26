@@ -58,7 +58,7 @@
       },
       "ghidra": {
         "type": "local",
-        "enabled": false,
+        "disabled": true,
         "command": [
           "uv",
           "run",

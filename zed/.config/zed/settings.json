@@ -1898,9 +1898,18 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/g36maid/docker"
-          ]
+          "paths": ["/home/g36maid/docker"]
+        }
+      ]
+    },
+    {
+      "host": "localhost",
+      "username": "g36maid",
+      "port": 22220,
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/g36maid/zed"]
         }
       ]
     },
@@ -1909,24 +1918,28 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/g36maid/.config/opencode"
-          ]
+          "paths": ["/home/g36maid/.config/opencode"]
         },
         {
-          "paths": [
-            "/home/g36maid/Code/AI/gemini-to-obsidian"
-          ]
+          "paths": ["/home/g36maid/Code/AI/gemini-to-obsidian"]
         },
         {
-          "paths": [
-            "/home/g36maid/Code/rust/zed"
-          ]
+          "paths": ["/home/g36maid/Code/rust/zed"]
         },
         {
-          "paths": [
-            "/home/g36maid/Documents/2026_master"
-          ]
+          "paths": ["/home/g36maid/Documents/2026_master"]
+        }
+      ]
+    },
+    {
+      "host": "10.10.101.40",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/g36maid/.hermes"]
+        },
+        {
+          "paths": ["/home/g36maid/Code/AI/gemini-takeout/./"]
         }
       ]
     },
@@ -1936,14 +1949,22 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/g36maid/Code/GLM-5.3-Flash-EXL3-2x-DGX-Sparks"
-          ]
+          "paths": ["/home/g36maid/Code/GLM-5.3-Flash-EXL3-2x-DGX-Sparks"]
         }
       ]
     },
     {
+      "host": "10.10.101.40",
+      "args": [],
+      "projects": []
+    },
+    {
       "host": "spark-3343.local",
+      "args": [],
+      "projects": []
+    },
+    {
+      "host": "10.10.101.40",
       "args": [],
       "projects": []
     }
@@ -1976,11 +1997,12 @@
     "light": "Catppuccin Mocha",
     "dark": "Catppuccin Mocha"
   },
+  "icon_theme": "Catppuccin Macchiato",
   "base_keymap": "VSCode",
-  "ui_font_size": 18,
-  "buffer_font_size": 18.0,
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Tokyo Night Storm",
     "dark": "Catppuccin Macchiato"
   }

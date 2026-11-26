@@ -115,7 +115,7 @@
       }
     },
     "default_model": {
-      "model": "group/glm",
+      "model": "auto/glm-5.3-flash",
       "provider": "magpie"
     },
     "favorite_models": [
@@ -196,48 +196,6 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "glm · routing group",
-            "max_output_tokens": 131072,
-            "max_tokens": 1179648,
-            "name": "group/glm",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5-Turbo · routing group",
-            "max_output_tokens": 131072,
-            "max_tokens": 331072,
-            "name": "auto/glm-5-turbo",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.2 · routing group",
-            "max_output_tokens": 131072,
-            "max_tokens": 1131072,
-            "name": "auto/glm-5.2",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
             "display_name": "GLM-5.3 · routing group",
             "max_output_tokens": 131072,
             "max_tokens": 1131072,
@@ -270,6 +228,34 @@
             "max_output_tokens": 131072,
             "max_tokens": 1131072,
             "name": "auto/glm-5.4",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5-Turbo · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 331072,
+            "name": "auto/glm-5-turbo",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.2 · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "auto/glm-5.2",
             "reasoning_effort": "high"
           },
           {

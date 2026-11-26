@@ -30,6 +30,16 @@
     "dock": "left"
   },
   "agent_servers": {
+    "pi-acp": {
+      "type": "registry"
+    },
+    "antigravity-acp": {
+      "default_config_options": {
+        "model": "gemini-4-neon",
+        "mode": "yolo"
+      },
+      "type": "registry"
+    },
     "opencode": {
       "default_config_options": {
         "model": "opencode/glm-5.2"
@@ -40,6 +50,9 @@
       "type": "registry"
     },
     "codex-acp": {
+      "default_config_options": {
+        "model": "gpt-6.2-sol"
+      },
       "type": "registry"
     }
   },

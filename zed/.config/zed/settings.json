@@ -30,6 +30,16 @@
     "dock": "left"
   },
   "agent_servers": {
+    "pi-acp": {
+      "type": "registry"
+    },
+    "antigravity-acp": {
+      "default_config_options": {
+        "model": "gemini-4-neon",
+        "mode": "yolo"
+      },
+      "type": "registry"
+    },
     "opencode": {
       "default_config_options": {
         "model": "opencode/glm-5.2"
@@ -40,12 +50,17 @@
       "type": "registry"
     },
     "codex-acp": {
+      "default_config_options": {
+        "model": "gpt-6.2-sol"
+      },
       "type": "registry"
     }
   },
   "diff_view_style": "unified",
   "agent": {
-    "sidebar_side": "right",
+    "threads_sidebar": {
+      "position": "right"
+    },
     "dock": "right",
     "inline_assistant_model": {
       "provider": "Z.ai",
@@ -376,12 +391,11 @@
     "light": "Catppuccin Mocha",
     "dark": "Catppuccin Mocha"
   },
-  "icon_theme": "Catppuccin Macchiato",
   "base_keymap": "VSCode",
-  "ui_font_size": 14,
-  "buffer_font_size": 14,
+  "ui_font_size": 18,
+  "buffer_font_size": 18.0,
   "theme": {
-    "mode": "dark",
+    "mode": "light",
     "light": "Tokyo Night Storm",
     "dark": "Catppuccin Macchiato"
   }

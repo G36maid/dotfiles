@@ -26,5 +26,8 @@
     "{\"source\":\"npm:pi-tool-display\",\"scope\":\"user\"}": "0.5.0",
     "{\"source\":\"git:github.com/G36maid/pi-unhappy-index\",\"scope\":\"user\"}": "0.3.0"
   },
-  "deviceId": "417c3fb5-0b6f-4e36-add0-d41dc768f50d"
+  "deviceId": "417c3fb5-0b6f-4e36-add0-d41dc768f50d",
+  "markdown": {
+    "mermaid": "streaming"
+  }
 }

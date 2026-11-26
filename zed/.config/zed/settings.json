@@ -64,7 +64,7 @@
     "dock": "right",
     "inline_assistant_model": {
       "provider": "magpie",
-      "model": "group/glm"
+      "model": "group/glm-5.3-flash-fast"
     },
     "default_profile": "write",
     "tool_permissions": {
@@ -115,7 +115,7 @@
       }
     },
     "default_model": {
-      "model": "group/fast",
+      "model": "group/glm-5.3-flash-fast",
       "provider": "magpie"
     },
     "favorite_models": [
@@ -200,6 +200,34 @@
             "max_output_tokens": 131072,
             "max_tokens": 1179648,
             "name": "auto/glm-5.3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-flash fast · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "group/glm-5.3-flash-fast",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-flash value · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "group/glm-5.3-flash-value",
             "reasoning_effort": "high"
           },
           {
@@ -382,34 +410,6 @@
             "max_output_tokens": 65536,
             "max_tokens": 1048576,
             "name": "auto/gemini-3.8-flash",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Fast · routing group",
-            "max_output_tokens": 131072,
-            "max_tokens": 1179648,
-            "name": "group/fast",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Cheap · routing group",
-            "max_output_tokens": 131072,
-            "max_tokens": 1179648,
-            "name": "group/cheap",
             "reasoning_effort": "high"
           },
           {

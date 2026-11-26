@@ -3,7 +3,7 @@ name: worker
 description: General-purpose worker — reads, writes, and edits code
 tools: read, write, edit, bash, web_search, fetch_content, codemode, tool_search
 subagent_agents: explore, librarian
-model: magpie/group/cheap
+model: magpie/group/glm-5.3-flash-value
 thinking: high
 system-prompt: append
 auto-exit: true

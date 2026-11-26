@@ -5,7 +5,7 @@
     "opencode-tps-meter"
   ],
   "$schema": "https://opencode.ai/config.json",
-  "model": "magpie/group/fast",
+  "model": "magpie/group/glm-5.3-flash-fast",
   "permissions": [
     { "action": "*", "resource": "*", "effect": "allow" }
   ],

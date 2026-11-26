@@ -1,7 +1,7 @@
 {
   "theme": "dark",
   "defaultProvider": "magpie",
-  "defaultModel": "group/fast",
+  "defaultModel": "group/glm-5.3-flash-fast",
   "defaultTools": [
     "read",
     "bash",

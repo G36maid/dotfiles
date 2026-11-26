@@ -40,10 +40,68 @@
         {
           "contextWindow": 1048576,
           "cost": {
+            "cacheRead": 0.03436,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.41831
+          },
+          "id": "group/glm-5.3-flash-fast",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3-flash fast · routing group",
+          "promptCache": {
+            "short": 300
+          },
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
             "cacheRead": 0,
             "cacheWrite": 0,
             "input": 0,
             "output": 0
+          },
+          "id": "group/glm-5.3-flash-value",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3-flash value · routing group",
+          "promptCache": {
+            "short": 300
+          },
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0.03436,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.41831
           },
           "id": "auto/glm-5.3-flash",
           "input": [
@@ -415,64 +473,6 @@
             "low": "low",
             "max": null,
             "medium": "medium",
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.03436,
-            "cacheWrite": 0,
-            "input": 0.11952,
-            "output": 0.41831
-          },
-          "id": "group/fast",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 131072,
-          "name": "Fast · routing group",
-          "promptCache": {
-            "short": 300
-          },
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0,
-            "cacheWrite": 0,
-            "input": 0,
-            "output": 0
-          },
-          "id": "group/cheap",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 131072,
-          "name": "Cheap · routing group",
-          "promptCache": {
-            "short": 300
-          },
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": "max",
-            "medium": null,
             "minimal": null,
             "off": null,
             "xhigh": null

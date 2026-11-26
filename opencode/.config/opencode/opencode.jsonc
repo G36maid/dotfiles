@@ -1,4 +1,15 @@
 {
+  "provider": {
+    "magpie": {
+      "name": "magpie",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "magpie",
+        "baseURL": "http://127.0.0.1:3425/v1",
+        "setCacheKey": true
+      }
+    }
+  },
   "plugin": [
     "opencode-mermaid-renderer@latest",
     "@azumag/opencode-rate-limit-fallback",
@@ -6,7 +17,7 @@
     "opencode-tps-meter"
   ],
   "$schema": "https://opencode.ai/config.json",
-  "model": "zai-coding-plan/glm-5.3-flash",
+  "model": "magpie/group/glm-5.3-flash-fast",
   "permission": {
     "read": "allow",
     "write": "allow",

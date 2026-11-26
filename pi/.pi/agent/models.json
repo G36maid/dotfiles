@@ -9,7 +9,7 @@
       },
       "models": [
         {
-          "contextWindow": 1000000,
+          "contextWindow": 1048576,
           "cost": {
             "cacheRead": 0.29879,
             "cacheWrite": 0,
@@ -40,10 +40,10 @@
         {
           "contextWindow": 1048576,
           "cost": {
-            "cacheRead": 0.03436,
+            "cacheRead": 0,
             "cacheWrite": 0,
-            "input": 0.11952,
-            "output": 0.41831
+            "input": 0,
+            "output": 0
           },
           "id": "auto/glm-5.3-flash",
           "input": [
@@ -113,7 +113,7 @@
           }
         },
         {
-          "contextWindow": 1000000,
+          "contextWindow": 1048576,
           "cost": {
             "cacheRead": 0.29879,
             "cacheWrite": 0,
@@ -395,7 +395,7 @@
           }
         },
         {
-          "contextWindow": 1048576,
+          "contextWindow": 983040,
           "cost": {
             "cacheRead": 0.075,
             "cacheWrite": 0,
@@ -415,6 +415,64 @@
             "low": "low",
             "max": null,
             "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0.03436,
+            "cacheWrite": 0,
+            "input": 0.11952,
+            "output": 0.41831
+          },
+          "id": "group/fast",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "Fast · routing group",
+          "promptCache": {
+            "short": 300
+          },
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "group/cheap",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "Cheap · routing group",
+          "promptCache": {
+            "short": 300
+          },
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
             "minimal": null,
             "off": null,
             "xhigh": null
@@ -1307,10 +1365,10 @@
         {
           "contextWindow": 1048576,
           "cost": {
-            "cacheRead": 0.03436,
+            "cacheRead": 0,
             "cacheWrite": 0,
-            "input": 0.11952,
-            "output": 0.41831
+            "input": 0,
+            "output": 0
           },
           "id": "spark-x2/GLM-5.3-Flash",
           "input": [
@@ -1329,6 +1387,451 @@
             "off": null,
             "xhigh": null
           }
+        },
+        {
+          "contextWindow": 256000,
+          "cost": {
+            "cacheRead": 0.03,
+            "cacheWrite": 0,
+            "input": 0.3,
+            "output": 0.9
+          },
+          "id": "mistral/codestral-2508",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 8192,
+          "name": "Codestral 25.08 · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 256000,
+          "cost": {
+            "cacheRead": 0.03,
+            "cacheWrite": 0,
+            "input": 0.3,
+            "output": 0.9
+          },
+          "id": "mistral/codestral-latest",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 4096,
+          "name": "codestral-2508 · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 256000,
+          "id": "mistral/mistral-code-latest",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 32768,
+          "name": "codestral-2508 · Mistral",
+          "reasoning": false
+        },
+        {
+          "id": "mistral/mistral-code-fim-latest",
+          "input": [
+            "text",
+            "image"
+          ],
+          "name": "codestral-2508 · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0.007,
+            "cacheWrite": 0,
+            "input": 0.3,
+            "output": 1.2
+          },
+          "id": "mistral/deepseek-v4-1-flash-1017",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 128000,
+          "name": "DeepSeek V4.1 Flash 1017 · Mistral",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": "none",
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0.14,
+            "cacheWrite": 0,
+            "input": 1.4,
+            "output": 4.4
+          },
+          "id": "mistral/glm-5-2",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.2 · Mistral",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": "none",
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0.14,
+            "cacheWrite": 0,
+            "input": 1.4,
+            "output": 4.4
+          },
+          "id": "mistral/zai-glm-5-2",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "glm-5-2 · Mistral",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": "none",
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0.14,
+            "cacheWrite": 0,
+            "input": 1.4,
+            "output": 4.4
+          },
+          "id": "mistral/zai-glm-5-3",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3 · Mistral",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 204800,
+          "cost": {
+            "cacheRead": 0.1494,
+            "cacheWrite": 0,
+            "input": 0.59758,
+            "output": 2.68911
+          },
+          "id": "mistral/zai-glm-5",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "zai-glm-5-3 · Mistral",
+          "reasoning": true
+        },
+        {
+          "id": "mistral/zai-glm-latest",
+          "input": [
+            "text",
+            "image"
+          ],
+          "name": "zai-glm-5-3 · Mistral",
+          "reasoning": false
+        },
+        {
+          "id": "mistral/glm-5-latest",
+          "input": [
+            "text",
+            "image"
+          ],
+          "name": "zai-glm-5-3 · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0.03,
+            "cacheWrite": 0,
+            "input": 0.15,
+            "output": 0.5
+          },
+          "id": "mistral/zai-glm-5-3-flash",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "GLM-5.3-Flash · Mistral",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": "max",
+            "medium": null,
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 262144,
+          "cost": {
+            "cacheRead": 0.02,
+            "cacheWrite": 0,
+            "input": 0.2,
+            "output": 0.2
+          },
+          "id": "mistral/ministral-14b-2512",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 262144,
+          "name": "Ministral 3 14B · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 262144,
+          "cost": {
+            "cacheRead": 0.02,
+            "cacheWrite": 0,
+            "input": 0.2,
+            "output": 0.2
+          },
+          "id": "mistral/ministral-14b-latest",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 262144,
+          "name": "ministral-14b-2512 · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 131072,
+          "cost": {
+            "cacheRead": 0.01,
+            "cacheWrite": 0,
+            "input": 0.1,
+            "output": 0.1
+          },
+          "id": "mistral/ministral-3b-2512",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "Ministral 3 3B · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 131072,
+          "cost": {
+            "cacheRead": 0.01,
+            "cacheWrite": 0,
+            "input": 0.1,
+            "output": 0.1
+          },
+          "id": "mistral/ministral-3b-latest",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 131072,
+          "name": "ministral-3b-2512 · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 262144,
+          "cost": {
+            "cacheRead": 0.015,
+            "cacheWrite": 0,
+            "input": 0.15,
+            "output": 0.15
+          },
+          "id": "mistral/ministral-8b-2512",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 262144,
+          "name": "Ministral 3 8B · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 262144,
+          "cost": {
+            "cacheRead": 0.015,
+            "cacheWrite": 0,
+            "input": 0.15,
+            "output": 0.15
+          },
+          "id": "mistral/ministral-8b-latest",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 262144,
+          "name": "ministral-8b-2512 · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 262144,
+          "cost": {
+            "cacheRead": 0.05,
+            "cacheWrite": 0,
+            "input": 0.5,
+            "output": 1.5
+          },
+          "id": "mistral/mistral-large-2512",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 262144,
+          "name": "Mistral Large 3 · Mistral",
+          "reasoning": false
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0.07,
+            "cacheWrite": 0,
+            "input": 0.7,
+            "output": 2.1
+          },
+          "id": "mistral/mistral-large-4",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 262144,
+          "name": "Mistral Large 4 · Mistral",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "id": "mistral/mistral-large-4-0",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 262144,
+          "name": "mistral-large-4 · Mistral",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": "none",
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 1048576,
+          "cost": {
+            "cacheRead": 0.07,
+            "cacheWrite": 0,
+            "input": 0.7,
+            "output": 2.1
+          },
+          "id": "mistral/mistral-large-latest",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 262144,
+          "name": "mistral-large-4 · Mistral",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": "low",
+            "max": null,
+            "medium": "medium",
+            "minimal": null,
+            "off": null,
+            "xhigh": null
+          }
+        },
+        {
+          "contextWindow": 262144,
+          "cost": {
+            "cacheRead": 0.15,
+            "cacheWrite": 0,
+            "input": 1.5,
+            "output": 7.5
+          },
+          "id": "mistral/mistral-medium-latest",
+          "input": [
+            "text",
+            "image"
+          ],
+          "maxTokens": 262144,
+          "name": "Mistral Medium (latest) · Mistral",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "high": "high",
+            "low": null,
+            "max": null,
+            "medium": null,
+            "minimal": null,
+            "off": "none",
+            "xhigh": null
+          }
+        },
+        {
+          "id": "mistral/mistral-medium",
+          "input": [
+            "text",
+            "image"
+          ],
+          "name": "mistral-medium-latest · Mistral",
+          "reasoning": false
         },
         {
           "api": "openai-responses",
@@ -2490,260 +2993,6 @@
             "medium": null,
             "minimal": null,
             "off": "none",
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.2,
-            "cacheWrite": 0,
-            "input": 2,
-            "output": 12
-          },
-          "id": "gemini/gemini-3.1-pro-preview",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 65536,
-          "name": "Gemini 3.1 Pro Preview · Gemini CLI",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "id": "gemini/gemini-3-pro-preview",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 65536,
-          "name": "Gemini 3 Pro Preview · Gemini CLI",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": null,
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.05,
-            "cacheWrite": 0,
-            "input": 0.5,
-            "output": 3
-          },
-          "id": "gemini/gemini-3-flash-preview",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 65536,
-          "name": "Gemini 3 Flash Preview · Gemini CLI",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": "minimal",
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.075,
-            "cacheWrite": 0,
-            "input": 0.75,
-            "output": 3.75
-          },
-          "id": "gemini/gemini-3.8-flash",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 65536,
-          "name": "Gemini 3.8 Flash · Gemini CLI",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.15,
-            "cacheWrite": 0,
-            "input": 1.5,
-            "output": 9
-          },
-          "id": "gemini/gemini-3.5-flash",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 65536,
-          "name": "Gemini 3.5 Flash · Gemini CLI",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": "minimal",
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.03,
-            "cacheWrite": 0,
-            "input": 0.3,
-            "output": 2.5
-          },
-          "id": "gemini/gemini-3.5-flash-lite",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 65536,
-          "name": "Gemini 3.5 Flash Lite · Gemini CLI",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": "minimal",
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.025,
-            "cacheWrite": 0,
-            "input": 0.25,
-            "output": 1.5
-          },
-          "id": "gemini/gemini-3.1-flash-lite",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 65536,
-          "name": "Gemini 3.1 Flash Lite · Gemini CLI",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": "minimal",
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.125,
-            "cacheWrite": 0,
-            "input": 1.25,
-            "output": 10
-          },
-          "id": "gemini/gemini-2.5-pro",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 65536,
-          "name": "Gemini 2.5 Pro · Gemini CLI",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.03,
-            "cacheWrite": 0,
-            "input": 0.3,
-            "output": 2.5
-          },
-          "id": "gemini/gemini-2.5-flash",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 65536,
-          "name": "Gemini 2.5 Flash · Gemini CLI",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": null,
-            "off": null,
-            "xhigh": null
-          }
-        },
-        {
-          "contextWindow": 1048576,
-          "cost": {
-            "cacheRead": 0.01,
-            "cacheWrite": 0,
-            "input": 0.1,
-            "output": 0.4
-          },
-          "id": "gemini/gemini-2.5-flash-lite",
-          "input": [
-            "text",
-            "image"
-          ],
-          "maxTokens": 65536,
-          "name": "Gemini 2.5 Flash Lite · Gemini CLI",
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "high": "high",
-            "low": "low",
-            "max": null,
-            "medium": "medium",
-            "minimal": null,
-            "off": null,
             "xhigh": null
           }
         }

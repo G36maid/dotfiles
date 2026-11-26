@@ -115,7 +115,7 @@
       }
     },
     "default_model": {
-      "model": "auto/glm-5.3-flash",
+      "model": "group/fast",
       "provider": "magpie"
     },
     "favorite_models": [
@@ -198,7 +198,7 @@
             },
             "display_name": "GLM-5.3 · routing group",
             "max_output_tokens": 131072,
-            "max_tokens": 1131072,
+            "max_tokens": 1179648,
             "name": "auto/glm-5.3",
             "reasoning_effort": "high"
           },
@@ -254,7 +254,7 @@
             },
             "display_name": "GLM-5.2 · routing group",
             "max_output_tokens": 131072,
-            "max_tokens": 1131072,
+            "max_tokens": 1179648,
             "name": "auto/glm-5.2",
             "reasoning_effort": "high"
           },
@@ -380,8 +380,36 @@
             },
             "display_name": "Gemini 3.8 Flash · routing group",
             "max_output_tokens": 65536,
-            "max_tokens": 1114112,
+            "max_tokens": 1048576,
             "name": "auto/gemini-3.8-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Fast · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "group/fast",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Cheap · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "group/cheap",
             "reasoning_effort": "high"
           },
           {
@@ -924,6 +952,324 @@
               "prompt_cache_key": false,
               "tools": true
             },
+            "display_name": "Codestral 25.08 · Mistral",
+            "max_output_tokens": 8192,
+            "max_tokens": 264192,
+            "name": "mistral/codestral-2508"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "codestral-2508 · Mistral",
+            "max_output_tokens": 4096,
+            "max_tokens": 260096,
+            "name": "mistral/codestral-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "codestral-2508 · Mistral",
+            "max_output_tokens": 32768,
+            "max_tokens": 288768,
+            "name": "mistral/mistral-code-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "codestral-2508 · Mistral",
+            "max_tokens": 128000,
+            "name": "mistral/mistral-code-fim-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "DeepSeek V4.1 Flash 1017 · Mistral",
+            "max_output_tokens": 128000,
+            "max_tokens": 1176576,
+            "name": "mistral/deepseek-v4-1-flash-1017",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.2 · Mistral",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "mistral/glm-5-2",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "glm-5-2 · Mistral",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "mistral/zai-glm-5-2",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3 · Mistral",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "mistral/zai-glm-5-3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "zai-glm-5-3 · Mistral",
+            "max_output_tokens": 131072,
+            "max_tokens": 335872,
+            "name": "mistral/zai-glm-5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "zai-glm-5-3 · Mistral",
+            "max_tokens": 128000,
+            "name": "mistral/zai-glm-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "zai-glm-5-3 · Mistral",
+            "max_tokens": 128000,
+            "name": "mistral/glm-5-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-Flash · Mistral",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "mistral/zai-glm-5-3-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Ministral 3 14B · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 524288,
+            "name": "mistral/ministral-14b-2512"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "ministral-14b-2512 · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 524288,
+            "name": "mistral/ministral-14b-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Ministral 3 3B · Mistral",
+            "max_output_tokens": 131072,
+            "max_tokens": 262144,
+            "name": "mistral/ministral-3b-2512"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "ministral-3b-2512 · Mistral",
+            "max_output_tokens": 131072,
+            "max_tokens": 262144,
+            "name": "mistral/ministral-3b-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Ministral 3 8B · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 524288,
+            "name": "mistral/ministral-8b-2512"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "ministral-8b-2512 · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 524288,
+            "name": "mistral/ministral-8b-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Mistral Large 3 · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 524288,
+            "name": "mistral/mistral-large-2512"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Mistral Large 4 · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 1310720,
+            "name": "mistral/mistral-large-4",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "mistral-large-4 · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 1310720,
+            "name": "mistral/mistral-large-4-0",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "mistral-large-4 · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 1310720,
+            "name": "mistral/mistral-large-latest",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Mistral Medium (latest) · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 524288,
+            "name": "mistral/mistral-medium-latest",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "mistral-medium-latest · Mistral",
+            "max_tokens": 128000,
+            "name": "mistral/mistral-medium"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
             "display_name": "GPT-6.2-Sol · Codex",
             "max_output_tokens": 128000,
             "max_tokens": 628000,
@@ -1443,146 +1789,6 @@
             "max_output_tokens": 64000,
             "max_tokens": 264000,
             "name": "zcode/GLM-5-Turbo",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Gemini 3.1 Pro Preview · Gemini CLI",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "gemini/gemini-3.1-pro-preview",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Gemini 3 Pro Preview · Gemini CLI",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "gemini/gemini-3-pro-preview",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Gemini 3 Flash Preview · Gemini CLI",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "gemini/gemini-3-flash-preview",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Gemini 3.8 Flash · Gemini CLI",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "gemini/gemini-3.8-flash",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Gemini 3.5 Flash · Gemini CLI",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "gemini/gemini-3.5-flash",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Gemini 3.5 Flash Lite · Gemini CLI",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "gemini/gemini-3.5-flash-lite",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Gemini 3.1 Flash Lite · Gemini CLI",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "gemini/gemini-3.1-flash-lite",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Gemini 2.5 Pro · Gemini CLI",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "gemini/gemini-2.5-pro",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Gemini 2.5 Flash · Gemini CLI",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "gemini/gemini-2.5-flash",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Gemini 2.5 Flash Lite · Gemini CLI",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "gemini/gemini-2.5-flash-lite",
             "reasoning_effort": "high"
           }
         ]

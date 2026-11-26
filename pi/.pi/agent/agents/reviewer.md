@@ -2,7 +2,7 @@
 name: reviewer
 description: Read-only deep review agent — context gathering, goal & constraint verification, code quality (10 dimensions), security (10 checks), context mining via git/GitHub. Produces a PASS/FAIL verdict.
 subagent_agents: explore, librarian
-model: zai/glm-5.3
+model: magpie/auto/glm-5.3
 thinking: high
 tools: read, grep, find, safe_bash
 system-prompt: append

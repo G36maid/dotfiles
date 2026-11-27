@@ -10,6 +10,18 @@
         "--script",
         "/home/g36maid/Code/AI/ghidra-mcp/bridge_mcp_ghidra.py"
       ]
+    },
+    "artex": {
+      "command": "/home/g36maid/Code/artex-mcp/.venv/bin/python",
+      "args": [
+        "/home/g36maid/Code/artex-mcp/artex_mcp.py"
+      ],
+      "timeout": 180,
+      "env": {
+        "ARTEX_URL": "http://127.0.0.1:8787",
+        "ARTEX_ALLOW_HTTP": "1",
+        "ARTEX_ADMIN_PASSWORD_FILE": "/home/g36maid/.config/artex-mcp/admin-password"
+      }
     }
   }
 }

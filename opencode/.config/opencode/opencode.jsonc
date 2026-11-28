@@ -1,4 +1,15 @@
 {
+  "provider": {
+    "magpie": {
+      "name": "magpie",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "magpie",
+        "baseURL": "http://127.0.0.1:3425/v1",
+        "setCacheKey": true
+      }
+    }
+  },
   "plugins": [
     "opencode-mermaid-renderer@latest",
     "opencode-todo-enforcer",

@@ -239,10 +239,24 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "GLM-5.3-Flash · routing group",
+            "display_name": "GLM-5.4 · routing group",
             "max_output_tokens": 131072,
-            "max_tokens": 1179648,
-            "name": "auto/glm-5.3-flash",
+            "max_tokens": 1131072,
+            "name": "auto/glm-5.4",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5-Turbo · routing group",
+            "max_output_tokens": 131072,
+            "max_tokens": 331072,
+            "name": "auto/glm-5-turbo",
             "reasoning_effort": "high"
           },
           {
@@ -255,7 +269,7 @@
             },
             "display_name": "GPT-5.6 Luna · routing group",
             "max_output_tokens": 128000,
-            "max_tokens": 400000,
+            "max_tokens": 1050000,
             "name": "auto/gpt-5.6-luna",
             "reasoning_effort": "high"
           },
@@ -285,6 +299,20 @@
             "max_output_tokens": 128000,
             "max_tokens": 1128000,
             "name": "auto/claude-haiku-5-5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Kimi K3 · routing group",
+            "max_output_tokens": 1048576,
+            "max_tokens": 2097152,
+            "name": "auto/kimi-k3",
             "reasoning_effort": "high"
           },
           {
@@ -379,286 +407,6 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Gemini 4 Argon · routing group",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "auto/gemini-4-argon",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.4 · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 1131072,
-            "name": "zai/glm-5.4",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.3-Flash · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 1131072,
-            "name": "zai/glm-5.3-flash",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.3 · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 1131072,
-            "name": "zai/glm-5.3",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.3 Highspeed · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 1131072,
-            "name": "zai/glm-5.3-highspeed",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.2 · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 1131072,
-            "name": "zai/glm-5.2",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.2 Highspeed · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 1131072,
-            "name": "zai/glm-5.2-highspeed",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5-Turbo · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 331072,
-            "name": "zai/glm-5-turbo",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-4.7 · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 335872,
-            "name": "zai/glm-4.7",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.3-FlashX-Legal · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 1131072,
-            "name": "zai/glm-5.3-flashx-legal",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.3-FlashX · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 1131072,
-            "name": "zai/glm-5.3-flashx",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.1 · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 331072,
-            "name": "zai/glm-5.1",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5V-Turbo · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 331072,
-            "name": "zai/glm-5v-turbo",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5 · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 335872,
-            "name": "zai/glm-5",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-4.7-Flash · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 331072,
-            "name": "zai/glm-4.7-flash",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-4.7-FlashX · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 331072,
-            "name": "zai/glm-4.7-flashx",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-4.6V · Z.ai",
-            "max_output_tokens": 32768,
-            "max_tokens": 160768,
-            "name": "zai/glm-4.6v",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-4.6V-Flash · Z.ai",
-            "max_output_tokens": 32768,
-            "max_tokens": 160768,
-            "name": "zai/glm-4.6v-flash",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-4.6 · Z.ai",
-            "max_output_tokens": 131072,
-            "max_tokens": 335872,
-            "name": "zai/glm-4.6",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-4.5V · Z.ai",
-            "max_output_tokens": 16384,
-            "max_tokens": 80384,
-            "name": "zai/glm-4.5v",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
             "display_name": "GLM-4.5 · Z.ai",
             "max_output_tokens": 98304,
             "max_tokens": 229376,
@@ -687,122 +435,10 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "GLM-4.5-Flash · Z.ai",
-            "max_output_tokens": 98304,
-            "max_tokens": 229376,
-            "name": "zai/glm-4.5-flash",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "HungerG Free · OpenCode Go",
-            "max_output_tokens": 65536,
-            "max_tokens": 1065536,
-            "name": "opencode-go/hungerg-free",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Hy4 flash Free · OpenCode Go",
-            "max_output_tokens": 65536,
-            "max_tokens": 1048576,
-            "name": "opencode-go/hy4-flash-free",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Qwen4 Max · OpenCode Go",
-            "max_output_tokens": 262144,
-            "max_tokens": 1262144,
-            "name": "opencode-go/qwen4-max",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Hy4 · OpenCode Go",
-            "max_output_tokens": 65536,
-            "max_tokens": 1048576,
-            "name": "opencode-go/hy4",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Crouton Alpha Free · OpenCode Go",
-            "max_output_tokens": 270000,
-            "max_tokens": 1318576,
-            "name": "opencode-go/crouton-alpha-free",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "LongCat-2.5 · OpenCode Go",
-            "max_output_tokens": 262144,
-            "max_tokens": 1262144,
-            "name": "opencode-go/longcat-2.5",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "LongCat 2.5 Free · OpenCode Go",
-            "max_output_tokens": 262144,
-            "max_tokens": 1262144,
-            "name": "opencode-go/longcat-2.5-free",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Iceman Contributor Free · OpenCode Go",
+            "display_name": "GLM-4.6 · Z.ai",
             "max_output_tokens": 131072,
-            "max_tokens": 393216,
-            "name": "opencode-go/iceman-contributor-free",
+            "max_tokens": 335872,
+            "name": "zai/glm-4.6",
             "reasoning_effort": "high"
           },
           {
@@ -813,10 +449,10 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Kimi K3.1 Pro · OpenCode Go",
-            "max_output_tokens": 1048576,
-            "max_tokens": 2097152,
-            "name": "opencode-go/kimi-k3.1-pro",
+            "display_name": "GLM-4.7 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 335872,
+            "name": "zai/glm-4.7",
             "reasoning_effort": "high"
           },
           {
@@ -827,10 +463,10 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "MiniMax M3.1 Flash · OpenCode Go",
-            "max_output_tokens": 512000,
-            "max_tokens": 1512000,
-            "name": "opencode-go/minimax-m3.1-flash",
+            "display_name": "GLM-5 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 335872,
+            "name": "zai/glm-5",
             "reasoning_effort": "high"
           },
           {
@@ -841,10 +477,108 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "MiniMax M3.1 Flash Free · OpenCode Go",
-            "max_output_tokens": 512000,
-            "max_tokens": 1512000,
-            "name": "opencode-go/minimax-m3.1-flash-free",
+            "display_name": "GLM-5-Turbo · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 331072,
+            "name": "zai/glm-5-turbo",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.1 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 331072,
+            "name": "zai/glm-5.1",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.2 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.2",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-Flash · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.3-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-FlashX · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.3-flashx",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-FlashX-Legal · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.3-flashx-legal",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.4 · Z.ai",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "zai/glm-5.4",
             "reasoning_effort": "high"
           },
           {
@@ -869,10 +603,10 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Gemini 4 Argon · OpenCode Go",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "opencode-go/gemini-4-argon",
+            "display_name": "DeepSeek V4 Pro · OpenCode Go",
+            "max_output_tokens": 384000,
+            "max_tokens": 1384000,
+            "name": "opencode-go/deepseek-v4-pro",
             "reasoning_effort": "high"
           },
           {
@@ -883,108 +617,10 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Gemini 4 Argon Contributor · OpenCode Go",
-            "max_output_tokens": 65536,
-            "max_tokens": 1114112,
-            "name": "opencode-go/gemini-4-argon-contributor",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Cat Jam Free · OpenCode Go",
+            "display_name": "GLM-5.3 · OpenCode Go",
             "max_output_tokens": 131072,
-            "max_tokens": 1179648,
-            "name": "opencode-go/cat-jam-free",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Claude Haiku 5.5 · OpenCode Go",
-            "max_output_tokens": 128000,
-            "max_tokens": 1128000,
-            "name": "opencode-go/claude-haiku-5-5",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Beam Free · OpenCode Go",
-            "max_output_tokens": 131072,
-            "max_tokens": 1179648,
-            "name": "opencode-go/beam-free",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Space Bunny · OpenCode Go",
-            "max_output_tokens": 524288,
-            "max_tokens": 1048576,
-            "name": "opencode-go/space-bunny",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GPT-6 Luna · OpenCode Go",
-            "max_output_tokens": 128000,
-            "max_tokens": 1050000,
-            "name": "opencode-go/gpt-6-luna",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "MiMo-V2.6-Flash · OpenCode Go",
-            "max_output_tokens": 131072,
-            "max_tokens": 1179648,
-            "name": "opencode-go/mimo-v2.6-flash",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "MiMo-V2.6-Pro · OpenCode Go",
-            "max_output_tokens": 131072,
-            "max_tokens": 1179648,
-            "name": "opencode-go/mimo-v2.6-pro",
+            "max_tokens": 1131072,
+            "name": "opencode-go/glm-5.3",
             "reasoning_effort": "high"
           },
           {
@@ -999,6 +635,20 @@
             "max_output_tokens": 500000,
             "max_tokens": 1000000,
             "name": "opencode-go/grok-4.7",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Muse Spark 1.2 Contributor · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "opencode-go/muse-spark-1.2-contributor",
             "reasoning_effort": "high"
           },
           {
@@ -1037,66 +687,313 @@
               "prompt_cache_key": false,
               "tools": true
             },
+            "display_name": "GPT-5.6 Luna · OpenCode Go",
+            "max_output_tokens": 128000,
+            "max_tokens": 1050000,
+            "name": "opencode-go/gpt-5.6-luna",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GPT-6 Luna · OpenCode Go",
+            "max_output_tokens": 128000,
+            "max_tokens": 1050000,
+            "name": "opencode-go/gpt-6-luna",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Claude Haiku 5.5 · OpenCode Go",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "opencode-go/claude-haiku-5-5",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Hy3 · OpenCode Go",
+            "max_output_tokens": 128000,
+            "max_tokens": 320000,
+            "name": "opencode-go/hy3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Hy4 preview · OpenCode Go",
+            "max_output_tokens": 65536,
+            "max_tokens": 1048576,
+            "name": "opencode-go/hy4-preview",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Kimi K2.7 Code · OpenCode Go",
+            "max_output_tokens": 262144,
+            "max_tokens": 524288,
+            "name": "opencode-go/kimi-k2.7-code",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Kimi K3 · OpenCode Go",
+            "max_output_tokens": 1048576,
+            "max_tokens": 2097152,
+            "name": "opencode-go/kimi-k3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "MiMo-V2.6-Flash · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "opencode-go/mimo-v2.6-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "MiMo-V2.6-Pro · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "opencode-go/mimo-v2.6-pro",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "MiniMax-M3 · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "opencode-go/minimax-m3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "MiniMax M3.1 Flash · OpenCode Go",
+            "max_output_tokens": 512000,
+            "max_tokens": 1512000,
+            "name": "opencode-go/minimax-m3.1-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Step 5 Preview · OpenCode Go",
+            "max_output_tokens": 65536,
+            "max_tokens": 1065536,
+            "name": "opencode-go/step-5-preview",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Beam Free · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "opencode-go/beam-free",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Qwen3.8 Max · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "opencode-go/qwen3.8-max",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Qwen3.8 Flash · OpenCode Go",
+            "max_output_tokens": 131072,
+            "max_tokens": 1131072,
+            "name": "opencode-go/qwen3.8-flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Qwen3.7 Plus · OpenCode Go",
+            "max_output_tokens": 65536,
+            "max_tokens": 1065536,
+            "name": "opencode-go/qwen3.7-plus",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Kimi K3.1 Pro · OpenCode Go",
+            "max_output_tokens": 1048576,
+            "max_tokens": 2097152,
+            "name": "opencode-go/kimi-k3.1-pro",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-Flash · DGX-Spark-x2",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "dgx-spark-x2/GLM-5.3-Flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Codestral 25.08 · Mistral",
+            "max_output_tokens": 8192,
+            "max_tokens": 264192,
+            "name": "mistral/codestral-2508"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "codestral-2508 · Mistral",
+            "max_output_tokens": 4096,
+            "max_tokens": 260096,
+            "name": "mistral/codestral-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "codestral-2508 · Mistral",
+            "max_output_tokens": 32768,
+            "max_tokens": 288768,
+            "name": "mistral/mistral-code-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "codestral-2508 · Mistral",
+            "max_tokens": 128000,
+            "name": "mistral/mistral-code-fim-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
             "display_name": "DeepSeek V4.1 Flash 1017 · Mistral",
             "max_output_tokens": 128000,
             "max_tokens": 1176576,
             "name": "mistral/deepseek-v4-1-flash-1017",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Mistral Large 4 · Mistral",
-            "max_output_tokens": 262144,
-            "max_tokens": 1310720,
-            "name": "mistral/mistral-large-4",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Mistral Large (latest) · Mistral",
-            "max_output_tokens": 262144,
-            "max_tokens": 1310720,
-            "name": "mistral/mistral-large-latest",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.3-Flash · Mistral",
-            "max_output_tokens": 131072,
-            "max_tokens": 1179648,
-            "name": "mistral/zai-glm-5-3-flash",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "GLM-5.3 · Mistral",
-            "max_output_tokens": 131072,
-            "max_tokens": 1179648,
-            "name": "mistral/zai-glm-5-3",
             "reasoning_effort": "high"
           },
           {
@@ -1121,7 +1018,7 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "GLM-5.2 · Mistral",
+            "display_name": "glm-5-2 · Mistral",
             "max_output_tokens": 131072,
             "max_tokens": 1179648,
             "name": "mistral/zai-glm-5-2",
@@ -1135,10 +1032,10 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Mistral Medium 3.5 · Mistral",
-            "max_output_tokens": 262144,
-            "max_tokens": 524288,
-            "name": "mistral/mistral-medium-2604",
+            "display_name": "GLM-5.3 · Mistral",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "mistral/zai-glm-5-3",
             "reasoning_effort": "high"
           },
           {
@@ -1149,10 +1046,10 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Mistral Medium (latest) · Mistral",
-            "max_output_tokens": 262144,
-            "max_tokens": 524288,
-            "name": "mistral/mistral-medium-latest",
+            "display_name": "zai-glm-5-3 · Mistral",
+            "max_output_tokens": 131072,
+            "max_tokens": 335872,
+            "name": "mistral/zai-glm-5",
             "reasoning_effort": "high"
           },
           {
@@ -1163,37 +1060,35 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Mistral Small 4 · Mistral",
-            "max_output_tokens": 256000,
-            "max_tokens": 518144,
-            "name": "mistral/mistral-small-2603",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Mistral Small (latest) · Mistral",
-            "max_output_tokens": 256000,
-            "max_tokens": 518144,
-            "name": "mistral/mistral-small-latest",
-            "reasoning_effort": "high"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Voxtral Mini (latest) · Mistral",
+            "display_name": "zai-glm-5-3 · Mistral",
             "max_tokens": 128000,
-            "name": "mistral/voxtral-mini-latest"
+            "name": "mistral/zai-glm-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "zai-glm-5-3 · Mistral",
+            "max_tokens": 128000,
+            "name": "mistral/glm-5-latest"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-Flash · Mistral",
+            "max_output_tokens": 131072,
+            "max_tokens": 1179648,
+            "name": "mistral/zai-glm-5-3-flash",
+            "reasoning_effort": "high"
           },
           {
             "capabilities": {
@@ -1216,7 +1111,7 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Ministral 3 14B (latest) · Mistral",
+            "display_name": "ministral-14b-2512 · Mistral",
             "max_output_tokens": 262144,
             "max_tokens": 524288,
             "name": "mistral/ministral-14b-latest"
@@ -1242,7 +1137,7 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Ministral 3 3B (latest) · Mistral",
+            "display_name": "ministral-3b-2512 · Mistral",
             "max_output_tokens": 131072,
             "max_tokens": 262144,
             "name": "mistral/ministral-3b-latest"
@@ -1268,7 +1163,7 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Ministral 3 8B (latest) · Mistral",
+            "display_name": "ministral-8b-2512 · Mistral",
             "max_output_tokens": 262144,
             "max_tokens": 524288,
             "name": "mistral/ministral-8b-latest"
@@ -1294,49 +1189,10 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Codestral 25.08 · Mistral",
-            "max_output_tokens": 8192,
-            "max_tokens": 264192,
-            "name": "mistral/codestral-2508"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Voxtral Small · Mistral",
-            "max_output_tokens": 32000,
-            "max_tokens": 64768,
-            "name": "mistral/voxtral-small-2507"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Voxtral Small (latest) · Mistral",
-            "max_output_tokens": 32000,
-            "max_tokens": 64768,
-            "name": "mistral/voxtral-small-latest"
-          },
-          {
-            "capabilities": {
-              "chat_completions": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "tools": true
-            },
-            "display_name": "Magistral Medium (latest) · Mistral",
+            "display_name": "Mistral Large 4 · Mistral",
             "max_output_tokens": 262144,
-            "max_tokens": 524288,
-            "name": "mistral/magistral-medium-latest",
+            "max_tokens": 1310720,
+            "name": "mistral/mistral-large-4",
             "reasoning_effort": "high"
           },
           {
@@ -1347,10 +1203,51 @@
               "prompt_cache_key": false,
               "tools": true
             },
-            "display_name": "Codestral (latest) · Mistral",
-            "max_output_tokens": 4096,
-            "max_tokens": 260096,
-            "name": "mistral/codestral-latest"
+            "display_name": "mistral-large-4 · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 1310720,
+            "name": "mistral/mistral-large-4-0",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "mistral-large-4 · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 1310720,
+            "name": "mistral/mistral-large-latest",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "Mistral Medium (latest) · Mistral",
+            "max_output_tokens": 262144,
+            "max_tokens": 524288,
+            "name": "mistral/mistral-medium-latest",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "mistral-medium-latest · Mistral",
+            "max_tokens": 128000,
+            "name": "mistral/mistral-medium"
           },
           {
             "capabilities": {
@@ -1810,6 +1707,76 @@
             "display_name": "Auto · Copilot",
             "max_tokens": 128000,
             "name": "copilot/auto"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.4 · ZCode",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "zcode/GLM-5.4",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3 · ZCode",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "zcode/GLM-5.3",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.3-Flash · ZCode",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "zcode/GLM-5.3-Flash",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5.2 · ZCode",
+            "max_output_tokens": 128000,
+            "max_tokens": 1128000,
+            "name": "zcode/GLM-5.2",
+            "reasoning_effort": "high"
+          },
+          {
+            "capabilities": {
+              "chat_completions": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "tools": true
+            },
+            "display_name": "GLM-5-Turbo · ZCode",
+            "max_output_tokens": 64000,
+            "max_tokens": 264000,
+            "name": "zcode/GLM-5-Turbo",
+            "reasoning_effort": "high"
           }
         ]
       },

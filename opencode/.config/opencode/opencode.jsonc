@@ -1,15 +1,4 @@
 {
-  "provider": {
-    "magpie": {
-      "name": "magpie",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "apiKey": "magpie",
-        "baseURL": "http://127.0.0.1:3425/v1",
-        "setCacheKey": true
-      }
-    }
-  },
   "plugins": [
     "opencode-mermaid-renderer@latest",
     "opencode-todo-enforcer",
@@ -44,7 +33,7 @@
           // context/output: recipe README — CONTEXT_MAX 1048576, MAX_TOKENS 32768
           "limit": { "context": 1048576, "output": 32768 },
           "capabilities": {
-            "reasoning": true,
+            "reasoning": { "supported": true },
             "input": ["text", "image"],
             "output": ["text"]
           },
